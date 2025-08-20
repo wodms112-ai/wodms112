@@ -58,7 +58,7 @@ ol, li, ul {
     text-align: center;
 }
 .cycle{
-    margin: 158 0 0 30px;
+    margin: 158px 0 0 30px;
     text-align: right;
 }
 .nature h1, 
@@ -98,7 +98,6 @@ ol, li, ul {
 .cycle p strong {
     font-weight: 700;
     text-decoration: underline;
-    color: yellow;
 }
 
 
