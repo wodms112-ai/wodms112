@@ -1,0 +1,203 @@
+@import url(common.css);
+.color{
+    margin: 164px 0 0 0;
+}
+.color .tit h1 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 0 0 14px 0;
+}
+.color .list{
+    margin: 50px 0 0 0;
+}
+.color .list ul {/*felx는 ul에만 걸수있음! list에는 걸수없음*/
+    display: flex;
+    justify-content: space-between;
+}
+.color .list ul li {
+    width: 297px;
+    height: 385px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 40px 40px 0 40px;
+} 
+/*가상선택자는 콜론을 띄어쓰기 하지 않고 붙여야함*//*가상선택자는 순서 상관없을때만사용
+.color .list ul li:first-child{
+    background-color: #00ad1d;
+} 
+.color .list ul li:nth-child(2){
+    background-color: #008233;
+}
+.color .list ul li:nth-child(3){
+    background-color: #003087;
+}
+.color .list ul li:last-child{
+    background-color: #002554; 
+}*/
+
+.color .list ul li.bg1{
+    background-color: #00ad1d;
+} 
+.color .list ul li.bg2{
+    background-color: #008233;
+}
+.color .list ul li.bg3{
+    background-color: #003087;
+}
+.color .list ul li.bg4{
+    background-color: #002554; 
+}
+.color .list ul li h2 {
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+.recruit{
+    margin: 155px 0 0 0;
+}
+.recruit .wrapper{
+    display: flex;/*tit-photo 좌우배치를 위해서 플랙스를 줌*/
+    justify-content: space-between;/*간격을 맞춰서 띄워줄쑤있게하는 것*/
+    align-items: center;
+}
+.recruit .tit strong {
+    font-weight: 700;
+    color: #003087;
+}
+.recruit .tit h1{
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 20px 0 35px 0;
+}
+.recruit .tit a {
+    border: 1px solid #666; /* */
+    padding: 13px 35px 11px 33px ;
+    display: inline-block; /* */
+    border-radius: 30px; /*둥글게 말기*/
+}
+.recruit .photo { 
+    overflow: hidden; /* 포토작업할땐 무조건 'overflow: hidden' 가로세로100% 넣어주기*/
+    border-radius: 30px;
+    width: 727px; /*사진크기정하기*/
+    height: 418px;
+}
+.recruit .photo image {/**/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overview {
+    margin: 125px 0 0 0; /*간격조절*/
+    background-color: #f4f4f4;
+    padding: 110px 0 125px 0;
+}
+.overview .wrapper {
+    display: flex; /*tit-list 좌우배치*/
+    justify-content: space-between;
+}
+.overview h1 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+}
+.overview .inner{
+    width: 804px;
+}
+.overview .inner .tit h2 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 0 0 20px 0;
+}
+.overview .inner .list {
+    margin: 44px 0 0 0;
+}
+.overview .inner .list ul li {
+   border-top: 1px solid #cccccc;/*위에 밑줄 그어주는것*/
+   padding: 25px 0 35px 0;
+   display: flex; /*h3-p 좌우 배치*/
+}
+/*마지막 선택자 부르기= last-child*/
+/*li 중에서 마지막 li에만 스타일을 줌 =밑줄만 그어주는것= border=bottom*/
+.overview .inner .list ul li:last-child{
+    border-bottom: 1px solid #cccccc;
+}
+.overview .inner .list ul li h3 {
+    font-weight: 700;
+    color: #1d1d1d;
+    width: 165px;
+}
+.ship {
+    margin: 180px 0 0 0;
+}
+.ship h1 {
+    font-weight: 700;
+    font-size: 40px;
+    color: #1d1d1d;
+}
+.ship .list {
+    margin: 25px 0 0 0;
+}
+.ship .list ul {
+    display:flex ;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    /*위아래 여백px 좌우여백px*/
+
+}
+.ship .list ul li{
+    width: 297px;
+    height: 171px;
+    border-radius: 20px;
+    background-repeat: no-repeat; /*배경 이미지를 반복하지 말고 한 번만 표시*/
+    background-position: center center;
+    background-size: cover;/*요소 크기에 꽉 차게 확대,축소*/
+    /*배경이미지 다르고 다른 속성은 같으니까?*/
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ship .list ul li.bg1 { /**/
+    background-image: url(../images/ci_chip01.jpg)
+}
+.ship .list ul li.bg2 {
+    background-image: url(../images/ci_chip02.jpg)
+}
+.ship .list ul li.bg2 {
+    background-image: url(../images/ci_chip03.jpg)
+}
+.ship .list ul li.bg3 {
+    background-image: url(../images/ci_chip04.jpg)
+}
+.ship .list ul li.bg4 {
+    background-image: url(../images/ci_chip05.jpg)
+}
+.ship .list ul li.bg5 {
+    background-image: url(../images/ci_chip06.jpg)
+}
+.ship .list ul li.bg6 {
+    background-image: url(../images/ci_chip07.jpg)
+}
+.ship .list ul li.bg7 {
+    background-image: url(../images/ci_chip08.jpg)
+}
+
+
+
+
+
+
+
+
+
+
+body {
+    margin: 0 0 200px 0;
+}
+
