@@ -1,0 +1,58 @@
+@import url(common.css);
+.global {
+    margin: 115px 0 0 0;
+}
+.global strong {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3; 
+    color: #1d1d1d;
+}
+.global h1 {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.3; 
+    color: #00b900;
+    margin: 20px 0 0 0;
+}
+.global p {
+    margin: 12px 0 28px 0;
+}
+
+.global a{
+    border: 1px solid #00b900;
+    padding: 4px 29px 4px 29px;
+    display: inline-block;
+    color: #00b900;
+}
+
+.global img {
+    margin: 40px 0 0 0;
+}
+
+.market {
+    text-align: center;
+    margin: 96px 0 0 0;
+    height: 640px;
+    background: url(../images/레고2배경.jpg) no-repeat center center / cover;
+    color: #fff;
+    padding: 122px 0 0 0;
+}
+.market strong {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3; 
+    color:#fff
+}
+.market p {
+    margin: 15px 0 36px 0;
+}
+
+.market a{
+    margin: 0 0 40px 0;
+    border: 1px solid #fff;
+    padding: 4px 29px 4px 29px;
+    display: inline-block;
+    color: #fff
+}
