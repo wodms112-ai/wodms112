@@ -101,19 +101,18 @@ footer {
     padding: 64px 0 82px 0;
     color: rgba(225, 225 ,225, 0.8)
 }
-footer .f-nav ul {
+footer .f_nav ul {
     display: flex; /*li를 좌우배치*/
     gap: 0 40px; /*위아래px -좌우px*/
 }
-footer .f-info{
+footer .f_nav ul li.privacy a {
+    font-weight: 700;
+}
+footer .f_info{
     margin: 17px 0 25px 0;
     display: flex;/**/
     gap: 0 24px;
 }
-footer .f-info strong {
+footer .f_info strong {
     font-weight: 700;
 }
-footer .copyright {
-
-}
-                
