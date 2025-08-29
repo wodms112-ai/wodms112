@@ -1,0 +1,19 @@
+/*중복되는 스타일 입력*/
+body {
+    font-family: "pretendard","Malgun Gothic","맑은 고딕",Dotum,"돋움",Helvetica,AppleSDGothicNeo,sans-serif;
+    /*프린텐다드를 적용하는데 안되면-> 다음에 맑은 고딕 서체를 적용하고-> 안되면 돋음을 적용하라는 뜻
+    [sans-serif]= 다 안되면 고딕체 아무거나 가져오란 명령
+    [serif]=다 안되면 명조제 가져오란 명령*/
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #464C53;
+    word-break: keep-all; /*단어별로 줄바꿈*/
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto; /*가운데 정렬*/
+}
+#wrap {
+    min-width: 1300px; /*1260+20+20=1300*/
+}
