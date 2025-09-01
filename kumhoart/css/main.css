@@ -7,13 +7,13 @@ header {
 }
 header .wrapper {
     display: flex; /*logo랑 gnb를 좌우로 배치*/
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between;/* 나의 영역안에 끝으로 이동*/
+    align-items: center;/*로고를 중간으로 보내기! logo와 gnb를 중앙배치*/
 }
 header .gnb ul {
     display: flex; /*li를 좌우로 배치*/
 }
-header .gnb ul li {
+header .gnb ul li a {
     display: block; /*a는 기본이 block*/
     line-height: 70px; /*헤더의 높이와 동일하게*/
     font-weight: 700;
@@ -27,7 +27,7 @@ header .gnb ul li {
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
     color: #fff;
-    height: 900px;
+    height: 900px;/*사진이 들어가는 백그라운드의 경우 높이를 줌*/
 }
 .visual h2 {
     font-size: 60px;
@@ -49,7 +49,7 @@ header .gnb ul li {
     justify-content: space-between;
 }
 .biz .txt {
-    width: 522px;
+    width: 522px; /*텍스트 너비제한*/
 }
 .biz .txt strong {
     color: #882C34;
@@ -72,6 +72,11 @@ header .gnb ul li {
     width: 605px;
     height: 500px;
     border-radius: 30px;
+}
+.biz .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .biz .txt .sub_tit {
     font-size: 20px;
@@ -97,13 +102,10 @@ header .gnb ul li {
     color: #fff;
     border-radius: 30px;
 }
-.biz .photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 .community {
     background: url(../images/commumity_bg.jpg) no-repeat center top/ auto 920px;
+    /*배경이 위에 있으니까 top*/
     margin: 145px 0 0 0 ;
     height: 100%;
     /*콘텐츠가 배경보다 길어서 배경의 높이만큼 주면x
@@ -138,6 +140,7 @@ header .gnb ul li {
 }
 .community .news .list ul li {
     border-bottom: 1px solid rgba(225, 225, 225,0.2);
+    /*border-bottom-> 아래방향에 선*/
 }
 .community .news .list ul li a {
     display: flex;
@@ -162,16 +165,16 @@ header .gnb ul li {
     margin: 100px 0 0 0;
 }
 .community .media .tit {
-    display: flex ;
+    display: flex ; /*h2좌우 배차*/
     justify-content: space-between;
+    align-items: center;
+    
 }
 .community .media .tit h2 {
     font-size: 40px;
     font-weight: 700;
     list-style: 1.4;
     letter-spacing: -0.02em;
-    color: #fff;
-    margin: 20px 0 20px 0;
 }
 .community .media .tit a {
     display: inline-block;
@@ -184,7 +187,6 @@ header .gnb ul li {
     margin: 36px 0 0 0;
 }
 .community .media .list ul {
-    display: inline-block;
     display: flex;
     justify-content: space-between;
     gap: 24px;
