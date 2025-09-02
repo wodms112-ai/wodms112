@@ -96,7 +96,8 @@ header .gnb ul li a {
     color: #882C34;
     padding: 10px 29px 10px 29px;
     border-radius: 30px;
-    transition: 0.5s; /*천천히 변화, 개취임*/
+    transition: 0.5s; 
+    /*천천히 변임 hover에 넣으면 오버후에도 적용이 안됨으로 오버전에 효과를 넣어야함*/
 }
 .biz .txt .btn_wrap a:hover { /*a에 마우스를 올렸을때 */
     background-color:#882C34;
@@ -139,7 +140,6 @@ header .gnb ul li a {
 .community .news .tit a:hover {
     background-color: #fff;
     color: #882C34;
-    transition: 0.5s;
 }
 .community .news .list {
     width: 802px;
@@ -246,7 +246,6 @@ footer {
 footer .wrapper {
     display: flex; /*inner랑 famailysite를 좌우 배치*/
     justify-content: space-between;
-
 }
 footer .inner .f_nav ul {
     display: flex; /*li를 좌우로 배치*/
