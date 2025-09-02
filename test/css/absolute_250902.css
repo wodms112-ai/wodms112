@@ -1,0 +1,196 @@
+@import url(common.css);
+header {
+    background-color: #fff;
+    position: absolute; /*body를 기준으로 정렬*/
+    left: 30px;
+    top: 30px;
+    z-index: 100; /*header를 맨위에 배치하기 위해*/
+    width: calc(100% - 60px); /*박스 너비의 100%에서 60px 뺀 값을 너비로 써라=30px씩2개 여백넣겠다는뜻*/
+    height: 80px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+header .gnb ul {
+    display: flex;
+}
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.visual .wrapper {
+    position: relative; /*botten의 absolute의 기준을 이걸로 잡겠다는뜻*/
+    height: 700px;
+}
+.visual h2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    padding: 230px 0 0 0;
+}
+.visual button {
+    display: block;
+    width: 160px;
+    height: 160px;
+    background-color: #B51111;
+    border-radius: 50%; /*동그라미는 50%*/
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: -80px;
+    bottom: -80px;
+}
+.f_nav {
+    margin: 50px 0 50px 0;
+}
+.f_nav ul {
+    display: flex;
+    gap: 40px;
+}
+.f_nav ul li {
+    position: relative; /*before를 li 기준으로 정렬하고 싶은데 그러면 positon속성이 선언되어야함..
+    position 속성중에서 제일 멀정한게 (값을 준것과 안준것의 차이가 거의 없음)relative
+    그래서 absolute정렬의 기준에는 posituon:relative;를 줌
+    positon값이 없을 경우에만 추가*/
+}
+.f_nav ul li::before {
+    content: "";/*before after가상선택자는 반드시content라는 속성이 있어야 나타남*/
+    width: 1px;
+    height: 11px;
+    background-color: #d4d4d4;
+    display: block;
+    position: absolute; /*li를 기준으로 정렬*/
+    left: -22px;
+    top: 6px;
+}
+.f_nav ul li:first-child::before { /*첫번째 li의 befre 숨김처리*/
+    display: none;/*html이 아예 없었던것 처럼 숨침처리*/
+}
+.btn_svg, 
+.btn_path,
+.btn_path_ab,
+.btn_bg
+.btn_ico
+{
+    margin: 50px 0 50px 0;
+}
+
+.btn_svg h2,
+.btn_path h2,
+.btn_path_ab h2,
+.btn_bg h2
+.btn_ico h2
+ {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+.btn_svg a {
+    border: 1px solid #666;
+    padding: 10px 50px 10px 30px;
+    display: inline-block;
+    border-radius: 40px;
+    position: relative; /*after정렬의 기준*/
+}
+.btn_svg a::after {
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 15px;
+    top: 15px;
+    background: url(../images/btn_arrow.svg)no-repeat center center ; 
+    width: 16px;
+    height: 16px;
+}
+.btn_svg a:hover {
+    border-color: #B51111;
+    background-color: #B51111;
+    color: #fff;
+} 
+.btn_svg a:hover::after {
+    background-image: url(../images/btn_arrow_w.svg);
+}
+.btn_path a {
+    border: 1px solid #666;
+    padding: 10px 50px 10px 30px;
+    display: inline-flex; /*span과 svg가 좌우로 정렬*/
+    align-items: center;
+    border-radius: 25px;
+    gap: 0 29px;
+}
+.btn_path a:hover {
+    border-color: #B51111;
+    background-color: #B51111;
+    color: #fff;
+}
+.btn_path a:hover svg path {
+    fill: #fff;
+}
+.btn_path_ab a {
+    border: 1px solid #666;
+    padding: 9px 62px 8px 26px;
+    border-radius: 30px;
+    display: inline-block;
+    position: relative; /*svg 정렬의 기준*/
+}
+.btn_path_ab a svg {
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 16px;
+    top: 13px;
+}
+.btn_path_ab a:hover {
+    border-color: #B51111;
+    background-color: #B51111;
+    color: #fff;
+}
+.btn_path_ab a:hover svg path {
+    fill: #fff;
+}
+.btn_bg a {
+    border: 1px solid #666;
+    padding: 10px 50px 10px 30px;
+    display: inline-block;
+    border-radius: 40px;
+    position: relative;
+}
+.btn_bg a::after {
+content: "";
+position: absolute;
+right: 26px;
+top: 14px;
+width: 7px;
+height: 13px;
+background-image: url();
+} 
+.btn_bg a:hover {
+    border-color: #B51111;
+    background-color: #B51111;
+    color: #fff;
+}
+.btn_bg a:hover::after {
+    background-image: url("data");
+}
+.btn_ico a {
+    border: 1px solid #666;
+    padding: 10px 50px 10px 30px;
+    display: inline-block;
+    border-radius: 40px;
+    position: relative; /*i정렬의 기준*/
+}
+.btn_ico a i {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+}
+.btn_ico a:hover {
+    border-color: #B51111;
+    background-color: #B51111;
+    color: #fff;
+    /*아이콘도 폰트라 글자색상이 적용됨*/
+}
+body {
+    padding: 0 0 500px 0;
+ /*hover는 “전체 스타일 변화”
+before/after는 “부분적 효과 추가”*/
+}
