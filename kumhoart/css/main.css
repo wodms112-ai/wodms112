@@ -113,15 +113,26 @@ header .gnb ul li a {
     /*콘텐츠가 배경보다 길어서 배경의 높이만큼 주면x
     background의 높이니까 backround*/
     color: #fff;
+    position: relative; /*before정렬의 기준*/
+}
+.community::before {
+    content: ""; /*가상선택자시 필수값*/
+    position: absolute;/*community 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 920px;
+    background: url(../images/commumity_bg.jpg);
 }
 .community .news{
     padding: 120px 0 0 0;
-
 }
 .community .news .wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    position: relative; /*more정렬의 기준주기. 이걸 기준으로  more위치 바꾸기 위해*/
+
 }
 .community .news .tit h2 {
     font-size: 40px;
@@ -130,17 +141,7 @@ header .gnb ul li a {
     letter-spacing: -0.02em;
     margin: 0 0 15px 0;
 }
-.community .news .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 29px 10px 29px;
-    border-radius: 30px;
-    margin: 45px 0 0 0;
-}
-.community .news .tit a:hover {
-    background-color: #fff;
-    color: #882C34;
-}
+
 .community .news .list {
     width: 802px;
 }
@@ -170,9 +171,26 @@ header .gnb ul li a {
 .community .news .list ul li a span {
     color: rgba(225,225,225,0.8);
 }
+.community .news a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 29px 10px 29px;
+    border-radius: 30px;
+    position: absolute; /*wrapper를 기준으로 엡솔루트*/
+    left: 0;
+    top: 150px;
+}
+.community .news a.more:hover {
+    background-color: #fff;
+    color: #882C34;
+}
 .community .media {
     margin: 100px 0 0 0;
 }
+.community .media .wrapper {
+    position: relative; /*more정렬의 기준*/
+}
+
 .community .media .tit {
     display: flex ; /*h2좌우 배차*/
     justify-content: space-between;
@@ -182,19 +200,10 @@ header .gnb ul li a {
 .community .media .tit h2 {
     font-size: 40px;
     font-weight: 700;
-    list-style: 1.4;
+    line-height: 1.4;
     letter-spacing: -0.02em;
 }
-.community .media .tit a {
-    display: inline-block;
-    border: 1px solid #fff;
-    padding: 10px 29px 10px 29px;
-    border-radius: 30px;
-}
-.community .media .tit a:hover {
-    background-color: #fff;
-    color: #882C34;
-}
+
 .community .media .list {
     margin: 36px 0 0 0;
 }
@@ -237,6 +246,19 @@ header .gnb ul li a {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+.community .media a.more {
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 10px 29px 10px 29px;
+    border-radius: 30px;
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+}
+.community .media a.more:hover {
+    background-color: #fff;
+    color: #882C34;
+}
 footer {
     margin: 180px 0 0 0;
     padding: 75px 0 66px 0;
@@ -251,27 +273,66 @@ footer .inner .f_nav ul {
     display: flex; /*li를 좌우로 배치*/
     gap: 0 46px;
 }
+footer .inner .f_nav ul li {
+    position: relative; /*after정렬의 기준*/
+}
+footer .inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -23px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,225, 0.8);
+}
+footer .inner .f_nav ul li:last-child::after {
+    display: none; /*마지막 li에 afrer효과처리 숨김*/
+}
 footer .inner .f_nav ul li a {
     display: block;
+    position: relative; /*a after의 정렬기준*/
 }
-footer .inner .f_nav ul li a:hover {
-    text-decoration: underline;
+footer .inner .f_nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0 ; /*아래에 짝대기를 그을 거니까*/
+    width: 0%; /*기준이 되는 a의 100% a는 영역이 정해져 있으니 길이를 px이 아닌 100%로 주는것*/
+    height: 1px; /*가로선이니까 높이가 두께가됨*/
+    background-color: rgba(225,225,225,0.8);
+    transition: 0.3s;
+}
+footer .inner .f_nav ul li a:hover::after {
+    width: 100%;/*기준이 되는a의 100%*/
 }
 footer .inner .f_info {
     margin: 17px 0 17px 0;
 }
 footer .inner .f_info .group {
     display: flex;
-    gap:0 47px;
+    gap: 0 47px;
 }
 footer .inner .copyright {
     color: rgba(255,255,225, 0.8);
 }
 footer .family_site button {
-    width: 184px;
+    width: 184px;/*버튼태그는 기본적으로 위아래좌우 가운데로 배치해줌*/
     line-height: 40px; /*행간으로 높이를 주면 글자는 위아래 가운데*/
     background-color: #882C34;
     display: block;
     text-align: left;
     padding: 0 0 0 20px;
-} /*버튼태그는 기본적으로 위아래좌우 가운데로 배치해줌*/
+    position: relative; /*after 정렬기준*/
+} 
+footer .family_site button::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-color:#fff;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    position: absolute; /*botton 기준정렬*/
+    right: 24px;
+    top: 14px;
+    transform: rotate(-45deg);
+}
