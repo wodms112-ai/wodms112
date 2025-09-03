@@ -32,7 +32,7 @@ header .gnb ul li a {
 .visual h2 {
     font-size: 60px;
     font-weight: 700;
-    list-style: 1.4;
+    line-height: 1.4;
     letter-spacing: -0.02em;
     padding: 326px 0 19px 0;
 } 
@@ -59,7 +59,7 @@ header .gnb ul li a {
 .biz .txt h2 {
     font-size: 40px;
     font-weight: 700;
-    list-style: 1.4;
+    line-height: 1.4;
     letter-spacing: -0.02em;
     color: #1E2124;
     margin: 20px 0 20px 0;
