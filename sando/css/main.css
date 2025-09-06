@@ -3,13 +3,14 @@
 @import url(fonts.css);
 
 header {
-    position: absolute; /*wrap을 기준으로 정렬*/
+    position: absolute; 
+    /*wrap을 기준으로 정렬. wrap영역을 벗어나지 않고 최소 여백주기위해*/
     left: 0;
     top: 0;
     z-index: 100;/*header는 맨위 100층 에 위치 그냥 항상주기*/
-    width: 100%;
-    height: 80px;
-    color: #fff;
+    width: 100%;/*absolute를 주면 너비를 상실하기땜에 꽉채우게 100%주기*/
+    height: 80px;/* 헤더 높이 주기*/
+    color: #fff;/*글씨 색상변경*/
 }
 header .wrapper {
     display: flex; /*logo -gnb-util 좌우 배치(개수상관 없음)*/
@@ -22,7 +23,9 @@ header .wrapper {
 }
 .visual .wrapper {
     height: 100vh; /* 브라우저 높이에 딱 맞춰서 높이를 주는 단위 vh*/
-    min-height: 580px;/*줄어드는 최소 높이 설정= 580px보다 적어지면 줄어드는걸 멈춤*/
+    min-height: 580px;
+    /*줄어드는 최소 높이 설정= 580px보다 적어지면 줄어드는걸 멈춤
+    여기서 더 줄면 글짜도 날라가고 헤더 찌그러 드니까 최소높이 두기*/
     position: relative;/*life 정렬의 기준*/
 }
 header .gnb ul {
@@ -31,13 +34,14 @@ header .gnb ul {
 header .gnb ul li a {
     display: block;
     font-size: 22px;
-    line-height: 80px; /*header 의 높이와 같은 값주기 왜나면 거기에도 눌려야하기땜*/
-    padding: 0 22px 0 22px;
+    line-height: 80px; 
+    /*행간 높이를 header 의 높이와 같은 값주기. 왜나면 거기에도 눌려야하기땜*/
+    padding: 0 22px 0 22px;/*좌우 너비주기*/
 
 }
 .visual h2 {
-    padding: 30vh 0 0 0;
-    text-align: center;
+    padding: 30vh 0 0 0; /* 로고이미지도 브라우저 길이에따라서 확대축소되야해서*/
+    text-align: center; /*로고 중간배치*/
 }
 .visual .life {
     width: 200px;
@@ -51,6 +55,7 @@ header .gnb ul li a {
     line-height: 1.3;
     padding: 92px 0 0 0;
     box-shadow: 4px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    /*박스그림자= 수평거리,수직거리,범짐거리 (빨 초 파 투명도)*/
     position: absolute; /*before 정렬의 기준*/
     right: -100px;
     bottom: -100px;
@@ -78,8 +83,8 @@ header .gnb ul li a {
     height: 35px;
     background: url(../imges/life_ico.svg) no-repeat center top; 
     /*가로 중앙(center) + 세로 위쪽(top)cover주면 짤림 꽉참*/
-}
 
+}
 
 footer {
     margin: 1000px 0 0 0;
