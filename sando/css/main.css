@@ -88,7 +88,6 @@ header .gnb ul li a {
 header .util {
     display: flex;
     gap: 0 58px;
-    margin: 0 20px 0 0;
 }
 header .util .weather {
     padding: 24px 0 0 0;
@@ -110,7 +109,9 @@ header .util .weather a {
 }
 header .util .sea {
     position: relative;
-    padding: 24px 0 0 0;
+    padding: 24px 0 0 0;/*margin이 아닌 padding을 준이유= 상자자체가 밑으로내려가 아이콘도내려가서
+    margin = 바깥 여백 → 박스 자체가 옆/위에서 밀려남
+    padding = 안쪽 여백 → 박스 안의 콘텐츠(글자 등)가 안쪽으로 밀려남*/
     font-size: 16px;
 }
 header .util .sea::before {
@@ -144,11 +145,11 @@ header .util .flow::before {
 .culture .wrapper {
     position: relative;/*more 정렬의 기준 */
 }
-.tour .more a,
+.tour .more,
 .culture .more {
-    position: relative;/*wrapper를 기준으로*/
-    right: -1173px;
-    top: -500px;
+    position: absolute;/*wrapper를 기준으로 정렬*/
+    right: 15px;
+    top: 62px;
 }
 .culture .tit h2 {
     font-size: 40px;
@@ -169,6 +170,7 @@ header .util .flow::before {
     한줄의 사이 여백의 합 = 24*2=48 / 한줄의 li 갯수 = 48/3=16
     calc(33.33%-16px)
     */
+    /*“한 줄에 3개 들어가야 하는데, 여백(24px)이 있으니까 각 칸을 조금씩 줄여서 딱 맞추자”*/
     width: calc(33.33% - 16px);
 }
 .culture .list ul li a {
@@ -200,15 +202,7 @@ header .util .flow::before {
     font-weight: 800;
     position: relative;/*afer정렬의 기준*/
 }
-.tour .more a::after {
-    content: "";
-    position: absolute;/*a를 기준으로 정렬*/
-    right: -16px;
-    top: 0;
-    width: 15px;
-    height: 100%;
-    background: url(../images/culture_more.svg)no-repeat center center;
-}
+.tour .more a::after,
 .culture .more a::after {
     content: "";
     position: absolute;/*a를 기준으로 정렬*/
@@ -218,7 +212,7 @@ header .util .flow::before {
     height: 100%;
     background: url(../images/culture_more.svg)no-repeat center center;
 }
-.tour .more a,
+.tour .more a:hover::after,
 .culture .more a:hover::after {
     animation-name: more;
     animation-duration: 1s;
@@ -253,14 +247,15 @@ header .util .flow::before {
 .tour .list ul li {
     width: 16.03%;
     /*1260=ul넓이 202=li하나 넓이
-    li는 ul의 몇퍼센트인가? */
+    li는 ul의 몇퍼센트인가? 마우스 오버할때 너비가 바껴야해서*/
 }
 
 .tour .list ul li a {
     display: flex; /*h3랑 p테그 내기기위해*/
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: column; /*세로방향*/
+    justify-content: flex-end;/*밑으로 배체*/
     align-items: center;
+    padding: 0 0 47px 0;
     height: 495px;
     /*li의 사이즈와 ass의 사이즈와 같게 눌리게 하기위해 
     li 넓이를 갖음 a가 높이를 가여야함*/
@@ -289,17 +284,25 @@ header .util .flow::before {
 .tour .list ul li.bg1 a p {
     display: none;
 }
+.tour .list ul li.bg2 a p {
+    display: none;
+}
+.tour .list ul li.bg3 a p {
+    display: none;
+}
+.tour .list ul li.bg4 a p {
+    display: none;
+}
 /*li에 on클랴스가 들어갔을때*/
 .tour .list ul li.on {
     width: 49.04%;
 }
 .tour .list ul li.on a {
     align-items: flex-start;
-    padding: 0 0 44px 49px;
+    padding: 42pz 40px 0 40px;/*글자바깥 여백! 하단 여백은 높이가 있으니쓰지 않기*/
 }
 .tour .list ul li.on a h3 {
     font-size: 24px;
-    margin: 0 0 7px 0;
 }
 .tour .list ul li.on a p {
     display: block;
@@ -340,14 +343,13 @@ header .util .flow::before {
     font-size: 24px;
     font-weight: 800;
     line-height: 1.3;
-    margin: 0 0 11px 0;
 }
 .community .inner .notice ul {
     margin: 41px 0 0 0;
 }
 
 .community .inner .notice ul li a {
-    display: flex;
+    display: flex;/*h4-span 좌우배치*/
     justify-content: space-between;
     padding: 11px 0 11px 0;
 }
@@ -355,13 +357,13 @@ header .util .flow::before {
     width: calc(100% - 105px);
     /* 제목은 날짜가 들어갈 공간 뺴고 전체
     a를 기준으로 100%
-    1줄제한 */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    제목줄 1줄제한 */
+    white-space: nowrap;/*무조건 1줄*/
+    overflow: hidden;/*영역넘어가면짤라*/
+    text-overflow: ellipsis;/*쩜쩜쩜 추가해서 잘라*/
 }
 .community .inner .notice ul li a span {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);/*날짜색상 연하게*/
 }
 .community .inner .notice .more {
     position: absolute;
