@@ -79,7 +79,7 @@
                         <ul>
                             <!--열려있는 li에 on클래스를 추가해줌
                             단1개의li에만 on클래스 추가-->
-                            <li class="bg1">
+                            <li class="bg1 on">
                                 <a href="#n">
                                     <h3>제1경 항도귀범</h3>
                                     <p>목섬에서 한가히 돌아오는 돛단배의 아름다움</p>
@@ -170,7 +170,44 @@
              </section><!--community-->
 
         </main>
-        <footer></footer>
+        <footer>
+            <div class="wrapper">
+                <div class="left_area">
+                    <div class="f_nav">
+                        <ul>
+                            <li class="privacy"><a href="#n">개인정보처리방침</a></li>       
+                            <li><a href="#n">이메일무단수집거부 </a></li>
+                            <li><a href="#n">저작권안내</a></li>
+                        </ul>
+                    </div><!--f-nav-->
+                    <div class="f_info">
+                        <address>전남 완도군 청산면 도청리 1143번지</address>       
+                        <span>문의전화 : 061-552-0809</span>
+                    </div><!--f_info-->
+                    <div class="copyright">
+                        <p>ⓒ cheong sando.net All rights reserved.</p>
+                        <p class="no"><span>※ www.cheongsando.net의 내용 및 이미지 무단링크, 무단전재,재배포를 금지합니다.</span></p>
+                        <!--span 태그는 인라인 태그니까 영역설정이 더 디테일함-->
+                    </div><!--copyright-->
+                </div><!--left_area-->
+                <div class="right_area">
+                    <!--family_site open 클래스를 주면 열린상태임-->
+                    <div class="family_site">
+                        <button class="family_open">관련사이트</button><!--여는버튼-->
+                        <div class="family_detail">
+                            <ul>
+                                <li><a href="https://www.jeonnam.go.kr/" target="_blank" title="새창열림"><span>전라남도군청</span></a></li>
+                                <li><a href="https://www.wando.go.kr/tour/sub.cs?m=31" target="_blank" title="새창열림"><span>청산도군청</span></a></li>
+                                <!-- 영영을 작게 잡어서 효과를 주기 위해span으로 묶어주기-->
+                                <!-- target="_blank" = 새창으로 여는 속성-->
+                            </ul>
+                        </div>
+                        <button class="family_close">관련사이트</button><!--닫는버튼-->
+                    </div>
+                    <button class="top"><span>TOP</span></button>
+                </div><!--right_area-->
+            </div><!--wrapper-->
+        </footer>
        
     </div><!--wrap-->
 </body>

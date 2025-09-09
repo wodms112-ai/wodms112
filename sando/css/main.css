@@ -327,7 +327,9 @@ header .util .flow::before {
 }
 .community .inner {
     display: flex; /*notice  inner좌우배치*/
+    align-items: flex-end; /*밑으로 배치*/
     gap: 0 12px;
+
 }
 .community .inner .notice {
     backdrop-filter: blur(14px);
@@ -387,13 +389,227 @@ header .util .flow::before {
     color: #8EEEFF;
 }
 .community .inner .service {
-    width: 312px;
+    width: 300px;
+}
+.community .inner .service ul {
+    display: flex; /*li를 좌우배치*/
+    flex-wrap: wrap; /*2줄 이상 허용*/
+    gap: 12px 12px;
+}
+.community .inner .service ul li a {
+    height: 150px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(1, 32,63 ,0.5);
+    border-radius: 10px;
+    display: block;
 }
 .community .inner .service ul li {
     width: calc(50% - 6px);
-    /*100%나누기 한줄에 나오는 li 갯수= 100/2=50%
-    한줄의 여백의 합 12px/ 한줄에 나오는 li 갯수=>12/2 =6*/
+    /*100%나누기 한줄에 나오는 li 갯수(2개 li블럭)
+     => 100/2=50%
+    한줄의 여백 (12px)/ 한줄에 나오는 li 갯수(2) =>12/2 =6 */
+    /*“한 줄에 2개 들어가야 하는데, 여백(12px)이 있으니까 각 칸을 조금씩 줄여서 딱 맞추자”*/
 }
+
+.community .inner .service ul li a {
+    height:150px ;
+    backdrop-filter: blur(10px);
+    background-color: rgba(1, 32,63 ,0.5);
+    border-radius: 10px;
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    padding: 28px 0 0 28px;
+
+}
+.community .inner .service ul li a::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.community .inner .service ul li.ico1 a::after {
+    background-image: url(../images/cummunity_service1.svg);
+}
+
+.community .inner .service ul li.ico2 a::after {
+    background-image: url(../images/cummunity_service2.svg);
+}
+
+.community .inner .service ul li.ico3 a::after {
+    background-image: url(../images/cummunity_service3.svg);
+}
+
+.community .inner .service ul li.ico4 a::after {
+    background-image: url(../images/cummunity_service4.svg);
+}
+.community .inner .service ul li a:hover {
+    background-color: #273961;
+}
+
+
+
 footer {
-    margin: 1000px 0 0 0;
+    padding: 80px 0 80px 0;
+    background-color: #1B202A;
+    color: #fff;
+}
+footer .wrapper {
+    display: flex; /*left right 좌우배치*/
+    justify-content: space-between;
+}
+footer .left_area .f_nav ul {
+    display: flex;
+    gap: 0 37px;
+}
+footer .left_area .f_nav ul li {
+    position: relative;/*after,a의 정렬의 기준*/
+}
+footer .left_area .f_nav ul li::after {
+    content: "";
+    position: absolute; /*li기준으로 정렬*/
+    right: -19px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+
+}
+footer .left_area .f_nav ul li:last-child::after {
+    display: none; /* 마지막 li 의 after를 불러서 숨김처리*/
+}
+footer .left_area .f_nav ul li.privacy a {
+    font-weight: 800;
+}
+footer .left_area .f_nav ul li a::after {
+    content: "";
+    position: absolute; /*li를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    opacity: 0;
+}
+footer .left_area .f_nav ul li a:hover::after {
+    opacity: 1;
+}
+footer .left_area .f_info {
+    margin: 18px 0 18px 0;
+    display: flex;
+    gap: 32px;
+}
+footer .left_area .copyright .no span{
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+footer .left_area .copyright .no span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}   
+footer .right_area {
+    margin: 5px 0 0 0 ;
+    display: flex; /*family_site ,top 좌우배치*/
+    align-items: flex-start; /* 플랙스 위로 정렬*/
+    gap: 0 3px; /*위아래 , 좌우 여백*/
+}
+footer .right_area .family_site {
+    position: relative; /*family_detail의 정렬의 기준*/
+}
+footer .right_area .family_site button {
+    width: 180px;
+    height: 50px;
+    background-color: #3B4D62;
+    text-align: left;
+    padding: 0 0 0 18px;
+    position: relative; /*after정렬기준*/
+}
+footer .right_area .family_site button::after {
+    content: "";
+    position: absolute;/*button을 기준으로 정렬 */
+    right: 15px;
+    top: 16px;
+    width: 21px;
+    height:18px ;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+footer .right_area .family_site button.family_open::after {
+    background-image: url(../images/family_open.svg);
+}
+footer .right_area .family_site button.family_close::after {
+    background-image: url(../images/family_close.svg);
+}
+footer .right_area .family_site button.family_close {
+    display: none; /*처음엔 안보임*/
+}
+footer .right_area .family_site .family_detail {
+    position: absolute;
+    left: 0;
+    bottom: 51px;
+    width: 100%; /*family_site 넓이를 기준으로 100%*/
+    background-color: #3B4D62;
+    padding: 24px 0 22px 18px;
+    display: none;
+}
+footer .right_area .family_site .family_detail ul li a {
+    display: block;
+    padding: 3px 0 3px 0;
+}
+footer .right_area .family_site .family_detail ul li a:hover {
+    font-weight: 800;
+}
+footer .right_area .family_site .family_detail ul li a span {
+  position: relative;
+}
+footer .right_area .family_site .family_detail ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -31px;
+    top: 2px;
+    width: 13px;
+    height: 13px;
+    background: url(../images/family_blank.svg) no-repeat center center;
+}
+/*family_site가 열렸을때= open클래스가 추가되었을때 
+*/
+footer .right_area .family_site.open .family_detail {
+    display: block; /* none으로 숨겼다가 나타날때는 display아무 값이나 줘도됨
+    단 블럭이 만만하니까 블럭을 주는거임*/
+}
+footer .right_area .family_site.open button.family_close {
+    display: block;/*숨겼다가 나타나기*/
+}
+footer .right_area .family_site.open button.family_open {
+    display: none;
+}
+footer .right_area .top {
+    width: 62px;
+    height: 50px;
+    background-color: #3B4D62;
+    font-size: 14px;
+    padding: 17px 0 0 0;
+    position: relative; /*before 정렬의 기준*/
+}
+footer .right_area .top::before {
+    content: "";
+    position: absolute;/*top을 기준으로 정렬*/
+    left: 0;
+    top: 12px;
+    width: 100%;
+    height: 5px;
+    background: url(../images/top.svg) no-repeat center center;
 }
