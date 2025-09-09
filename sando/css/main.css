@@ -243,14 +243,14 @@ header .util .flow::before {
 .tour .list ul {
     display: flex; /*li를 좌우배치*/
     justify-content: space-between;
-    gap:0 12px
+    gap:0 12px /*좌우여백*/
 }
 .tour .list ul li {
     /*width: 16.03%;*/
     /*1260=ul넓이 202=li하나 넓이
     li는 ul의 몇퍼센트인가? 마우스 오버할때 너비가 바껴야해서*/
     transition: 0.5s;
-    overflow: hidden;
+    overflow: hidden;/*사진 넘치는거 자르기*/
     flex:1 1 0%
 }
 
@@ -310,10 +310,9 @@ header .util .flow::before {
     font-size: 24px;
 }
 .tour .list ul li.on a p {
-    display: block;
-    white-space: nowrap;
-    /*none으로 숨긴요소는 none 빼고 뭐든 줘도 나타남
+    display: block;/*none으로 숨긴요소는 none 빼고 뭐든 줘도 나타남
     다만 block이 만만해서 대부분 block을 줌*/
+    white-space: nowrap;/*줄바꿈 금지*/
 }
 .community {
     height:930px ;
