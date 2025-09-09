@@ -243,11 +243,15 @@ header .util .flow::before {
 .tour .list ul {
     display: flex; /*li를 좌우배치*/
     justify-content: space-between;
+    gap:0 12px
 }
 .tour .list ul li {
-    width: 16.03%;
+    /*width: 16.03%;*/
     /*1260=ul넓이 202=li하나 넓이
     li는 ul의 몇퍼센트인가? 마우스 오버할때 너비가 바껴야해서*/
+    transition: 0.5s;
+    overflow: hidden;
+    flex:1 1 0%
 }
 
 .tour .list ul li a {
@@ -292,20 +296,22 @@ header .util .flow::before {
 }
 .tour .list ul li.bg4 a p {
     display: none;
+
 }
 /*li에 on클랴스가 들어갔을때*/
 .tour .list ul li.on {
-    width: 49.04%;
+    /*width: 49.04%;*/
+    flex: 2.5 1 0%;
 }
 .tour .list ul li.on a {
     align-items: flex-start;
-    padding: 42px 40px 0 40px;/*글자바깥 여백! 하단 여백은 높이가 있으니쓰지 않기*/
-}
+    padding: 0 0 44px 49px;}
 .tour .list ul li.on a h3 {
     font-size: 24px;
 }
 .tour .list ul li.on a p {
     display: block;
+    white-space: nowrap;
     /*none으로 숨긴요소는 none 빼고 뭐든 줘도 나타남
     다만 block이 만만해서 대부분 block을 줌*/
 }
