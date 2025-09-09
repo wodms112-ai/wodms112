@@ -299,7 +299,7 @@ header .util .flow::before {
 }
 .tour .list ul li.on a {
     align-items: flex-start;
-    padding: 42pz 40px 0 40px;/*글자바깥 여백! 하단 여백은 높이가 있으니쓰지 않기*/
+    padding: 42px 40px 0 40px;/*글자바깥 여백! 하단 여백은 높이가 있으니쓰지 않기*/
 }
 .tour .list ul li.on a h3 {
     font-size: 24px;
