@@ -66,6 +66,9 @@
 .news {
     margin: 100px 0 100px 0;
 }
+.news .wrapper {
+    position: relative;/*btn_wrap (이전 다음 더보기) 정렬의 기준*/
+}
 .news .tit h2 {
     font-size: 40px;
     font-weight: 800;
@@ -93,7 +96,7 @@
     transform: scale3d(1.2, 1.2, 1);
 }
 .news .list .swiper-slide a h3 {
-     font-size: 40px;
+    font-size: 40px;
     font-weight: 800;
     color: #1d1d1d;
     margin: 0 0 10px 0;
@@ -101,7 +104,51 @@
     margin: 23px 0 10px 0;
 
     /*2줄제한*/
-
-
-    /*3줄제한*/
+    line-height: 1.3;
+    height: 2.6em ; /*행간*줄수  = 단위는 em=1.3*2= 2.5*/
+    overflow: hidden;
+    /*여러줄로 제한할때...을 추가하는 코드(호환성떨어짐)*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;/*2줄*/
+    -webkit-box-orient: vertical;
+    word-break: break-all; /*단어줄바꿈 해지, 글짜 강제 줄바꿈*/
 }
+    /*3줄제한*/
+ .news .list .swiper-slide a p {
+    line-height: 1.5;
+    height: 4.5em;
+    overflow: hidden;
+    /*여러줄로 제한할때...을 추가하는 코드(호환성떨어짐)*/
+    display: -webkit-box;
+    -webkit-line-clamp: 3;/*3줄*/
+    -webkit-box-orient: vertical;
+    word-break: break-all;/*단어줄바꿈 해지, 글짜 강제 줄바꿈*/
+ }
+ .news .btn_wrap {
+    position: absolute;/*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+    display: flex; 
+    gap: 0 8px;
+ }
+
+ .news .btn_wrap button,/*아이콘 같은속성 한번에 주고*/
+ .news .btn_wrap a {
+    width: 36px;
+    height: 36px;
+    background-position: center center;
+    background-repeat: no-repeat;
+ }
+ .news .btn_wrap button {/*다른속성 따로 불러서 하나씩 주기*/
+    background: url(../images/news_arrow.svg);
+ }
+ .news .btn_wrap button.btn_next {
+    transform: rotate(180deg); /*button중에btn_next는 180도 돌려 */
+ } 
+ .news .btn_wrap button.swiper-button-disabled { 
+ /*더이상 갈수없어요 태그(스위퍼가 랜덤으로 주니까 코딩확인하기)에-> 오퍼써티 낮추기*/
+    opacity: 0.5;
+ }
+ .news .btn_wrap a {
+    background: url(../images/news_more.svg);
+ }

@@ -1,8 +1,9 @@
 $(document).ready(function(){
-	const visual_swiper = new Swiper('.swiper', { /* 팝업을 감싼는 요소의 class명 */
+    //visual의 swiper
+	const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         autoplay: { 
-            delay: 1000,
+            delay: 7000,
             disableOnInteraction: true,
         }, /* 팝업 자동 실행 */
 
@@ -39,8 +40,14 @@ $(document).ready(function(){
         slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.news .btn_wrap button.btn_next',
+            prevEl: '.news .btn_wrap button.btn_prev',
         },
-});
+    });
+
+
+
+
+
+
 });//$(document).ready 맨끝

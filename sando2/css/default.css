@@ -1,0 +1,34 @@
+/*테그스타일의 초기화*/
+h1,h2,h3,h4,h5,h6 {
+    font-weight: inherit;
+    font-size: inherit;
+    /*브라우저가 주는 스타일을 무시해*/
+}
+strong {
+    font-weight: inherit;
+}
+em, address {
+    font-style: normal;/*기울임 취소*/
+}
+ol, ul, li {
+    list-style: none; /* 동글배기등 도형 빼기*/
+}
+a {
+    color: inherit;
+    text-decoration: none; /*밑줄삭제*/
+}
+button {
+    border: none;
+    background-color: transparent; /*투명*/
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    cursor: pointer; /* 오버시 마우스 폳인터를 손바닥으로 변경*/
+}
+* { /*와일드카드로 모든 태그를 0으로*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* 패딩과 높이너비를 같이 주면 사이즈가 늘어나는 현상 막기*/
+}
