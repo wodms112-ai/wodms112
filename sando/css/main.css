@@ -4,7 +4,8 @@
 
 header {
     position: absolute; 
-    /*wrap을 기준으로 정렬. wrap영역을 벗어나지 않고 최소 여백주기위해*/
+    /*wrap을 기준으로 정렬. wrap영역을 벗어나지 않고 최소 여백주기위해
+    비주얼 사진 안에 헤더영역을 주기위해*/
     left: 0;
     top: 0;
     z-index: 100;/*header는 맨위 100층 에 위치 그냥 항상주기*/
@@ -22,7 +23,8 @@ header .wrapper {
     border-radius: 0 0 200px 0;
 }
 .visual .wrapper {
-    height: 100vh; /* 브라우저 높이에 딱 맞춰서 높이를 주는 단위 vh*/
+    height: 100vh; /* 브라우저 높이에 딱 맞춰서 높이를 주는 단위 vh
+                    모니터마다 크기가 다르니 화면상대에 맞게 꽉차서 들어감*/
     min-height: 580px;
     /*줄어드는 최소 높이 설정= 580px보다 적어지면 줄어드는걸 멈춤
     여기서 더 줄면 글짜도 날라가고 헤더 찌그러 드니까 최소높이 두기*/

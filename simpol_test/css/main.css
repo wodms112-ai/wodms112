@@ -60,6 +60,10 @@ header .inner .shop::before {
     font-weight: 800;
     padding: 375px 0 8px 0;
 }
+
+
+
+
 .introduce {
     margin: 192px 0 0 0 ;
 }
@@ -75,16 +79,32 @@ header .inner .shop::before {
     font-size: 45px ;
     color:#1d1d1d ;
 }
+
+.item_tab {
+  position: relative; /* 기준점 */
+}
+.item_tab::after {
+  content:"" ;
+  position:absolute ;
+  right:0;             
+  top:0%;
+  width:24px;             
+  height:24px;
+  background: url(../images/item_arrow.svg) no-repeat center center;
+  z-index: 1;
+}
 .introduce .item_tab ul {
     display: flex;
-    margin: 50px 0 32px 0;
+    margin: 33px 0 32px 0;
     gap: 22px;
 }
 .introduce .item_tab ul li a {
     display: block;
-    border: 1px solid #13A94F;
+    border: 2px solid #13A94F;
     color:#13A94F;
     padding: 13px 35px 13px 35px;
+    font-size: 24px;
+    font-weight: 800;
     border-radius: 35px;
 }
 .introduce .item_tab ul li a:hover {
@@ -94,10 +114,27 @@ header .inner .shop::before {
 }
 .introduce .item_kind ul {
     display: flex;
-    gap: 23px;
+    gap: 22px;
+    position: relative;
+    
 }
 .introduce .item_kind ul li {
     box-shadow: 5px 0 8px rgba(225,225,225,0.6);
+    border-radius: 35px;
+}
+.introduce .item_kind ul li {
+    font-size: 22px;
+}
+
+.introduce .item_kind ul li a .phto {
+    overflow: hidden;
+    height: 316px;
+    border-radius: 35px;
+}
+.introduce .item_kind ul li a .phto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .introduce .item_kind ul li p{
     margin: 34px 0 29px 30px;
@@ -111,9 +148,24 @@ header .inner .shop::before {
     width: 40px;
     height: 100%;
 }
-
-
-
+.network {
+    background: url(../images/network_bg.jpg) no-repeat center center / cover;
+    height: 900px ;
+    color: #fff;
+    text-align: center;
+    margin: 252px 0 82px 0;
+} 
+.network h2 {
+    font-size: 45px;
+    font-weight: 800;
+    padding: 327px 0 27px 0;
+}
+.network a {
+    display: inline-block;
+    margin: 45px 0 0 0;
+    border: solid 1px #fff;
+    padding: 13px 48px 13px 48px;
+}
 
 .community {
     margin: 170px 0 0 0;
