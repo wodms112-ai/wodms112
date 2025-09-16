@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'Paperozi';
-    src: url(../fonts/Paperlogy-4Regular.woff2) format('woff2');
-    font-weight: 400;
+    font-family: 'GMarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
     font-display: swap;
 }
+
 @font-face {
-    font-family: 'Paperozi';
-    src: url(../fonts/Paperlogy-8ExtraBold.woff2) format('woff2');
-    font-weight: 800;
+    font-family: 'GMarketSans';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
     font-display: swap;
 }
