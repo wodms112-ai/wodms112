@@ -26,6 +26,12 @@ body {
 } /*html 문서 구조상 글짜를 써줘야 하는데  그글자를 안보이게 하고 싶을때
 blind 클래스를 주면 사라짐*/
 
+.tit_top {
+    display: block;
+    color: #2048BA;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
 .tit_gm { /*기본제목스타일*/
     font-family: 'GM';
     font-weight: 700;
