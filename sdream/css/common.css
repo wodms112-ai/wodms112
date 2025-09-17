@@ -13,6 +13,15 @@ body {
     margin: 0 auto; /*가운데 정렬*/
 }
 #wrap {
-    min-width: 1600px; /*1260+100+100=1600 ( 동그라미 나간 만큼  더해주기, 사진밖으로 원이 나가지 않게)*/
+    min-width: 1320px; /*1260+30+30=1320 ( 동그라미 나간 만큼  더해주기, 사진밖으로 원이 나가지 않게)*/
     position: relative;/*wrap을 기준으로 header를 정렬하기위해서*/
 }
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+} /*html 문서 구조상 글짜를 써줘야 하는데  그글자를 안보이게 하고 싶을때
+blind 클래스를 주면 사라짐*/
