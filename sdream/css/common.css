@@ -25,3 +25,28 @@ body {
     overflow: hidden;
 } /*html 문서 구조상 글짜를 써줘야 하는데  그글자를 안보이게 하고 싶을때
 blind 클래스를 주면 사라짐*/
+
+.tit_gm { /*기본제목스타일*/
+    font-family: 'GM';
+    font-weight: 700;
+    line-height: 1.3;
+    font-size: 40px;
+}
+
+@media screen and (max-width:768px){
+	body {
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 16px;
+    }
+    .wrapper{
+        width: auto; /*block요소니까 꽉차게 나옴*/
+        margin: 0 16px; /*가운데 정렬*/
+    }
+    #wrap {
+        min-width: 0; /*최소넓이 없음*/
+        position: relative;/*wrap을 기준으로 header를 정렬하기위해서*/
+    }
+    .tit_gm {
+        font-size: 28px;
+    }
+}/*@media*/
