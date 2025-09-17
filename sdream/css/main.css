@@ -9,3 +9,9 @@ h1 {
     color: #1d1d1d;
     font-size: 40px;
 }
+h2 {
+    margin: 50px 0 0 0;
+    font-family: 'GM';
+    font-size: 24px;
+    font-weight: 700;
+}
