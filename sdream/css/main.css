@@ -18,25 +18,26 @@ header .logo a {
     display: block;
     width: 141px;
     height: 54px;
-    background: url(../images/logo.svg) no-repeat center center / contain; 
+    background: url(../images/logo.svg) no-repeat center center / contain ; 
     /*contain =아이콘 이미지를 안자르고 다 나오게 하겠다(로고나 아이콘 쓸때 사용)*/
 }
 
-header .logo .gnb_open,
+header .gnb .gnb_open,
 header .logo .gnb_close {
-    display: none;
+    display: none; /*모바일에서만 나옴*/
 }
 header .gnb .gnb_wrap ul {
-    display: flex;
+    display: flex; /*li좌우배치*/
+    padding: 60px 0 0 0;
 }
 header .gnb .gnb_wrap ul li a {
     display: block;
-    line-height: 90px; /*행간을해더*/
+    line-height: 90px; /*행간 header높이만큼 주기*/
     font-size: 20px;
-    padding: 0 28px 0 28px;
+    padding: 0 28px 0 28px;/*메뉴사이 여백 반때씩*/
 }
 header .util {
-    display: flex;
+    display: flex;/*mypage-lang 좌우배치*/
 }
 header .util .mypage,
 header .util .lang .lang_open {
@@ -59,7 +60,7 @@ header .util .lang .lang_open {
                 }*/
                 header {
                     height:56px;
-                    padding: 0 0 0 16px;
+                    padding: 0 0 0 16px;/*햄버거 아이콘(≡)은 끝까지 붙여야 하니까 오른쪽엔 여백 안 줌*/
                 }
                 
                 header .gnb .gnb_open {
@@ -68,14 +69,8 @@ header .util .lang .lang_open {
                     height: 56px;
                     background: url(../images/gnb_open.svg) no-repeat center center;
                 }
-                header .gnb .gnb_wrap ul {
-                    display: none;/*모바일에서 숨김*/
-                }
-                header .gnb .gnb_wrap ul li a {
-                    display: block;
-                    line-height: 90px; /*행간을해더*/
-                    font-size: 20px;
-                    padding: 0 28px 0 28px;
+                header .gnb .gnb_wrap {
+                    display: none;/*모바일에서 숨김, 껍데기를 지워야하는거 li를 지우면 wrap이 남으니까*/
                 }
                 header .util {
                     display: none;/*모바일에서 숨김*/
@@ -296,29 +291,28 @@ header .util .lang .lang_open {
                 }
                 
                 .biz .tit {
-                    position: relative; /*sticky-> reletive*/
+                    position: relative; /*sticky-> reletive( 포지션은 이것만 멀쩡함)*/
                     top: auto; /*top을 선엉하지 않은 것처럼 해지 0이랑 다름*/
                 }
                 .biz .list {
                     width: auto; /* 넓이가 원래 들어가야할 값이 들어가게됨
                                     block요소 이기 때문에 100% 들어간다는 의미*/
-                    padding: 0;
-                
+                    padding: 0;/*글짜 밖으로 나가기땜에  패딩빼기*/
+                    margin: 41px 0 0 0;
                 } 
                 .biz .list ul {
                     /*flex 유지(취향것)*/
                     display: block; /*flex->block으로 교체*/
-                    flex-wrap: nowrap;
-                    gap: 20px 20px;
-                    flex-direction: column;
+                    flex-wrap: nowrap;/*한줄로 바꾸기*/
+                    flex-direction: column;/*플랙스 세로 배치*/
                     gap: 16px 0px; /*위아래, 좌우*/
                 }
                 .biz .list ul li {
                     width: auto; /*??????*/
                 }
                 
-                .biz .list ul li:nth-child(odd) {
-                    transform: translateY(0);
+                .biz .list ul li:nth-child(odd) { /*짝수에  위로올라오게*/
+                    transform: translateY(0);/*위로올라오는 기능빼기*/
                 }
                 .biz .list ul li a .photo {
                     /*포토 숨길거면 =>  display:none*/
@@ -328,10 +322,10 @@ header .util .lang .lang_open {
                 .biz .list ul li a .txt {
                     /*글짜만 나오거나, 글자가 사진 밑으로가면 absolute 빼기
                     = postion:relative*/
-                    position: relative;
-                    left: auto;
-                    width: auto;
-                    bottom: auto;
+                    position: relative; /*absolut-> relative*/
+                    left: auto; /*안준것 처럼(너맘대로 해라)*/
+                    width: auto;/*안준것 처럼(너맘대로 해라)*/
+                    bottom: auto;/*안준것 처럼(너맘대로 해라)*/
                     color: #1d1d1d;
                 } 
                 
@@ -347,17 +341,12 @@ header .util .lang .lang_open {
                     /*p태그 나오면   opacity: 1;*/
                     display:none
                 }
-                .biz .list ul li a:hover .txt p {
-                                                /*p태그 안 나오면->display:none*/
-                    /*p태그 나오면   opacity: 1;*/
-                    display:none
-                }
 } /*@media*/
 .notice {
     margin: 113px 0 0 0;
     background-color: #15195C;
     color: #fff;
-    padding: 154px 0 131px 0;
+    padding: 154px 0 131px 0; /* 백색값 주기 */
 }
 .notice .wrapper {
     position: relative; /*more 정렬의 기준*/
@@ -369,7 +358,7 @@ header .util .lang .lang_open {
     margin: 33px 0 0 0;
 }
 .notice .list ul li {
-    margin: 0 0 13px 0;
+    margin: 0 0 13px 0; /*하단여백주기*/
 }
 .notice .list ul li:last-child {
     margin-bottom: 0; /* 하단 여백만 0처리 다른곳에 여백을 줄수잇으니 빼는 것*/
@@ -378,10 +367,10 @@ header .util .lang .lang_open {
 .notice .list ul li a {
     display: flex; /*inner의 span을 좌우로 배치*/
     justify-content: space-between;
-    align-items: center;
+    align-items: center;/*가운데 배치*/
     background: #fff;
     color: #1d1d1d;
-    padding: 29px 55px 29px 55px ;
+    padding: 29px 55px 29px 55px ;/*오른쪽 왼쪽 내부여백*/
 }
 .notice .list ul li a:hover {
     background: #2C55CC;
@@ -389,20 +378,22 @@ header .util .lang .lang_open {
     padding: 29px 55px 29px 55px ;
 }
 .notice .list ul li a .inner {
-    display: flex;
-    font-size: 17px;
+    display: flex; /*strong- h3좌우배치*/
+    font-size: 17px;/*inner에 tit_gm을 줘서 폰트스타일을 넣었기땜에 사이즈 재선언*/
     font-weight: 500;
     align-items: center;
-    width: calc(100% - 131px) ;/*오른쪽에 날짜 들어갈 공간(131px 빼고 나머지 전부가 inner땅이야~*/
+    width: calc(100% - 131px) ;/*오른쪽에 날짜 들어갈 공간(131px 빼고 나머지 전부가 inner땅이야~
+                                 여백주고 텍스트 자르기*/
+                                 /*날짜를뺀 inner사이즈는 브라우저 크기에따라 사이즈가 달라질수있으니 날짜 공간만px로 뺀거임 */
 }
 .notice .list ul li a .inner h3 {
     white-space: nowrap; /*줄바꿈 안해*/
-    overflow: hidden;/*숨기기*/
-    text-overflow: ellipsis;
+    overflow: hidden;/*넘친거숨기기*/
+    text-overflow: ellipsis;/*...추가하기*/
 }
 .notice .list ul li a .inner strong {
     display: block;
-    padding: 6px 17px 6px 17px;
+    padding: 6px 17px 6px 17px;/*상자사이즈 주기*/
     background-color: #2B308B;
     color: #fff;
     margin: 0 33px 0 0;
@@ -425,18 +416,18 @@ header .util .lang .lang_open {
     display: block;
     padding: 0 28px 0 0; /*모어 옆에 패딩을 넣어서 옆에 아이콘이 눌릴 상자를 만듬*/
 }
-.notice .more a::after {
+.notice .more a::after { /* more뒤 after에 엡솔루트로 스티커 붙이기*/
     content: "";
     position: absolute; /*more기준으로 정렬*/
     right: 0;
     top: 4px;
-    width: 24px;
+    width: 24px; /* 내가 넣은 아이콘만하게 높이 너비 주기*/
     height: 24px;
     background: url(../images/notice_more.svg) no-repeat center center;
     transition: 0.8s;
 }
 .notice .more a:hover::after {
-    right: -10px;
+    right: -10px;/*a에 오버할때 after의 변화-> 10px이동*/
 } 
 footer {
     margin: 1500px 0 0 0;
@@ -448,7 +439,7 @@ footer {
                     padding: 93px 0 87px 0;
                 }
                 .notice .tit {
-                    width: calc(100% - 42px); /*브라우저 사이즈가 줄면 아이콘과겹치지 않기위해 42픽셀은 너 영역아니야 선언*/
+                    width: calc(100% - 42px); /*브라우저 사이즈가 줄면 tit과 아이콘과겹치지 않기위해 42픽셀은 너 영역아니야 선언*/
                 }
                 .notice .list {
                     margin: 33px 0 0 0;
@@ -456,30 +447,21 @@ footer {
                 .notice .list ul li {
                     margin: 0 0 13px 0;
                 }
-                .notice .list ul li:last-child {
-                    display: none; /*마지막 가서 삭제*/
-                }
-                .notice .list ul li:last-child(2){
-
-                }
                 .notice .list ul li a {
                     display: block; /*flex해지*/
-                    background: #fff;
                     border-radius: 10px;
-                    color: #1d1d1d;
                     padding: 16px 16px 13px 16px ;
                 }
                 .notice .list ul li a .inner {
-                    display: block;
-                    font-size: 17px;
+                    display: block;/*flex해지*/
+                    font-size: 16 px;
                     font-weight: 500;
                     width: auto;/*오른쪽에 날짜 들어갈 공간(131px 빼고 나머지 전부가 inner땅이야~*/
                 }
                 .notice .list ul li a .inner h3 {
-                    margin: 19px 0 21px 0;
+                    margin: 14px 0 11px 0;
                     white-space: wrap; /*줄바꿈 안해*/
-                    overflow: visible;/*숨기기*/
-                    text-overflow: ellipsis;
+                    overflow: visible;/*안숨기기*/
                 }
                 .notice .list ul li a .inner strong {
                     display: inline-block;
@@ -505,10 +487,14 @@ footer {
 
                 }
                 .notice .more a span {
-                    display: none;
+                    display: none; /*more글씨 날리기*/
                 }
                 .notice .more a::after {
-                  display: none;
+                  right: 0;
+                  top: 0;
+                  width: 100%;
+                  height: 100%;
+                  background-size: 20px;
                 }
                 footer {
                     margin: 1500px 0 0 0;
