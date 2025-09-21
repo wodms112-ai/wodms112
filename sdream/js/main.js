@@ -33,14 +33,19 @@ $(document).ready(function(){
         $('.visual .btn_wrap .btn_play').show()
     }) 
 
-
+//여러개 보이는 팝업스위퍼
     const webzine_swiper = new Swiper('.webzine .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        slidesPerView: 1, // 기본: 모바일(제일 작은 화면)에서는 한 화면에 1장만 보임
+        spaceBetween: 16,  // 슬라이드 간격 16px
         breakpoints: {
-            768: {    /* 640px 이상일때 적용 */
-                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-                spaceBetween: 24,
+            470: {     //모바일 브레이크포인트 470이상일땐 2개로 슬라이드
+                slidesPerView: '2',    /*470*/
+                spaceBetween: 16,//슬라이드 간격 16px
+            },
+            769: {     // 화면 너비가 768px 이상일 때 즉 pc일때
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨
+                                              css 에서 줘야 반응해서 사이즈가 줄어들어서  css에서 줘야하는거 */
+                spaceBetween: 24,//슬라이드 간격 24px
             },
         },    
     });

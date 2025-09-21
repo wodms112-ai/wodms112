@@ -495,23 +495,27 @@ header .util .lang .lang_open {
                   height: 100%;
                   background-size: 20px;
                 }
-                footer {
-                    margin: 1500px 0 0 0;
-                } 
+            
 }
 .webzine {
     background-color: #F2F4FF;
     padding: 150px 0 126px 0;
-    overflow: hidden; /*가로스크롤 없애기*/
     position: relative; /*more정렬의 기준*/
+    overflow: hidden; /*가로스크롤 없애기*/
+    /*“페이지 안 어딘가의 요소가 뷰포트보다 더 넓을 때” 생기는데, 
+     넘친 부분이 .webzine 안에서 일어나는 거라면 .webzine이 잘라버리니까 
+     페이지 전체 가로스크롤이 사라져보임*/
 }
+
 .webzine .list {
-    /* width: calc(50% + 630px); => 영역주고 짤리는 방식
+    /* width: calc(50% + 630px);=>50%(브라우저절반+레퍼절반) => 영역주고 짤리는 방식
     position: relative;
     left: calc(50% - 630px); 
     margin: 47px 0 0 0;*/
+
+    /**/
     width: 1260px;
-    margin: 52px auto 0 auto;
+    margin: 52px auto 0 auto; /*wrpper크기로 알아서 들어가*/
 }
 .webzine .list .swiper {
     overflow: visible;
@@ -526,6 +530,7 @@ header .util .lang .lang_open {
     box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     height: 575px;
+    transition: 0.5s;
 }
 .webzine .list .swiper-slide a .photo {
     overflow: hidden;
@@ -537,7 +542,7 @@ header .util .lang .lang_open {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: 0.5s;
+    transform: 0.5s; /*천천히 움직이자*/
 }
 .webzine .list .swiper-slide a .photo .cate {
     position: absolute;
@@ -547,12 +552,16 @@ header .util .lang .lang_open {
     background-color: #2B308B;
     color: #fff;
     border-radius: 30px;
-    max-width: calc(100% - 66px); /*최대넓이 제한하기*/
-    /*1줄제한*/
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     z-index: 1 ;
+    
+    /*absolute를 주면 영역이 안잡히니까 넓이 줘야하는데
+    반응형으로 만들어야하니까 왼쪽 33 +오른쪽33 뺴서 최대넓이 제한하기*/
+    max-width: calc(100% - 66px); 
+
+    /*1줄제한 -> 1줄요소이거나 넓이 필수*/
+    white-space: nowrap; /*줄바꿈금지*/
+    overflow: hidden;
+    text-overflow: ellipsis;/*한줄제한*/
 }
 .webzine .list .swiper-slide a .txt {
     margin: 33px 33px 0 33px;
@@ -563,13 +572,13 @@ header .util .lang .lang_open {
     font-weight: 800;
     margin: 39px 0 15px 0;
     /*2줄제한*/
-    line-height: 1.3;
-    height: 2.6em;/* line-height × 줄 수( 단위는em) */
-    overflow: hidden;
+    line-height: 1.3;/*행간 1.3*/
+    height: 2.6em;/*줄 높이 × 2줄 = 두 줄까지만 영역 확보 */
+    overflow: hidden;/*넘어가면 그냥 잘라버림 (말줄임표 …는 안 생김)*/
     /*...추가*/
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /*최대 2줄까지만 표시하고 그 뒤는 … 붙이기*/
+    -webkit-box-orient: vertical;/*세로 방향으로*/
 }
 .webzine .list .swiper-slide a .txt p {
     /*3줄제한*/
@@ -582,7 +591,7 @@ header .util .lang .lang_open {
     -webkit-box-orient: vertical;
 }
 .webzine .more {
-    position: absolute; /*wevzine을 기준으로 정렬*/
+    position: absolute; /*webzine을 기준으로 정렬*/
     right: calc(50% - 630px);
     top: 252px;
     z-index: 1;
@@ -608,55 +617,61 @@ header .util .lang .lang_open {
     right: -10px;/*a에 오버할때 after의 변화-> 10px이동*/
 } 
 /*오버스타일*/
-.webzine .list .swiper-slide a {
- transition: 0.5s;
-}
-.webzine .list .swiper-slide a:hover .photo img {
-    transform: scale3d(1.2, 1.2, 1);
-}
-.webzine .list .swiper-slide:hover a {
+.webzine .list .swiper-slide:hover a { /*a에 주면 영역을 이동해서 슬라이드에 오버주기*/
     box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.15);
     transform: translate(-10px, -20px);
 }
+.webzine .list .swiper-slide:hover a .photo img {
+    transform: scale3d(1.2, 1.2, 1); 
+    /*아무 데나 올려도 같은 효과가 나와야 자연스러워서 **슬라이드(또는 a 전체)**에 hover를 건 거*/
+}
+
 @media screen and (max-width:768px){ 
-                    .webzine {
-                        padding: 150px 0 126px 0;
+                   .webzine {
+                        padding: 107px 0 71px 0;
+
                     }
+
                     .webzine .list {
-                        width: auto; /*넓이해지*/
-                        margin: 26px 16px 0 16px;
-                    }
-                    .webzine .list .swiper {
-                        overflow: visible;
-                        /* margin: 0 24px 0 0; => 영역주고 짤리는 방식*/ 
+                        width: auto;
+                        margin: 19px 16px 0 16px; /*16px 좌우여백 , 위여백*/
                     }
                     .webzine .list .swiper-slide {
-                        width: auto;
+                        width: 401px; /*최소넓이*/
                     }
                     .webzine .list .swiper-slide a {
-                        display: block;
+                        height: 575px;
                     }
+                    .webzine .list .swiper-slide a .photo {
+                        height: 293px;
+                        border-radius: 20px 20px 0 0;
+                        position: relative; /*cate 정렬의 기준*/
+                    }
+
                     .webzine .list .swiper-slide a .txt {
                         margin: 44px 16px 0 16px;
                     }
-                    .webzine .more {
-                        right: 10px;
-                       top: 235px;
+                    .webzine .list .swiper-slide a .txt h3 {
+                        font-family: 'GM';
+                        font-size: 28px;
+                        font-weight: 800;
+                        margin: 44px 0 12px 0;
                     }
-                    .webzine .more span {
-                        display: none;
+                    
+                    .webzine .more {
+                    top: 55px;/*???*/
                     }
                     .webzine .more a {
                         padding: 0; /*모어 옆에 패딩을 넣어서 옆에 아이콘이 눌릴 상자를 만듬*/
-                        width: 29px;
-                        height: 29px;
+                        width: 26px;
+                        height: 26px;
+                        background: url(../images/arrow_black.svg)no-repeat center center;
                         border-radius: 50%;
-                        background: #15195C url(../images/notice_more.svg);
+
                     }
-                    .webzine .more a::after { /* more뒤 after에 엡솔루트로 스티커 붙이기*/
-                        display: none;
+                    .webzine .more a span {
+                        display: none; /*more글씨 날리기*/
                     }
-                    
 }
 
 .service {
@@ -678,7 +693,8 @@ header .util .lang .lang_open {
 }
 .service .list ul li a {
     display: block;
-    padding: 40px 90px 40px 40px;
+    padding: 40px 90px 40px 40px;/*90px준 이유= a 들어가는 자리 만들기위해 글짜가 a와 겹치지
+    않기위해 내안쪽살을 더 만듬*/
     background-color: #15195C;
     border-radius: 20px;
     color: #fff;
