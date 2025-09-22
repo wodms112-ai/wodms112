@@ -56,4 +56,51 @@ $(document).ready(function(){
        }, 500)
     })
 
+
+    $('header').on('mouseenter' , function(){
+        $(this).addClass('fixed')
+        console.log('오버함')
+    })
+    $('header').on('mouseleave' , function(){
+        //브라우저 스크롤 값이 0보다 크면 작동하면 안됨
+        //0이거나 0보다 작을때만 실행
+        if(scrollig <= 0 ){
+            $(this).removeClass('fixed')
+            console.log('스크롤값은 0이거나 0보다 적다')
+        }
+    })
+
+    //문서가 로딩된 이후 단1번 실행
+    let scrollig // 스크롤링 변수선언
+    scroll_chk() //스크롤 정도 체크
+
+    function scroll_chk(){
+        scrollig = $(window).scrollTop()
+        //스크롤 값이 0보다 크면 heaeder에 fixedclass 추가함
+        if(scrollig > 0){
+            console.log('0보다 크다')
+            $('header').addClass('fixed')
+        }else{
+            console.log('0이다')
+            $('header').removeClass('fixed')
+        }
+
+    }
+
+
+
+    //스크롤 할때 마다 1번실행 명령
+    $(window).scroll(function(){
+        // console.log(scrollig)
+        scroll_chk()
+    
+    })
+
+
+
+
+
+
+
+
 })//맨끝
