@@ -691,13 +691,20 @@ header.fixed .util .lang .lang_open {
                         padding: 0; /*모어 옆에 패딩을 넣어서 옆에 아이콘이 눌릴 상자를 만듬*/
                         width: 26px;
                         height: 26px;
-                        background: url(../images/arrow_black.svg)no-repeat center center;
+                        border: 1px solid #15195C;
                         border-radius: 50%;
 
                     }
                     .webzine .more a span {
                         display: none; /*more글씨 날리기*/
                     }
+                    .webzine .more a::after {
+                        right: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-size: 20px;
+                      }
 }
 
 .service {
