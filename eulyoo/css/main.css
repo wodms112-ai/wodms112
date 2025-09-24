@@ -180,10 +180,18 @@ header .gnb .gnb_wrap ul a {
     width: auto;
     z-index: 1;
     display: flex; /*버튼 가로정렬*/
-    gap: 0 16px;
+    gap: 0 5px;
 }
 
-
+.visual .ctrl_btn .paging .swiper-pagination-bullet {
+    width: ;
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--swiper-pagination-bullet-inactive-color, #000);
+    opacity:;
+    margin: 0;
+}
 .book {
     margin: 156px 0 0 0;
 }
