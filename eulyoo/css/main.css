@@ -306,19 +306,22 @@ header .gnb .gnb_wrap ul a {
     height: auto;
     /* font-size: 0;
     line-height: 0; =>쓰지말래*/
-    display: inline-block;
-    zoom: 1;
+    /* display: inline-block; /* 남에거 가저온거 */
+    /* zoom: 1;
     overflow: hidden;
     text-align: left;
     vertical-align: top;
-    border: 1px solid #f4f4f4;
+    border: 1px solid #f4f4f4; */ 
 }
 .book .book_wrap .list .swiper-slide a .photo img {
     width: 100%; /*이미지 자르면 안되니까*//* 포토가 길이 제안 안하니까 높이 제한 안넣음*/
     height: 100%;
     object-fit: cover;
-    vertical-align: top;
+    vertical-align: top;/*이것만 걸어주면 이미지를 잘 감싸줌*/
 }
+.book .book_wrap .list .swiper-slide a .txt {
+        height: 100px;
+    }
 .book .book_wrap .list .swiper-slide a .txt h3 {
     margin: 12px 0 4px 0;
     font-size: 20px;
@@ -380,9 +383,12 @@ header .gnb .gnb_wrap ul a {
             margin: 96px 0 0 0;
         }
         .book .book_wrap {
-            width: auto;
+            width: auto; /* 모바일 일때는 책 왼쪽여백 없어도 되니까*/
             margin: auto;
             display: block; /*tit 와 list 좌우배치*/
+        }
+        .book .book_wrap .tit {
+            margin: 0 0 0 16px;
         }
         .book .book_wrap .tit h2 {
             font-size: 24px;
@@ -392,40 +398,19 @@ header .gnb .gnb_wrap ul a {
         }
         .book .book_wrap .list {
             width: auto;
-            margin: 33px 0 0 0;
+            margin: 23px 0 0 0;
         }
         .book .book_wrap .list .swiper {
-            padding: 10px 16px 0 16px;
+            padding: 10px 16px 0 16px; /*스위퍼 끝에 여백 16px주기 */
         }
         .book .book_wrap .list .swiper-wrapper {
-            align-items: flex-end;
+            align-items: flex-start; /*윗정렬*/
         }
         .book .book_wrap .list .swiper-slide {
-            width: 200px;
+            width:132px;
         }
-        .book .book_wrap .list .swiper-slide a {
-            display: block;
-        }
-        .book .book_wrap .list .swiper-slide a .photo {
-            overflow: hidden;
-            box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-            height: auto;
-            /* font-size: 0;
-            line-height: 0; =>쓰지말래*/
-            display: inline-block;
-            zoom: 1;
-            overflow: hidden;
-            text-align: left;
-            vertical-align: top;
-            border: 1px solid #f4f4f4;
-        
-        }
-        .book .book_wrap .list .swiper-slide a .photo img {
-        
-            width: 100%; /*이미지 자르면 안되니까*//* 포토가 길이 제안 안하니까 높이 제한 안넣음    */
-            height: 100%;
-            object-fit: cover;
-            vertical-align: top;
+        .book .book_wrap .list .swiper-slide a .txt {
+            height: 100px;
         }
         .book .book_wrap .list .swiper-slide a .txt h3 {
             margin: 12px 0 4px 0;
@@ -434,59 +419,22 @@ header .gnb .gnb_wrap ul a {
         }
         
         .book .book_wrap .ctrl_btn {
-            position: absolute;
-            left: 1352px;
-            bottom: 0px;
-            display: flex;
-            gap: 0 8px;
+            display: none;
         }
-        
-        .book .book_wrap .ctrl_btn button {
-            width: 30px;
-            height: 30px;
-            border: 1px solid #1d1d1d;
-            border-radius: 50%;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_33_1783' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='28' height='28'%3E%3Crect x='0.930176' y='0.894531' width='27.0613' height='27.0613' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_33_1783)'%3E%3Cpath d='M8.28524 14.9886L12.4964 19.1994C12.6061 19.3094 12.6635 19.4388 12.6686 19.5876C12.6737 19.7366 12.6163 19.8732 12.4964 19.9975C12.372 20.1219 12.2379 20.1851 12.0941 20.1872C11.9502 20.1894 11.8161 20.1284 11.6919 20.0039L6.75008 15.0624C6.56798 14.8801 6.47693 14.6676 6.47693 14.4248C6.47693 14.182 6.56798 13.9695 6.75008 13.7872L11.6919 8.84567C11.8018 8.73573 11.9322 8.67822 12.0831 8.67315C12.2342 8.66808 12.372 8.72774 12.4964 8.85215C12.6163 8.97637 12.6774 9.10933 12.6796 9.25102C12.6817 9.39272 12.6206 9.52577 12.4964 9.65018L8.28524 13.861H22.2452C22.4057 13.861 22.5398 13.9149 22.6475 14.0225C22.7552 14.1302 22.809 14.2643 22.809 14.4248C22.809 14.5853 22.7552 14.7194 22.6475 14.8271C22.5398 14.9347 22.4057 14.9886 22.2452 14.9886H8.28524Z' fill='%23444444'/%3E%3C/g%3E%3C/svg%3E%0A");
-        }
-        
-        .book .book_wrap .ctrl_btn button.btn_next {
-            transform: rotate(180deg);
-        }
-        
-        .book .book_wrap .ctrl_btn button.swiper-button-disabled {
-            opacity: 0.5;
-            cursor: default; /*손모양-> 마으스포인트(안눌리는 영역이니까)*/
-        }
-        
         
         .book .book_wrap .more {
-            position: absolute;
-            left: 0;
-            top: 150px;
+            left: auto;
+            right: 16px;
+            top: 0px;
         
         }
         .book .book_wrap .more a {
-            display: block;
-            padding: 0 39px 0 0;
-            position: relative; /*afrer정렬기준*/
+            padding: 0 ;
         }
         .book .book_wrap .more a::after {
-            content: "";
-            position: absolute;
-            right: 8px;
-            top: 4px;
-            width: 14px;
-            height: 14px;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_33_1795' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='24' height='24'%3E%3Crect x='24' y='24' width='24' height='24' transform='rotate(-180 24 24)' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_33_1795)'%3E%3Cpath d='M16.8136 11.2498L13.5213 7.95751C13.3725 7.80868 13.2991 7.63459 13.3011 7.43526C13.3029 7.23593 13.3763 7.05867 13.5213 6.90351C13.6763 6.74851 13.8545 6.66843 14.0558 6.66326C14.2572 6.65809 14.4353 6.73309 14.5903 6.88826L19.0693 11.367C19.25 11.5478 19.3403 11.7588 19.3403 11.9998C19.3403 12.2408 19.25 12.4517 19.0693 12.6325L14.5903 17.1113C14.4417 17.2599 14.2651 17.3333 14.0606 17.3315C13.8561 17.3295 13.6763 17.251 13.5213 17.096C13.3763 16.9408 13.3013 16.7652 13.2963 16.569C13.2912 16.3728 13.3662 16.1972 13.5213 16.042L16.8136 12.7498L5.04808 12.7498C4.83525 12.7498 4.65708 12.6779 4.51358 12.5343C4.36992 12.3908 4.29808 12.2126 4.29808 11.9998C4.29808 11.7869 4.36992 11.6088 4.51358 11.4653C4.65708 11.3216 4.83525 11.2498 5.04808 11.2498L16.8136 11.2498Z' fill='%23444444'/%3E%3C/g%3E%3C/svg%3E%0A");
-        } 
+            display: none;
+        }
 }
-
-
-
 
 
 
