@@ -1,0 +1,257 @@
+@import url(common.css);
+@import url(default.css);
+@import url(fonts.css);
+
+.news {
+    margin: 171px 0 0 0;
+}
+.news .wrapper {
+    position: relative;
+}
+.news .tit strong {
+    color: #004EA2;
+}
+.news .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 13px 0 0 0s;
+}
+.news .list {
+    margin: 46px 0 0 0;
+}
+.news .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: calc(33.33% - 16px);
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a .photo {
+    height: 250px;
+}
+.news .list ul li a h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 14px 0 5px 0;
+}
+.news .more {
+    position: absolute; /*레퍼 기준으로 정렬*/
+    right: 0;
+    top: 76px;
+}
+.news .more a {
+    display: block;
+    color: #004EA2;
+    padding: 0 19px 0 0;
+    position: relative;
+}
+.news .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: url(../images/news_more.svg) no-repeat center center;
+}
+
+@media screen and (max-width:768px){
+                .news {
+                    margin: 97px 0 0 0;
+                }
+                .news .tit h2 {
+                    font-size: 24px;
+                    margin: 8px 0 0 0s;
+                }
+                .news .list ul {
+                    display: block;
+                }
+                .news .list ul li {
+                    width: auto;
+                    border-bottom: 1px solid #ededed;
+                }
+                 .news .list ul li:first-child {
+                    border-top: 1px solid #ededed;
+                 }
+                .news .list ul li a {
+                padding: 17px 0 17px 0;
+                }
+                .news .list ul li a .photo {
+                    display: none;
+                }
+                .news .list ul li a h2 {
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin: 0;
+                }
+                .news .list ul li a p {
+                    display: none;
+                }
+                .news .more {
+                    position: relative; /*absolute풀고 싶을땐 relative */
+                    right: auto;
+                    top: auto;
+                    margin: 30px 0 0 0;
+                    display: flex; /*a의 부모영역으로 플랙스 주는것*/
+                    justify-content: center;
+                }
+                .news .more a {
+                    padding: 4px 38px 5px 22px;
+                    border-radius: 30px;
+                    border: 1px solid #004EA2;
+                }
+                .news .more a::after {
+                    right: 18px;
+                    top: 9px;
+                }
+}
+.service {
+    margin: 96px 0 0 0;
+    padding: 154px 0 133px 0 ;
+    background-image: url(../images/service_bg.jpg);
+}
+.service .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.service .tit strong {
+    color: rgba(255, 255, 255, 0.8);
+}
+.service .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin: 13px 0 0 0;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;  
+    gap: 20px;
+}
+.service .list ul li {
+    width: calc(25% - 15px);
+}
+/*100/ 한줄에 나오는 li 개수 =100/4=25%
+    한줄 여백의 합/ 한줄에 나오는 li개수 = 60/4=15*/
+
+.service .list ul li a {
+    display: block;
+    background-color: rgba(225, 225, 225, 0.1);
+    color: #fff;
+    padding: 86px 0 38px 0;
+    text-align:center;  
+    position: relative;
+}
+.service .list ul li a::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 34px;
+    width: 100%;
+    height: 45px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+.service .list ul li.ico01 a::before {
+    background-image: url(../images/servies_01.svg);
+}
+.service .list ul li.ico02 a::before {
+    background-image: url(../images/servies_02.svg);
+}
+.service .list ul li.ico03 a::before {
+    background-image: url(../images/servies_03.svg);
+}
+.service .list ul li.ico04 a::before {
+    background-image: url(../images/servies_04.svg);
+}
+.service .list ul li.ico05 a::before {
+    background-image: url(../images/servies_05.svg);
+}
+.service .list ul li.ico06 a::before {
+    background-image: url(../images/servies_06.svg);
+}
+.service .list ul li.ico07 a::before {
+    background-image: url(../images/servies_07.svg);
+}
+.service .list ul li.ico08 a::before {
+    background-image: url(../images/servies_08.svg);
+}
+@media screen and (max-width:768px){
+                    .service {
+                        margin: 77px 0 0 0;
+                        padding: 102px 0 102px 0 ;
+                    }
+                    .service .wrapper {
+                        display: block;
+                    }
+                    .service .tit h2 {
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: #fff;
+                        margin: 8px 0 44px 0;
+                    }
+                    .service .list ul {
+                        /* justify-content: space-between; */
+                        /* flex-wrap: wrap;   */
+                        gap: 16px;
+                    }
+                    .service .list ul li {
+                        width: calc(50% - 8px);
+                    }
+                    /*100/ 한줄에 나오는 li 개수 =100/2=50%
+                        한줄 여백의 합/ 한줄에 나오는 li개수 = 16/2=8*/
+
+                    .service .list ul li a {
+                        background-color: rgba(225, 225, 225, 0.1);
+                        color: #fff;
+                        padding: 86px 0 38px 0;
+                        text-align:center;  
+                        position: relative;
+                    }
+                    .service .list ul li a::before {
+                        content: "";
+                        position: absolute;
+                        right: 0px;
+                        top: 34px;
+                        width: 100%;
+                        height: 45px;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+
+                    }
+                    .service .list ul li.ico01 a::before {
+                        background-image: url(../images/servies_01.svg);
+                    }
+                    .service .list ul li.ico02 a::before {
+                        background-image: url(../images/servies_02.svg);
+                    }
+                    .service .list ul li.ico03 a::before {
+                        background-image: url(../images/servies_03.svg);
+                    }
+                    .service .list ul li.ico04 a::before {
+                        background-image: url(../images/servies_04.svg);
+                    }
+                    .service .list ul li.ico05 a::before {
+                        background-image: url(../images/servies_05.svg);
+                    }
+                    .service .list ul li.ico06 a::before {
+                        background-image: url(../images/servies_06.svg);
+                    }
+                    .service .list ul li.ico07 a::before {
+                        background-image: url(../images/servies_07.svg);
+                    }
+                    .service .list ul li.ico08 a::before {
+                        background-image: url(../images/servies_08.svg);
+                    }
+}
+.footer {
+    margin: 800px 0 0 0;
+}

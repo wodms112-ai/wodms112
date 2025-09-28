@@ -76,7 +76,7 @@ $(document).ready(function(){
         breakpoints: {
            
             769: {    /* 640px 이상일때 적용 */
-                slidesPerView: 1,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
             },
         },
