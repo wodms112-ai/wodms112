@@ -268,6 +268,75 @@
 }
 
 
+.sdi {
+    margin: 100px 0 0 0;
+}
+.sdi .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+}
+.sdi .inner {
+    margin: 38px 0 0 0;
+    display: flex;
+    gap: 0 24px;
+}
+.sdi .inner .item {
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    height: 279px;
+    width: calc(25% - 18px);
+    /*나와 같은 사이즈가 있을때의 사이즈*/
+    padding: 28px 28px 0 28px;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px);
+    /*나와 같은 사이즈가 있을때의 사이즈*/
+    padding: 0; /*파란 부분 다 주기위해*/
+}
+.sdi .inner .item h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 9px 0;
+}
+.sdi .inner .career .career_tit{
+    background-color: #1549A4;
+    color: #fff;
+    border-radius: 17px 17px 0 0;
+    padding: 29px 29px 29px 26px;
+    display: flex;
+    align-items: center;
+    gap: 0 18px;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #fff;
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 54px 0 0 0;
+}
+.sdi .inner .career .career_list ul li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul li a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+.sdi .inner .career .career_list ul li a br {
+    display: none; /*줄바꿈 지금안함*/
+}
+
+
+
+
+
+
 body {
     margin:  0 0 500px 0;
 }
