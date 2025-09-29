@@ -181,7 +181,7 @@
     margin: 100px 0 0 0;
     background-color: #1549A4;
     color: #fff;
-    padding: 74px 0 73px 0;
+    padding: 74px 0 73px 0; /*동그라미 위아래 여백*/
 }
 
 .service .list ul {
@@ -190,7 +190,7 @@
 
 .service .list ul li {
     width: 16.66%; 
-    /*나를 감싸는 ul의 넓이의 16%*/
+    /*나를 감싸는 ul의 넓이의 16% =100% /6 = 16.66%*/
 }
 
 .service .list ul li a {
@@ -209,7 +209,7 @@
     justify-content: center;
     align-items: center;
 }
-@media screen and (max-width:1336px){  /*wrapper 넓이가 풀린시점*/
+@media screen and (max-width:1336px){  /*wrapper 넓이가 풀린시점->글자 위치밑츠로*/
     .service .list ul li a {
         /*a안에서 좌우에 가운데를 flex로 배치*/
         flex-direction: column;
@@ -244,7 +244,7 @@
             .service .list ul li a i {
                 width: 35px;
                 height: 35px;
-                background-color: transparent;
+                background-color: transparent; /*투명하게*/
             }
             .service .list ul li a i svg {
                 width: 90%;
@@ -331,10 +331,60 @@
 .sdi .inner .career .career_list ul li a br {
     display: none; /*줄바꿈 지금안함*/
 }
+@media screen and (max-width:1024px){ 
+    .sdi .inner .career .career_list ul li a br {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){ 
+    .sdi {
+    margin: 100px 0 0 0;
+    }
+    .sdi .tit h2 {
+        font-size: 28x;
+    }
+    .sdi .inner {
+        margin: 38px 0 0 0;
+        display: flex;
+        gap: 0 24px;
+    }
+    .sdi .inner {
+        flex-wrap: wrap;
+        gap: 16px 16px;
+    }
+    .sdi .inner .item {
+    width: calc(50% - 8px); /*여백 16을 둘이서 가져가니까*/
+
+    }
+    .sdi .inner .item.career {
+        width: 100%; /*flex로  정렬되기떔에 절대 auto 안됨*/
+    }
+    .sdi .inner .item h3 {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+    }
+    .sdi .inner .career .career_tit{
+        background-color: #1549A4;
+        color: #fff;
+        border-radius: 17px 17px 0 0;
+        padding: 29px 29px 29px 26px;
+        display: flex;
+        align-items: center;
+        gap: 0 18px;
+    }
+    .sdi .inner .career .career_list ul {
+    margin: 44px 0 0 0;
+    }
+    .sdi .inner .career .career_list ul li {
+        width: 33.33%;
+        text-align: center;
+    }
+    .sdi .inner .career .career_list ul li a {
+        font-size: 16px;
+    }
 
 
-
-
+}
 
 
 body {
