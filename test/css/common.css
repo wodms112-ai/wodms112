@@ -16,9 +16,9 @@
     url(../fonts/Pretendard-Bold.woff) format('woff');
 }
 /* body에 기본 글자 스타일(본문 스타일) 적용 */
-body {
+html, body {
     font-family: 'Pretendard';
-    font-size: 17px;
+    font-size: var(--bas-font-size);
     font-weight: 400;
     color: #1d1d1d; /* 555555 => 6글자가 같으면 3개만 써도됨 */
     line-height: 1.5;
@@ -92,20 +92,51 @@ button {
  1260*0.1= 126 (=126) ->+1260 =1386 
  1260*0.05= 75.6 -> +1260=1336*/
 
-@media screen and (max-width:1336px){
+
+ /*
+    좌우여백5% => 1260 *0.1 (5% +5%=10%)  +1260 = 126+1260 =1386
+    
+    좌우여백3% => 1260*0.06 (3%+3% =6%) +1260 = 1335.6
+
+    좌우벼백50px => 1260 + 100(50px+50px=100px) = 1300
+
+    좌우여백30px => 1260+60(30px+30px=60) =1320
+ */
+@media screen and (max-width:1320px){
                 .wrapper{
                     width: auto;
-                    margin: 0 16px; 
+                    margin: 0 30px; 
                 }
 }
 @media screen and (max-width:768px){
     /*브라우저 사이즈 ( 768px~그 이하의 사이즈 ) -> 에서만 적용*/
-                        body {
-                            font-size: 16px;
-                        }
                         .wrapper{
-                            width:auto;/*자유롭게 너하던데로살아(자유로운 너비조정)*/
                             margin: 0 16px;/*위아래여백0 좌우여백16px*/
                         }
                         
 }/*@media*/
+
+/* css 변수 -  값은 media 를 이용해서 수치는 변경가능
+   선언한 변수를 css에서 사용하는 방법은 font-size:var (--bas-font-size: ;)
+   앞에 -- 두개는 반드시 포함되야함
+   피그마 dev모드를 사용하면 많이 나옴 그래서 많이 사용함 */
+:root {
+    --bas-font-size: 17px;
+    --tit-color: #1d1d1d;
+    --tit-font-size: 40px;
+    --h3-font-size: 22px;
+    --tit-line-height: 1.3;
+    --bold-weight: 800;
+}
+@media screen and (max-width:1024px){
+    :root {    
+            --tit-font-size: 32px;
+            --h3-font-size: 20px; 
+        }
+}
+@media screen and (max-width:768px){
+    :root {
+        --bas-font-size: 24px;
+        --tit-font-size: 19px;
+    }
+}
