@@ -1,0 +1,315 @@
+@import url(common.css);
+:root {
+    --header-h: 90px;
+}
+/*:root = HTML 전체 범위
+
+--header-h = CSS 변수 이름
+
+var(--header-h) = 변수 불러오기*/
+
+/*변수 선언할 때: --이름: 값;
+
+변수 불러올 때: var(--이름);*/
+
+@media screen and (max-width:1024px){
+    /*max = 최대값 → 그 값보다 작을 때까지 적용
+     min = 최소값*/
+    :root {
+        --header-h: 56px;
+    }
+}/*media*/
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    padding: 0 30px 0 30px; /*최소 여백주기 엡솔루트여서 줘야함*/
+    display: flex; /*logo -gnb-util  좌우배치*/
+    justify-content: space-between;
+    align-items: center; /*중간으로 보내기*/
+}
+header .logo a {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/menu_logo_w.svg) no-repeat center center / contain;
+    /* 로고나 아이콘처럼 배경에 넣더라도 짤리지 않고 모두 보여야하는 배경은  contain*/
+}
+
+
+
+header .util {
+    display: flex; /*lang-search 좌우배치*/
+}
+header .util .lang .lang_open { /*임의 상자 크기 넣기*/
+    width: 39px;
+    height: 39px;
+
+    /* i를 나의 영역에 가운데 정렬하려고*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .util .lang .lang_open i {
+    display: block; /*i태그는 블럭주기*/
+    width: 24px; /*박스까지 포함된 실제 크기*/
+    height: 24px;
+}
+header .util .search .search_open {
+    width: 39px; /*박스까지 포함된 실제 크기*/
+    height: 39px;
+
+    /* i를 나의 영역에 가운데 정렬하려고*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .util .search .search_open i {
+    display: block; /*i태그는 블럭주기*/
+    width: 24px; /*박스까지 포함된 실제 크기*/
+    height: 24px;
+}
+
+@media screen and (min-width:1025px){  
+            /*min : 769 미만일때  = pc 버전일때만 적용 , 모바일과 따로 만들겠다는고*/
+            header .gnb .gnb_open,
+            header .gnb .gnb_close {
+                display: none;/*pc버전 순김*/
+            }
+
+            header .gnb .gnb_wrap ul.depth1 {
+                display: flex; /*li좌우배치*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li {
+                position: relative; /*depth2 정렬기준*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a { /* > : 직계자식만 선택*/
+                display: block;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: var(--header-h);
+                padding: 0 28px 0 28px; /*좌우여백*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { /**/
+                /* 2차 메뉴는 absolute로 처리
+                li 기준으로 */
+                position: relative; /*depth2 정렬기준*/
+                position: absolute;
+                left: 0;
+                top: var(--header-h); /*헤더의 높이 만큼 줘야함*/  
+                width: 100%; /*li 넓이의 100%*/
+                padding: 20px 0 0 0; /* 2차메뉴와 선사이의여백, 마진으로 주면 사이에 여백이 생겨서 마우스오버가 풀리기땜*/
+                    display: none;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                padding: 5px 0 5px 0; /**/
+                text-align: center;
+                color: #555;
+
+            }
+
+            /* 메뉴가 열렸을때  header에 menu over가 들어갔을때 */
+            header.menu_over {
+                color: #1d1d1d;
+            }
+            header.menu_over::before {
+                content: "";
+                position: absolute; /*header를 기준으로 정렬*/
+                left: 0;
+                top: 0;
+                z-index: -1; /*밑으로 보내기 , header 중에서 맨 아래, header밖으로는 못나감*/
+                width: 100%;
+                height: 282px;
+                background-color: #fff;
+
+            } 
+            header.menu_over::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: var(--header-h);
+                width: 100%;
+                height: 1px;
+                background-color: #f4f4f4;
+            }
+            header.menu_over .logo a {
+                background: url(../images/menu_logo.svg);
+            }
+
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a {
+                color: #8F4440;
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span {
+                position: relative;
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span::after {
+                content: "";
+                position: absolute;
+                left:5px;
+                bottom: -33px;
+                z-index: 10;
+                width: 100%;
+                height: 3px;
+                border-radius: 2px;
+                background-color: #8F4440;
+
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { 
+                display: block; 
+            }
+            /*오버하면 메뉴가 나타남*/
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+                text-decoration: underline;
+                color: #8F4440;
+            }
+            header.menu_over .util .lang .lang_open i svg path{
+                fill: #2d2d2d;
+            }
+            header.menu_over .util .search .search_open i svg path {
+                fill: #2d2d2d;
+            }
+   
+}/*media*/
+
+@media screen and (max-width:1024px){   /*1024이하일때 - 메뉴가 모바일 버전으로 변경*/
+            header {
+                padding: 0 0 0 16px; /*최소 여백주기 엡솔루트여서 줘야함*/
+
+                /* display: flex; logo -gnb  좌우배치 util은 빼고 두개만 좌우배치*/
+                justify-content: space-between;
+                align-items: center; /*중간으로 보내기*/
+            }
+            header .logo a {
+                width: 20px;
+                height: 20px;
+            }
+            header .gnb .gnb_open {
+                width: var(--header-h);
+                height: var(--header-h);
+
+
+                display: flex; /*svg를 가운데 배치*/
+                justify-content: center;
+                align-items: center;
+            }
+            header .gnb .gnb_open i {
+                display: block;
+                width: 18px;
+                height: 14px;
+                margin: 0 0 14px 0;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {
+                display: block;
+                padding: 18px 52px 18px 16px; /*오른쪽 아이콘과 글자가 겹치지 않기 위해 왼쪽여백52px을 준것*/
+                font-size: 20px;
+                font-weight: 800;
+                position: relative;/*afer정렬의 기준*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                content: "";
+                position: absolute;
+                right: 21px;
+                top: 30px;
+                width: 14px; /**/
+                height: 7px;
+                background-image: url("data:image/svg+xml,%3Csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.4999 5.48542L12.7061 0.279168C12.8832 0.102084 13.0898 0.0164937 13.3259 0.0223965C13.562 0.0282992 13.7686 0.119792 13.9457 0.296875C14.1228 0.473959 14.2114 0.680556 14.2114 0.916667C14.2114 1.15278 14.1228 1.35938 13.9457 1.53646L8.50927 6.99063C8.3676 7.13229 8.20823 7.23854 8.03115 7.30938C7.85406 7.38021 7.67698 7.41563 7.4999 7.41563C7.32281 7.41563 7.14573 7.38021 6.96865 7.30938C6.79156 7.23854 6.63219 7.13229 6.49052 6.99063L1.03635 1.53646C0.85927 1.35938 0.773679 1.14983 0.779582 0.907814C0.785485 0.6658 0.876978 0.456251 1.05406 0.279168C1.23114 0.102085 1.43774 0.0135431 1.67385 0.0135431C1.90996 0.0135431 2.11656 0.102085 2.29364 0.279168L7.4999 5.48542Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                background-color: #f4f4f4;
+                padding: 15px 36px 17px 36px; /**/
+                display: none; /*1차 메뉴를 클릭하면 열림*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                padding: 5px 0 5px 0;
+            }
+
+
+            header .gnb .gnb_close {
+                display: none; /*메뉴가 열렸을때 나타남*/
+                position: absolute; /*header기준으로 정렬*/
+                right: 0;
+                top: 0;
+                width: var(--header-h);
+                height: var(--header-h);
+
+                /*메뉴가 열리면 flex줄 예정, displyㅎ여러번 넣으면 안됨*/
+                justify-content: center;
+                align-items: center;
+            }
+            header .gnb .gnb_close i {
+                display: block;
+                width: 13px;
+                height: 13px;
+            }
+            header .gnb .gnb_wrap {
+                display: none; /*메뉴가 열렸을때 나타남*/
+                position: absolute;/*header기준으로 정렬*/
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100dvh; /*화면 꽉차게*/
+                background-color: #fff;
+                color: #1d1d1d;
+                padding: 64px 0 0 0 ; /*2차메뉴 상단여백*/
+            }
+            header .util {
+                position: absolute; /*header기준으로 정렬*/
+                right: var(--header-h); /**/
+                top: 0;
+            }
+            header .util .lang { /*감싸는 껍데기까지 없애야함 : 모바일에서*/
+                display: none;
+            }
+            header .util .search .search_open {
+                width: 30px; /*박스까지 포함된 실제 크기*/
+                height: var(--header-h);
+            }
+            
+            header .util .search .search_open i {
+                width: 20px; /*박스까지 포함된 실제 크기*/
+                height: 20px;
+            }
+
+            /*header에 menu_open이 있을때 = 메뉴가 열렸을때 */
+            header.menu_open .gnb .gnb_wrap {
+                display: block;
+            }
+            header.menu_open .gnb .gnb_close {
+                display: flex; /* 아이콘 가운데 놔야하니까*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+                transform: rotate(180deg);
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
+                display: block;
+            }
+            
+
+
+
+
+
+}/*media*/
+
+
+
+
+
+
+
+
+.visual {
+    height: 100dvh;
+    background: url(../images/menu_visual.jpg) no-repeat center center / cover;
+}
