@@ -102,18 +102,11 @@ button {
 
     좌우여백30px => 1260+60(30px+30px=60) =1320
  */
-@media screen and (max-width:1320px){
+@media screen and (max-width:1360px){
                 .wrapper{
                     width: auto;
-                    margin: 0 30px; 
+                    margin: var( --content-margin) ; 
                 }
-}
-@media screen and (max-width:768px){
-    /*브라우저 사이즈 ( 768px~그 이하의 사이즈 ) -> 에서만 적용*/
-                        .wrapper{
-                            margin: 0 16px;/*위아래여백0 좌우여백16px*/
-                        }
-                        
 }/*@media*/
 
 /* css 변수 -  값은 media 를 이용해서 수치는 변경가능
@@ -127,16 +120,19 @@ button {
     --h3-font-size: 22px;
     --tit-line-height: 1.3;
     --bold-weight: 800;
+    --content-margin: 0 50px;
 }
 @media screen and (max-width:1024px){
     :root {    
             --tit-font-size: 32px;
             --h3-font-size: 20px; 
+            --content-margin: 0 30px;
         }
 }
 @media screen and (max-width:768px){
     :root {
-        --bas-font-size: 24px;
+        --bas-font-size: 16px;
         --tit-font-size: 19px;
+        --content-margin: 0 16px;
     }
 }
