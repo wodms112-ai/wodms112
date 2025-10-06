@@ -1,4 +1,5 @@
 @import url(common.css);
+
 :root {
     --header-h: 90px;
 }
@@ -29,7 +30,7 @@ header {
 }
 header .logo a {
     display: block;
-    width: 35px;
+    width: 35px;   /*실제 아이콘크기 = */
     height: 35px;
     background: url(../images/menu_logo2.svg) no-repeat center center / contain;
     /* 로고나 아이콘은 contauin 으로 짤리지 않게함 */
@@ -44,6 +45,7 @@ header .util .lang .lang_open {
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20C8.63333 20 7.34167 19.7375 6.125 19.2125C4.90833 18.6875 3.84583 17.9708 2.9375 17.0625C2.02917 16.1542 1.3125 15.0917 0.7875 13.875C0.2625 12.6583 0 11.3667 0 10C0 8.61667 0.2625 7.32083 0.7875 6.1125C1.3125 4.90417 2.02917 3.84583 2.9375 2.9375C3.84583 2.02917 4.90833 1.3125 6.125 0.7875C7.34167 0.2625 8.63333 0 10 0C11.3833 0 12.6792 0.2625 13.8875 0.7875C15.0958 1.3125 16.1542 2.02917 17.0625 2.9375C17.9708 3.84583 18.6875 4.90417 19.2125 6.1125C19.7375 7.32083 20 8.61667 20 10C20 11.3667 19.7375 12.6583 19.2125 13.875C18.6875 15.0917 17.9708 16.1542 17.0625 17.0625C16.1542 17.9708 15.0958 18.6875 13.8875 19.2125C12.6792 19.7375 11.3833 20 10 20ZM10 17.95C10.4333 17.35 10.8083 16.725 11.125 16.075C11.4417 15.425 11.7 14.7333 11.9 14H8.1C8.3 14.7333 8.55833 15.425 8.875 16.075C9.19167 16.725 9.56667 17.35 10 17.95ZM7.4 17.55C7.1 17 6.8375 16.4292 6.6125 15.8375C6.3875 15.2458 6.2 14.6333 6.05 14H3.1C3.58333 14.8333 4.1875 15.5583 4.9125 16.175C5.6375 16.7917 6.46667 17.25 7.4 17.55ZM12.6 17.55C13.5333 17.25 14.3625 16.7917 15.0875 16.175C15.8125 15.5583 16.4167 14.8333 16.9 14H13.95C13.8 14.6333 13.6125 15.2458 13.3875 15.8375C13.1625 16.4292 12.9 17 12.6 17.55ZM2.25 12H5.65C5.6 11.6667 5.5625 11.3375 5.5375 11.0125C5.5125 10.6875 5.5 10.35 5.5 10C5.5 9.65 5.5125 9.3125 5.5375 8.9875C5.5625 8.6625 5.6 8.33333 5.65 8H2.25C2.16667 8.33333 2.10417 8.6625 2.0625 8.9875C2.02083 9.3125 2 9.65 2 10C2 10.35 2.02083 10.6875 2.0625 11.0125C2.10417 11.3375 2.16667 11.6667 2.25 12ZM7.65 12H12.35C12.4 11.6667 12.4375 11.3375 12.4625 11.0125C12.4875 10.6875 12.5 10.35 12.5 10C12.5 9.65 12.4875 9.3125 12.4625 8.9875C12.4375 8.6625 12.4 8.33333 12.35 8H7.65C7.6 8.33333 7.5625 8.6625 7.5375 8.9875C7.5125 9.3125 7.5 9.65 7.5 10C7.5 10.35 7.5125 10.6875 7.5375 11.0125C7.5625 11.3375 7.6 11.6667 7.65 12ZM14.35 12H17.75C17.8333 11.6667 17.8958 11.3375 17.9375 11.0125C17.9792 10.6875 18 10.35 18 10C18 9.65 17.9792 9.3125 17.9375 8.9875C17.8958 8.6625 17.8333 8.33333 17.75 8H14.35C14.4 8.33333 14.4375 8.6625 14.4625 8.9875C14.4875 9.3125 14.5 9.65 14.5 10C14.5 10.35 14.4875 10.6875 14.4625 11.0125C14.4375 11.3375 14.4 11.6667 14.35 12ZM13.95 6H16.9C16.4167 5.16667 15.8125 4.44167 15.0875 3.825C14.3625 3.20833 13.5333 2.75 12.6 2.45C12.9 3 13.1625 3.57083 13.3875 4.1625C13.6125 4.75417 13.8 5.36667 13.95 6ZM8.1 6H11.9C11.7 5.26667 11.4417 4.575 11.125 3.925C10.8083 3.275 10.4333 2.65 10 2.05C9.56667 2.65 9.19167 3.275 8.875 3.925C8.55833 4.575 8.3 5.26667 8.1 6ZM3.1 6H6.05C6.2 5.36667 6.3875 4.75417 6.6125 4.1625C6.8375 3.57083 7.1 3 7.4 2.45C6.46667 2.75 5.6375 3.20833 4.9125 3.825C4.1875 4.44167 3.58333 5.16667 3.1 6Z' fill='white'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
+    background-position: center center;
 }
 header .util .search .search_open {
     width: 40px;
@@ -55,265 +57,288 @@ header .util .search .search_open {
 
 /*--------------------------------------------- 1025이상일때-------------------------------------------------*/
 @media screen and (min-width:1025px){ /* 1025이상일때  -pc버전 스타일메뉴*/
-    header .gnb .gnb_open,
-    header .gnb .gnb_close {
-        display: none;
-    }
-    header .gnb .gnb_wrap ul.depth1 {
-        display: flex; /*li좌우배치*/
-    }
-    header .gnb .gnb_wrap ul.depth1 > li {
-        position: relative; /*ul.depth2 정렬의 기준*/
-        z-index: 10;
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > a {   /**/
-        display: block;
-        font-size: 22px;
-        font-weight: 800;
-        line-height: var(--header-h);
-        padding: 0 28px;
+            header .gnb .gnb_bg,
+            header .gnb .gnb_open,
+            header .gnb .gnb_close {
+                display: none; /*pc 버전숨김*/
+            }
+            header .gnb .gnb_wrap ul.depth1 {
+                display: flex; /*li좌우배치*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li {
+                position: relative; /*ul.depth2 정렬의 기준*/
+                z-index: 10;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {   
+                display: block;
+                font-size: 22px;
+                font-weight: 800;
+                line-height: var(--header-h);
+                padding: gnb_wrap0 28px; /*반반씩  좌우여백 주기*/
+            }
+            
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {  /**/
+                
+            /*2차 메뉴는 absolute처리*/
+                position: absolute; /*1차메뉴 li를 기준으로 정렬
+                                => 자신이 있는 부분만 존재하기땜 넒이 높이줘야함*/
+                left: 0;
+                top: var(--header-h); /*header높이 만큼 내려오기*/
+                width: 100%;
+                min-height: 160px; 
+                /* ㄴ 모든 2차메뉴의 길이를 동일하게 주려고 최소높이주기(최소준건 더긴걸 나중에 추가될수있으니)*/
 
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {  /**/
-        /*2차 메뉴는 absolute처리*/
-        position: absolute; /*1차메뉴 li를 기준으로 정렬 => 자신이 있는 부분만 존재하기땜 넒이 높이줘야함*/
-        left: 0;
-        top: var(--header-h); /*header높이 만큼 내려오기*/
-        width: 100%;
-        min-height: 150px; /*모든 2차메뉴의 길이를 동일하게 주려고 최소높이주기(최소준건 더긴걸 나중에 추가될수있으니)*/
-
-        padding: 16px 0 0 0;
-        display: none;/* 메뉴가 열렸을때만 나타남*/
-        
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
-        display: block;
-        padding: 4px 0;
-        color: #555;
-        text-align: center;
-    }
-
-
-
-/*메뉴에 마우스를 오버했을때 menu_over가 추가되었을때*/
-    header.menu_over {
-        color: #1d1d1d;
-    }
-    header.menu_over::before {
-        content: "";
-        position: absolute; /*헤더 정렬 기준*/
-        left: 0;
-        top: 0;
-        z-index: -1; /* header 아넹 있는 요소중에 맨아래로 보내겠다는것*/
-        width: 100%;
-        height: 290px;
-        background-color: #fff;
-    }
-    header.menu_over .logo a {
-        background: url(../images/menu_logo2_w.svg) no-repeat center center / contain;
-    }
-    header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {  
-        display: block !important; 
-        /* important : 선택자 우선순위가 낮아서 적용되지 않을때 무조건 먼저 적용하게 하는 명령
-          (속성뒤에-> !important) 함부러 쓰지마*/
-    }
-    header.menu_over .util .lang .lang_open {
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20C8.63333 20 7.34167 19.7375 6.125 19.2125C4.90833 18.6875 3.84583 17.9708 2.9375 17.0625C2.02917 16.1542 1.3125 15.0917 0.7875 13.875C0.2625 12.6583 0 11.3667 0 10C0 8.61667 0.2625 7.32083 0.7875 6.1125C1.3125 4.90417 2.02917 3.84583 2.9375 2.9375C3.84583 2.02917 4.90833 1.3125 6.125 0.7875C7.34167 0.2625 8.63333 0 10 0C11.3833 0 12.6792 0.2625 13.8875 0.7875C15.0958 1.3125 16.1542 2.02917 17.0625 2.9375C17.9708 3.84583 18.6875 4.90417 19.2125 6.1125C19.7375 7.32083 20 8.61667 20 10C20 11.3667 19.7375 12.6583 19.2125 13.875C18.6875 15.0917 17.9708 16.1542 17.0625 17.0625C16.1542 17.9708 15.0958 18.6875 13.8875 19.2125C12.6792 19.7375 11.3833 20 10 20ZM10 17.95C10.4333 17.35 10.8083 16.725 11.125 16.075C11.4417 15.425 11.7 14.7333 11.9 14H8.1C8.3 14.7333 8.55833 15.425 8.875 16.075C9.19167 16.725 9.56667 17.35 10 17.95ZM7.4 17.55C7.1 17 6.8375 16.4292 6.6125 15.8375C6.3875 15.2458 6.2 14.6333 6.05 14H3.1C3.58333 14.8333 4.1875 15.5583 4.9125 16.175C5.6375 16.7917 6.46667 17.25 7.4 17.55ZM12.6 17.55C13.5333 17.25 14.3625 16.7917 15.0875 16.175C15.8125 15.5583 16.4167 14.8333 16.9 14H13.95C13.8 14.6333 13.6125 15.2458 13.3875 15.8375C13.1625 16.4292 12.9 17 12.6 17.55ZM2.25 12H5.65C5.6 11.6667 5.5625 11.3375 5.5375 11.0125C5.5125 10.6875 5.5 10.35 5.5 10C5.5 9.65 5.5125 9.3125 5.5375 8.9875C5.5625 8.6625 5.6 8.33333 5.65 8H2.25C2.16667 8.33333 2.10417 8.6625 2.0625 8.9875C2.02083 9.3125 2 9.65 2 10C2 10.35 2.02083 10.6875 2.0625 11.0125C2.10417 11.3375 2.16667 11.6667 2.25 12ZM7.65 12H12.35C12.4 11.6667 12.4375 11.3375 12.4625 11.0125C12.4875 10.6875 12.5 10.35 12.5 10C12.5 9.65 12.4875 9.3125 12.4625 8.9875C12.4375 8.6625 12.4 8.33333 12.35 8H7.65C7.6 8.33333 7.5625 8.6625 7.5375 8.9875C7.5125 9.3125 7.5 9.65 7.5 10C7.5 10.35 7.5125 10.6875 7.5375 11.0125C7.5625 11.3375 7.6 11.6667 7.65 12ZM14.35 12H17.75C17.8333 11.6667 17.8958 11.3375 17.9375 11.0125C17.9792 10.6875 18 10.35 18 10C18 9.65 17.9792 9.3125 17.9375 8.9875C17.8958 8.6625 17.8333 8.33333 17.75 8H14.35C14.4 8.33333 14.4375 8.6625 14.4625 8.9875C14.4875 9.3125 14.5 9.65 14.5 10C14.5 10.35 14.4875 10.6875 14.4625 11.0125C14.4375 11.3375 14.4 11.6667 14.35 12ZM13.95 6H16.9C16.4167 5.16667 15.8125 4.44167 15.0875 3.825C14.3625 3.20833 13.5333 2.75 12.6 2.45C12.9 3 13.1625 3.57083 13.3875 4.1625C13.6125 4.75417 13.8 5.36667 13.95 6ZM8.1 6H11.9C11.7 5.26667 11.4417 4.575 11.125 3.925C10.8083 3.275 10.4333 2.65 10 2.05C9.56667 2.65 9.19167 3.275 8.875 3.925C8.55833 4.575 8.3 5.26667 8.1 6ZM3.1 6H6.05C6.2 5.36667 6.3875 4.75417 6.6125 4.1625C6.8375 3.57083 7.1 3 7.4 2.45C6.46667 2.75 5.6375 3.20833 4.9125 3.825C4.1875 4.44167 3.58333 5.16667 3.1 6Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
-    }
-    header.menu_over .util .search .search_open {   
-        background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L17.3 15.9C17.4833 16.0833 17.575 16.3167 17.575 16.6C17.575 16.8833 17.4833 17.1167 17.3 17.3C17.1167 17.4833 16.8833 17.575 16.6 17.575C16.3167 17.575 16.0833 17.4833 15.9 17.3L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
-    }
-    header.menu_over::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: var(--header-h);
-        width: 100%;
-        height: 1px;
-        background-color: #ededed;
-    }
-
-    /* 1차메뉴 li에 =>over가 들어갔을때*/
-    header .gnb .gnb_wrap ul.depth1 > li.over > a span {
-        position: relative; /*before정렬의 기준*/
-        color: #036580;  
-    }
-    header .gnb .gnb_wrap ul.depth1 > li.over > a span::before {
-        content: "";
-        position: absolute; /*span태그를 중심으로 정렬*/
-        left: -6px;
-        top: -5px;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background-color: #036580;
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.over > a span {
-        position: relative;
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.over > a span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0%;
-        height: 1px;
-        background-color: #036580;
-        transition: 0.5s;
-    }
+                padding: 16px 0 0 0;/*실선과 뎀스2 사이 여백*/
+                display: none; /* 메뉴가 열렸을때만 나타남*/
+                
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                padding: 4px 0; /*위아래여백*/
+                color: #555;
+                text-align: center;
+            }
 
 
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.over > a:hover,
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.over > a:focus {
-        color: #036580;
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li> a:hover span::after,
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li> a:hover span:focus {
-        width: 100%;
-    }
-}/*media - pc메뉴*/
+
+        /*메뉴에 마우스를 오버했을때 menu_over가 추가되었을때*/
+            header.menu_over {
+                color: #1d1d1d;
+            }
+            header.menu_over::before {
+                content: "";
+                position: absolute; /*헤더 정렬 기준*/
+                left: 0;
+                top: 0;
+                z-index: -1; /* header 아넹 있는 요소중에 맨아래로 보내겠다는것
+                            position을 주면 위로 올라김*/
+                width: 100%;
+                height: 290px;
+                background-color: #fff;
+            }
+            header.menu_over .logo a {
+                width: 30px;
+                height: 30px;
+                background: url(../images/menu_logo2_w.svg) no-repeat center center / contain;
+            }
+            header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {  
+                display: block !important; 
+                /* important : 선택자 우선순위가 낮아서 적용되지 않을때 무조건 먼저 적용하게 하는 명령
+                (속성뒤에-> !important) 함부러 쓰지마*/
+            }
+            header.menu_over .util .lang .lang_open {
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20C8.63333 20 7.34167 19.7375 6.125 19.2125C4.90833 18.6875 3.84583 17.9708 2.9375 17.0625C2.02917 16.1542 1.3125 15.0917 0.7875 13.875C0.2625 12.6583 0 11.3667 0 10C0 8.61667 0.2625 7.32083 0.7875 6.1125C1.3125 4.90417 2.02917 3.84583 2.9375 2.9375C3.84583 2.02917 4.90833 1.3125 6.125 0.7875C7.34167 0.2625 8.63333 0 10 0C11.3833 0 12.6792 0.2625 13.8875 0.7875C15.0958 1.3125 16.1542 2.02917 17.0625 2.9375C17.9708 3.84583 18.6875 4.90417 19.2125 6.1125C19.7375 7.32083 20 8.61667 20 10C20 11.3667 19.7375 12.6583 19.2125 13.875C18.6875 15.0917 17.9708 16.1542 17.0625 17.0625C16.1542 17.9708 15.0958 18.6875 13.8875 19.2125C12.6792 19.7375 11.3833 20 10 20ZM10 17.95C10.4333 17.35 10.8083 16.725 11.125 16.075C11.4417 15.425 11.7 14.7333 11.9 14H8.1C8.3 14.7333 8.55833 15.425 8.875 16.075C9.19167 16.725 9.56667 17.35 10 17.95ZM7.4 17.55C7.1 17 6.8375 16.4292 6.6125 15.8375C6.3875 15.2458 6.2 14.6333 6.05 14H3.1C3.58333 14.8333 4.1875 15.5583 4.9125 16.175C5.6375 16.7917 6.46667 17.25 7.4 17.55ZM12.6 17.55C13.5333 17.25 14.3625 16.7917 15.0875 16.175C15.8125 15.5583 16.4167 14.8333 16.9 14H13.95C13.8 14.6333 13.6125 15.2458 13.3875 15.8375C13.1625 16.4292 12.9 17 12.6 17.55ZM2.25 12H5.65C5.6 11.6667 5.5625 11.3375 5.5375 11.0125C5.5125 10.6875 5.5 10.35 5.5 10C5.5 9.65 5.5125 9.3125 5.5375 8.9875C5.5625 8.6625 5.6 8.33333 5.65 8H2.25C2.16667 8.33333 2.10417 8.6625 2.0625 8.9875C2.02083 9.3125 2 9.65 2 10C2 10.35 2.02083 10.6875 2.0625 11.0125C2.10417 11.3375 2.16667 11.6667 2.25 12ZM7.65 12H12.35C12.4 11.6667 12.4375 11.3375 12.4625 11.0125C12.4875 10.6875 12.5 10.35 12.5 10C12.5 9.65 12.4875 9.3125 12.4625 8.9875C12.4375 8.6625 12.4 8.33333 12.35 8H7.65C7.6 8.33333 7.5625 8.6625 7.5375 8.9875C7.5125 9.3125 7.5 9.65 7.5 10C7.5 10.35 7.5125 10.6875 7.5375 11.0125C7.5625 11.3375 7.6 11.6667 7.65 12ZM14.35 12H17.75C17.8333 11.6667 17.8958 11.3375 17.9375 11.0125C17.9792 10.6875 18 10.35 18 10C18 9.65 17.9792 9.3125 17.9375 8.9875C17.8958 8.6625 17.8333 8.33333 17.75 8H14.35C14.4 8.33333 14.4375 8.6625 14.4625 8.9875C14.4875 9.3125 14.5 9.65 14.5 10C14.5 10.35 14.4875 10.6875 14.4625 11.0125C14.4375 11.3375 14.4 11.6667 14.35 12ZM13.95 6H16.9C16.4167 5.16667 15.8125 4.44167 15.0875 3.825C14.3625 3.20833 13.5333 2.75 12.6 2.45C12.9 3 13.1625 3.57083 13.3875 4.1625C13.6125 4.75417 13.8 5.36667 13.95 6ZM8.1 6H11.9C11.7 5.26667 11.4417 4.575 11.125 3.925C10.8083 3.275 10.4333 2.65 10 2.05C9.56667 2.65 9.19167 3.275 8.875 3.925C8.55833 4.575 8.3 5.26667 8.1 6ZM3.1 6H6.05C6.2 5.36667 6.3875 4.75417 6.6125 4.1625C6.8375 3.57083 7.1 3 7.4 2.45C6.46667 2.75 5.6375 3.20833 4.9125 3.825C4.1875 4.44167 3.58333 5.16667 3.1 6Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+            }
+            header.menu_over .util .search .search_open {   
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L17.3 15.9C17.4833 16.0833 17.575 16.3167 17.575 16.6C17.575 16.8833 17.4833 17.1167 17.3 17.3C17.1167 17.4833 16.8833 17.575 16.6 17.575C16.3167 17.575 16.0833 17.4833 15.9 17.3L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+            }
+            header.menu_over::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: var(--header-h);
+                width: 100%;
+                height: 1px;
+                background-color: #ededed;
+            }
+
+        /* 1차메뉴 li에 =>over가 들어갔을때*/
+            header .gnb .gnb_wrap ul.depth1 > li.over > a span {
+                position: relative; /*before정렬의 기준*/
+                color: #036580;  
+            }
+            header .gnb .gnb_wrap ul.depth1 > li.over > a span::before {
+                content: "";
+                position: absolute; /*span태그를 중심으로 정렬*/
+                left: -6px;
+                top: -5px;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #036580;
+            }
+        /* 2차메뉴애 들어갔을때 => depth1의 오버가 여부에따라 depth2가 결정되니까.over 안붙여도됨*/
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a span {
+                position: relative;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a span::after {
+                /*span 태그에 선긋기 애니메이션*/
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 0; /*transition주기 : 너비 0->100%*/
+                height: 1px;
+                background-color: #036580;
+                transition: 0.4s;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover span,
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:focus span { /*focus 붙여서 tab키로 이동하게 */
+                color: #036580;
+                font-weight: 800;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover span::after,
+            header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:focus span::after  {
+                width: 100%; /*transition주기 : 너비 0->100%*/
+            }
+
+}/*media - pc(1025)메뉴*/
 
 
 /*--------------------------------------------- 1024이하일때-------------------------------------------------*/
 @media screen and (max-width:1024px){ /*1024이하일때*/
-    header {
-        padding: 0 0 0 16px; /*최소 여백주기 엡솔루트여서 줘야함*/
-
-        /* display: flex; logo -gnb  좌우배치 util은 빼고 두개만 좌우배치*/
-        justify-content: space-between;
-        align-items: center; /*중간으로 보내기*/
-    }
-    header .logo a {
-        width: 20px;
-        height: 20px;
-    }
-    header .gnb .gnb_open {
-        width: var(--header-h);
-        height: var(--header-h);
-
-
-        display: flex; /*svg를 가운데 배치*/
-        justify-content: center;
-        align-items: center;
-    }
-    header .gnb .gnb_open i {
-        display: block;
-        width: 18px;
-        height: 14px;
-        margin: 0 0 14px 0;
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > a {
-        display: block;
-        padding: 18px 52px 18px 16px; /*오른쪽 아이콘과 글자가 겹치지 않기 위해 왼쪽여백52px을 준것*/
-        font-size: 20px;
-        font-weight: 800;
-        position: relative;/*afer정렬의 기준*/
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > a::after {
-        content: "";
-        position: absolute;
-        right: 21px;
-        top: 30px;
-        width: 14px; /**/
-        height: 7px;
-        background-image: url("data:image/svg+xml,%3Csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.4999 5.48542L12.7061 0.279166C12.8832 0.102082 13.0898 0.0164918 13.3259 0.0223946C13.562 0.0282973 13.7686 0.11979 13.9457 0.296873C14.1228 0.473957 14.2114 0.680554 14.2114 0.916665C14.2114 1.15278 14.1228 1.35937 13.9457 1.53646L8.50927 6.99062C8.3676 7.13229 8.20823 7.23854 8.03115 7.30937C7.85406 7.38021 7.67698 7.41562 7.4999 7.41562C7.32281 7.41562 7.14573 7.38021 6.96865 7.30937C6.79156 7.23854 6.63219 7.13229 6.49052 6.99062L1.03635 1.53646C0.85927 1.35937 0.773679 1.14983 0.779582 0.907812C0.785485 0.665798 0.876978 0.456249 1.05406 0.279166C1.23114 0.102083 1.43774 0.0135412 1.67385 0.0135412C1.90996 0.0135412 2.11656 0.102083 2.29364 0.279166L7.4999 5.48542Z' fill='%23555555'/%3E%3C/svg%3E%0A");
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-        background-color: #f4f4f4;
-        padding: 15px 36px 17px 36px; /**/
-        display: none; /*1차 메뉴를 클릭하면 열림*/ 
-    }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
-        display: block;
-        padding: 5px 0 5px 0;
-    }
-
-
-    header .gnb .gnb_close {
-        /* display: none; 메뉴가 열렸을때 나타남 */
-        position: absolute; /*header기준으로 정렬*/
-        right: 0;
-        top: 0;
-        width: var(--header-h);
-        height: var(--header-h);
-        z-index: 11;
-
-        /*메뉴가 열리면 flex줄 예정, displyㅎ여러번 넣으면 안됨*/
-        justify-content: center;
-        align-items: center;
-    }
-    header .gnb .gnb_close i {
-        display: block;
-        width: 13px;
-        height: 13px;
-    }
-    header .gnb .gnb_wrap {
-        display: none; /*메뉴가 열렸을때 나타남*/
-        position: absolute;/*header기준으로 정렬*/
-        right: -110%;
-        top: 0;
-        width: 100%;
-        height: 100dvh; /*화면 꽉차게*/
-        background-color: #fff;
-        color: #1d1d1d;
-        padding: 64px 0 0 0 ; /*2차메뉴 상단여백*/
-        transition: 0.3s ;
-    }
-    header .util {
-        position: absolute; /*header기준으로 정렬*/
-        right: var(--header-h); /**/
-        top: 0;
-    }
-    header .util .lang { /*감싸는 껍데기까지 없애야함 : 모바일에서*/
-        display: none;
-    }
-    header .util .search .search_open {
-        width: 30px; /*박스까지 포함된 실제 크기*/
-        height: var(--header-h);
-    }
+            header {
+                padding-right: 0;
+            }
+            header .logo a {
+                width: 30px;
+                height: 30px;
+            }
+            header .gnb .gnb_open {
+                width: var(--header-h);
+                height: var(--header-h);
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 2C0.716667 2 0.479167 1.90417 0.2875 1.7125C0.0958333 1.52083 0 1.28333 0 1C0 0.716667 0.0958333 0.479167 0.2875 0.2875C0.479167 0.0958333 0.716667 0 1 0H17C17.2833 0 17.5208 0.0958333 17.7125 0.2875C17.9042 0.479167 18 0.716667 18 1C18 1.28333 17.9042 1.52083 17.7125 1.7125C17.5208 1.90417 17.2833 2 17 2H1ZM1 14C0.716667 14 0.479167 13.9042 0.2875 13.7125C0.0958333 13.5208 0 13.2833 0 13C0 12.7167 0.0958333 12.4792 0.2875 12.2875C0.479167 12.0958 0.716667 12 1 12H17C17.2833 12 17.5208 12.0958 17.7125 12.2875C17.9042 12.4792 18 12.7167 18 13C18 13.2833 17.9042 13.5208 17.7125 13.7125C17.5208 13.9042 17.2833 14 17 14H1ZM1 8C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H17C17.2833 6 17.5208 6.09583 17.7125 6.2875C17.9042 6.47917 18 6.71667 18 7C18 7.28333 17.9042 7.52083 17.7125 7.7125C17.5208 7.90417 17.2833 8 17 8H1Z' fill='white'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: 28px;
+                display: block;
+            }
+            header .gnb .gnb_wrap {
+                /* display: none;  */
+                position: fixed; /*header를 기준으로 정렬*/
+                right: -110%; /*안보이다가 -> 보이게 하기 위해  -100%주기*/
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                height: 100dvh;
+                background-color: #fff;
+                color: #1d1d1d;
+                box-shadow: 0 0 50px 10px rgba(0,  0, 0, 0.5);
+                transition: 0.5s;
+            }
+            header .gnb .gnb_wrap ul.depth1 {
+                overflow-y: auto; 
+                /* 컨텐츠 높이가 입력한 높이보다 커지면 스크롤바를 생성=auto */   
+                height: calc(100dvh - var(--header-h));
+                /* padding: 18px 0 0 0; 위 여백주기 */
+                margin: var(--header-h) 0 0 0;
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a {
+                display: block;
+                padding: 14px 50px 14px 16px; /*글짜가 침범하지 않게 여백까지 포함시키기*/
+                font-size: 20px;
+                font-weight: 800;
+                position: relative; /*after 정렬기준*/
+            }
+            header .gnb .gnb_wrap ul.depth1 > li > a::after {
+                content: "";
+                position: absolute;
+                right: 25px;
+                top: 27px;
+                width: 13px;
+                height: 8px;
+                background-image: url("data:image/svg+xml,%3Csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.4999 5.48542L12.7061 0.279168C12.8832 0.102084 13.0898 0.0164937 13.3259 0.0223965C13.562 0.0282992 13.7686 0.119792 13.9457 0.296875C14.1228 0.473959 14.2114 0.680556 14.2114 0.916667C14.2114 1.15278 14.1228 1.35938 13.9457 1.53646L8.50927 6.99063C8.3676 7.13229 8.20823 7.23854 8.03115 7.30938C7.85406 7.38021 7.67698 7.41563 7.4999 7.41563C7.32281 7.41563 7.14573 7.38021 6.96865 7.30938C6.79156 7.23854 6.63219 7.13229 6.49052 6.99063L1.03635 1.53646C0.85927 1.35938 0.773679 1.14983 0.779582 0.907814C0.785485 0.6658 0.876978 0.456251 1.05406 0.279168C1.23114 0.102085 1.43774 0.0135431 1.67385 0.0135431C1.90996 0.0135431 2.11656 0.102085 2.29364 0.279168L7.4999 5.48542Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+                transition: 0.5s;
+            }
+             header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+                background-color: #f4f4f4;
+                padding: 15px 35px 17px 38px;
+                display: none;/*이건 1차 메뉴가 클릭되면 열림*/
+             }
+              header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+                display: block;
+                padding: 4px 0 4px 0 ; 
+              }
+            header .gnb .gnb_close {
+                display: none; /*메뉴가 열려야 보임*/
+                position: absolute; /*header 기준으로*/
+                right: 0;
+                top: 0;
+                width: var(--header-h);
+                height: var(--header-h);
+                background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.50013 7.96231L2.03654 12.4256C1.83739 12.6249 1.59596 12.7223 1.31226 12.7178C1.02832 12.7134 0.786777 12.6116 0.587631 12.4125C0.388485 12.2134 0.288912 11.9696 0.288912 11.6813C0.288912 11.3931 0.388485 11.1493 0.587631 10.9502L5.03782 6.5L0.574569 2.07078C0.375194 1.87164 0.277798 1.62792 0.282381 1.33963C0.286735 1.05156 0.388485 0.807958 0.587631 0.608813C0.786777 0.409438 1.0305 0.30975 1.31879 0.30975C1.60708 0.30975 1.8508 0.409438 2.04994 0.608813L6.50013 5.07206L10.9293 0.608813C11.1285 0.409438 11.3699 0.30975 11.6536 0.30975C11.9376 0.30975 12.1791 0.409438 12.3783 0.608813C12.5916 0.821938 12.6983 1.06909 12.6983 1.35028C12.6983 1.63147 12.5916 1.87164 12.3783 2.07078L7.92807 6.5L12.3913 10.9636C12.5907 11.1627 12.6904 11.4042 12.6904 11.6879C12.6904 11.9718 12.5907 12.2134 12.3913 12.4125C12.1782 12.6259 11.931 12.7325 11.6498 12.7325C11.3687 12.7325 11.1285 12.6259 10.9293 12.4125L6.50013 7.96231Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            header .gnb .gnb_bg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100dvh;
+                background-color: #000;
+                opacity: 0.5;
+                display: none;/*깔아버리니까숨겼다가 제이쿼리가 작동하게 */
+            }
+             header .util {
+                position: absolute; /*헤더 기준으로 정렬*/
+                right: var(--header-h); /* util을 감싸는 상자 영역이 헤더 길이만큼의 정사각형이니까*/
+                top: 0;
+             }
+            header .util .lang {
+                display: none ; /*감싸는 껍데기한테 명령*/
+            }
+            header .util .search .search_open {
+                width: 35px;
+                height: var(--header-h);
+                background-size: 20px; /*아이콘 가로 넓이*/
+                background-position: center top 50%; /*백그라운드 포지션 -> 위치를 조절 할 수있음*/
+            }
+        /* 메뉴가 열렸을 때 : header에 menu_open생길때*/
+             /* header.menu_open .logo {
+                position: relative;
+                z-index: 10; 
+                 */
+                /*z-index는 position값이 필수 
+                position: relative, absolute, fixed, sticky 중 하나여야 z-index 값이 적용돼.
+                즉, z-index는 "포지셔닝 컨텍스트" 안에서만 작동하는 거라 position이 필요함.*/
+             /* }
+              header.menu_open .logo a {
+                background-image: url(../images/menu_logo2_w.svg);
+              } */
+             header.menu_open .gnb .gnb_wrap {
+                display: block; /*메뉴가 열려야 보임*/
+                right: 0;
+            }
+            header.menu_open .gnb .gnb_close {
+                display:  block; /*메뉴가 열려야 보임*/
+            }
+            /* header.menu_open .util {
+                z-index: 10;
+            }
+            header.menu_open .util .search .search_open {
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L17.3 15.9C17.4833 16.0833 17.575 16.3167 17.575 16.6C17.575 16.8833 17.4833 17.1167 17.3 17.3C17.1167 17.4833 16.8833 17.575 16.6 17.575C16.3167 17.575 16.0833 17.4833 15.9 17.3L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z' fill='%232d2d2d'/%3E%3C/svg%3E%0A");
+            } */
+        /* 2차 메뉴 열기  */
+          header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
+            /* display: block; */
+          }
+          header .gnb .gnb_wrap ul.depth1 > li.open  > a::after {
+            transform: rotate(180deg);
+          }
     
-    header .util .search .search_open i {
-        width: 20px; /*박스까지 포함된 실제 크기*/
-        height: 20px;
-    }
-
-/**************header에 menu_open이 있을때 = 메뉴가 열렸을때 ************/
-    header.menu_open .gnb .gnb_wrap {
-        display: block;
-    }
-    header.menu_open .gnb .gnb_close {
-        display: flex; /* 아이콘 가운데 놔야하니까*/
-    }
-
-    /*2차메뉴열기*/
-    header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
-        transform: rotate(180deg);
-    }
-    header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
-        /* display: block; */
-    }
-    
-}
+}/*media1024*/
 
 
 
 /* -------------------------------------------------768이하일때----------------------------------------------*/
+/*모바일에서 : 1차 메뉴를 클릭하면-> 2차 메뉴 열림*/
 @media screen and (max-width:768px){  /* 768이하일때*/
-    header .logo a {
-        width: 30px;
-        height: 30px;
-        
-    }
-    header .gnb .gnb_open {
-        background-size: 21px;
-    }
-    header .util .search .search_open {
-        background-size: 20px; /* 아이콘 가로넓이 , 높이는 알아서 들어감 */
-        
-    }
+            header .logo a {
+                width: 25px;   /*실제 아이콘크기 = */
+                height: 26px;
+
+            }
+            header .util .lang .lang_open {
+                background-size: 20px;
+            }
+            header .gnb .gnb_close {
+                background-size: 16px;
+            }
+        /*2차 메뉴 열기*/
+            
 
 }/*media*/
 

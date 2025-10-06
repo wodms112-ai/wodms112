@@ -27,7 +27,9 @@
     font-size: 1vw  ;
 }
 .test h6 {
-    font-size: clamp(24px ,3vw ,40px);
+    font-size: clamp(24px ,3vw ,40px); 
+    /*클램프단위 : clamp (최소값 , 평소값 , 최대값) 
+    많이는 안씀 = */
 }
 
 .news {
@@ -74,7 +76,7 @@
     align-items: center;
 }
 .news .list ul li a h3 {
-    font-size: var(--tit-font-size);
+    font-size: var(--base-font-size);
     color: var(--tit-color);
     line-height: var(--tit-line-height);
     font-weight: var(--bold-weight);
@@ -121,7 +123,7 @@
         display: none;
     }
     .news .wrapper {
-        display: block;
+        display: block;/*tit-list 위아래*/
     }
     .news .tit {
         width: auto;
@@ -133,23 +135,25 @@
     }
     
     .news .list ul li a {
-        display: block;
+        display: block; /*h3-span 위아래 flex해제*/
     }
     .news .list ul li a h3 {
         width: auto;
-        white-space: wrap;
-        overflow: visible;
+        /*1줄 무제한*/
+        white-space: wrap; /*줄바꿈 해지*/
+        overflow: visible; /*넘치는거 그냥 보여줘*/
     }
     
     .news .more {
         left: auto;
         right: 0;
-        /*정렬이 riht가 변경되면 left로 해지하고 rihgt로 변경해야함*/
+        /*정렬이 riht가 변경되면 left로 해지(auto)하고 rihgt로 변경해야함*/
         bottom: auto;
         top: 0;
     }
     .news .more a {
-        justify-content: center; /*i를 가운데로 배치해야하는데 플랙스를 유지하고 플랙스로 정렬*/
+        justify-content: center; 
+        /*i를 가운데로 배치해야하는데 플랙스를 유지하고 플랙스로 가운데 정렬*/
         gap: 0;
         width: 25px;
         height: 25px;
@@ -157,7 +161,7 @@
         border-radius: 50%;
     }
     .news .more a span {
-        display: none; /*글자숨김*/
+        display: none; /*더보기글자숨김*/
     }
     .news .more a i {
         width: 6px;
@@ -168,8 +172,13 @@
     margin: 92px 0 0 0;
     background-color: #1d1d1d;
     color: rgba(225, 225, 225, 0.8);
+    padding: 170px 0 100px 0;
 }
-
+.notice .wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
 .notice .tit h2 {
     font-size: var(--tit-font-size);
     color: #fff;
@@ -183,15 +192,15 @@
 }
 
 .notice .list {
-    max-width:832px; /*최대 넓이*/
-    width: calc(100% - 235px);
+    max-width:832px; /*최대 넓이주기 -> 내가 원하는 길이만큼줘야하니까 안주면 넘 길어짐*/
+    width: calc(100% - 235px); /*100%-tit 최소넓이 빼기 그이상 줄면 안되니까*/
 }
 
 .notice .list ul li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(255, 225, 225, 0.2);
 }
 .notice .list ul li:first-child {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(255, 225, 225, 0.2);
 }
 .notice .list ul li a {
     display: flex;
@@ -200,13 +209,13 @@
     padding: 26px 0 26px 0;
 }
 .notice .list ul li a h3 {
-    font-size: var(--tit-font-size);
+    font-size: var(--base-font-size);
     line-height: var(--tit-line-height);
     font-weight: var(--bold-weight);
     color: #fff;
     margin: 0 0 17px 0;
 
-    width: calc(100% - 125px);
+    width: calc(100% - 125px); /* 오른쪽 여백 충분희 줘서 글짜 안겹치게*/
     /*1줄제한*/
     white-space: nowrap;
     overflow: hidden;
@@ -242,7 +251,8 @@
                 margin: 0;
             }
             .notice .tit h2 span {
-                display: none; /*span 태그에 블럭을 주면 한줄에 하나 밖에안들어 가니까 줄바꿈 발생
+                display: none;
+                 /*span 태그에 블럭을 주면 한줄에 하나 밖에안들어 가니까 줄바꿈 발생
                 다른 글짜가 옆에 존재 할수없기때문에 자동으로 다음 글자는 줄이 바뀜*/
             }
             .notice .tit p {
@@ -260,26 +270,27 @@
             }
             
             .notice .list ul li a {
-                align-items: flex-start; /* center->  flex start*/
-                justify-content: space-between; /*flex를 유지하면서 세로방향 전환*/
-                flex-direction: column;
+                align-items: flex-start; /*  align-items:center->  flex start*/
+                flex-direction: column;  /*flex를 유지하면서 세로방향 전환*/
                 padding: 20px 0 14px 0;
             }
             .notice .list ul li a h3 {
                 width: auto;
-                /*1줄제한*/
-                white-space: wrap;
-                overflow: visible;
+                /*1줄제한 -> 여러줄 허용*/
+                white-space: visible;
+                overflow: wrap;
             }
             
-            
+             
             .notice .more {
-                position: relative; /*wrapper를 기준으로 정렬*/
+                position: relative; 
+                /*앱솔루트 해지 ,wrapper를 기준으로 정렬*/
                 left: auto;
                 bottom: auto;
                 /* li하고 more의 여백은 wrapper가 준 gap으로 처리*/
                 display: flex;
                 justify-content: center;
+                /*flex로 중간에 배치*/
             }
             .notice .more a {
                 margin: 30px 0 0 0;
@@ -291,4 +302,4 @@
                 border-radius: 25px;
                 padding: 6px 22px 6px 22px;
             }
-}
+}/*media*/

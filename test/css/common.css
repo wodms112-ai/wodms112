@@ -110,11 +110,11 @@ button {
 }/*@media*/
 
 /* css 변수 -  값은 media 를 이용해서 수치는 변경가능
-   선언한 변수를 css에서 사용하는 방법은 font-size:var (--bas-font-size: ;)
-   앞에 -- 두개는 반드시 포함되야함
+   선언한 변수를 css에서 사용하는 방법은 font-size:var (--bas-font-size: );
+   (앞에 -- 두개는 반드시 포함되야함)
    피그마 dev모드를 사용하면 많이 나옴 그래서 많이 사용함 */
 :root {
-    --bas-font-size: 17px;
+    --base-font-size: 17px;
     --tit-color: #1d1d1d;
     --tit-font-size: 40px;
     --h3-font-size: 22px;
@@ -124,14 +124,14 @@ button {
 }
 @media screen and (max-width:1024px){
     :root {    
-            --tit-font-size: 32px;
+            --tit-font-size: 32px; /*중간 글씨 크기 주기*/
             --h3-font-size: 20px; 
             --content-margin: 0 30px;
         }
 }
 @media screen and (max-width:768px){
     :root {
-        --bas-font-size: 16px;
+        --base-font-size: 16px;
         --tit-font-size: 19px;
         --content-margin: 0 16px;
     }
