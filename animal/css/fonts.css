@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Im';
+    src: url('../fonts/IM_Hyemin-Regular.woff2') format('woff'); 
+    /*cdn은 위험하니까 주소에쳐서 다운로드 받고 불러오기 */
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Im';
+    src: url('../fonts/IM_Hyemin-Bold.woff2') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
