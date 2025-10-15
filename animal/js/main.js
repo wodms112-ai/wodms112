@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
 //---------------------------------- visual swiper 시작 ---------------------------------
-    let visual_time = 5000
+    let visual_time = 5000 /*변수 만들기-> 하나만 바뀌면 다 바뀌게 */
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-        autoplay: {  /* 팝업 자동 실행 */
-            delay: 3000,
-            disableOnInteraction: true,
-        },
+        // autoplay: {  /* 팝업 자동 실행 */
+        //     delay: 3000,
+        //     disableOnInteraction: true,
+        // },
 
         effect: "fade", /* fade 효과 */
 
@@ -16,7 +16,7 @@ $(document).ready(function(){
     });
 
 
-
+        //클릭하는지 감시-> 실행(숨기기기능)시키기
         $('.visual .ctrl_btn .stop').on('click' , function(){
             visual_swiper.autoplay.stop(); /* 일시정지 기능 */
             $(this).hide()
@@ -35,27 +35,28 @@ $(document).ready(function(){
     const totalSlides = $('.visual .swiper .swiper-slide').not('.swiper-slide-duplicate').length;
         $('.visual .paging .total').text(totalSlides); // 총 개수 표시
 
-        // 현재 슬라이드 번호 표시 함수
-        function updateCurrent() {
-            let realIndex = visual_swiper.realIndex + 1; // 실제 인덱스 (0부터 시작하므로 +1)
-            $('.visual .paging .current').text(realIndex);
-            //슬라이드가 교체되면 제일 먼저 넓이를0으로 초기화
-            $('.visual .ctrl_btn .bar span').stop() //에니메이션종료
-            $('.visual .ctrl_btn .bar span').width(0)
-            $('.visual .ctrl_btn .bar span').animate({ 
-                width : '100%'
-            }, visual_time)
-        }
+    // 현재 슬라이드 번호 표시 함수
+    function updateCurrent() {
+        let realIndex = visual_swiper.realIndex + 1; // 실제 인덱스 (0부터 시작하므로 +1)
+        $('.visual .paging .current').text(realIndex);
+        //슬라이드가 교체되면 제일 먼저 넓이를0으로 초기화
+        $('.visual .ctrl_btn .bar span').stop() //에니메이션종료
+        $('.visual .ctrl_btn .bar span').width(0)
 
-        // 처음 로드 시 한번 실행
+        $('.visual .ctrl_btn .bar span').animate({ //사용자 정의 에니메이션 =animate
+            width : '100%'
+        }, visual_time)
+    }
+
+    // 처음 로드 시 한번 실행
+    updateCurrent();
+
+    // 슬라이드 변경될 때마다 실행
+    visual_swiper.on('slideChange', function (){
         updateCurrent();
-
-        // 슬라이드 변경될 때마다 실행
-        visual_swiper.on('slideChange', function (){
-            updateCurrent();
-        });
-        // visual_swiper.autoplay.stop();  /* 일시정지 기능 */
-        // visual_swiper.autoplay.start();  /* 재생 기능 */
+    });
+    // visual_swiper.autoplay.stop();  /* 일시정지 기능 */
+    // visual_swiper.autoplay.start();  /* 재생 기능 */
 
 //---------------------------------- visual swiper 끝 ----------------------------------
 

@@ -39,8 +39,8 @@ body {
 }
 
 .wrapper {
-    width: auto;
-    margin: 0 40px; /*가운데 정렬*/
+    width: 1260px;
+    margin: 0 auto; /*가운데 정렬*/
 }
 
 #wrap {
@@ -82,7 +82,11 @@ blind 클래스를 주면 사라짐*/
 
 @media screen and (max-width:768px){/*모바일버전일때*/
     .wrapper{
+        width: auto;
         margin: 0 16px; /*모바일 여백*/
+    }
+    #wrap { /*id 선택자는->#으로 줌*/
+        min-width: 0;
     }
 
 }/*@media*/

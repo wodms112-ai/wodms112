@@ -11,8 +11,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--color-white);
+
     display: flex; /*wrapper를 바닥으로 배치하기 위헤*/
-    align-items: flex-end;
+    align-items: flex-end; /*밑으로 내리기*/
 }
 .visual .swiper-slide.pop1 {
     background-image: url(../images/visual01.jpg);
@@ -28,15 +29,15 @@
     font-size: 60px;
     font-weight: var(--font-weight-blod);
     line-height: var(--line-height-title);
-    margin: 0 0 calc(3dvh + 90px) 0;
+    margin: 0 0 calc(10dvh + 80px) 0;  /*p테그 높이 + 떨어지고 싶은 높이 =일정간격 두기위해*/
 
     /*글짜 나타나는 효과*/
-    transition: 1s;
+    transition: transform 1s , opercity 1s; /*글자크기변화에 트렌스폼 넣지않고 효과만 넣으렴*/
     transition-delay:0.3s ;
-    transform: translate(0, 50px);
+    transform: translate(0, 50px); /*위아래 이동*/
     opacity: 0;
 }
-.visual .swiper-slide.swiper-slide-active p {
+.visual .swiper-slide.swiper-slide-active p { /*나타나게 만듬*/
     transform: translate(0, 0);
     opacity: 1;
 }
@@ -44,8 +45,8 @@
     position: absolute; /*visual기준으로 정렬*/
     display: flex;
     align-items: center;
-    left: calc(50% - 100px);
-    bottom: 3%;
+    left: calc(50% - 630px);
+    bottom: 10%; /**/
 
     z-index: 10;
     color: #fff;
@@ -70,12 +71,12 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 30%;
+    width: 50%;
     height: 100%;
     background-color: var(--color-white);
 }
 .visual .ctrl_btn .stop,
-.visual .ctrl_btn .play {
+.visual .ctrl_btn .play {  /*동그라미 주기*/
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -84,11 +85,14 @@
     justify-content: center;
     align-items: center;
 }
-
+.visual .ctrl_btn .play {
+    display: none;
+}
 .visual .ctrl_btn .play i {
     display: block;
     width:  4px;
     margin: 0 0 2px 0;
+    /* 이미지나 svg 코드등은 넓이만 줘도  높이는 비율에 맞게 들어감*/
 }
 .visual .ctrl_btn .stop i {
     display: block;
@@ -102,80 +106,19 @@
 @media screen and (max-width:768px){
                     .visual .ctrl_btn {
                         left: 16px;
+                         gap: 5px;
                     }
-                    .visual .swiper-slide {
+                    /* .visual .swiper-slide {
                         height: 700px; 
                     }
-                    
+                     */
                     .visual .swiper-slide p {
                         font-size: 38px;
-                        margin: 0 0 98px 0;
-                    
-                        /*글짜 나타나는 효과*/
-                        transition: 1s;
-                        transition-delay:0.3s ;
-                        transform: translate(0, 50px);
-                        opacity: 0;
-                    }
-                    .visual .swiper-slide.swiper-slide-active p {
-                        transform: translate(0, 0);
-                        opacity: 1;
-                    }
-                    .visual .ctrl_btn {
-                        position: absolute; /*visual기준으로 정렬*/
-                        display: flex;
-                        align-items: center;
-                        left: calc(50% - 100px);
-                        bottom: 3%;
-                    
-                        z-index: 10;
-                        color: #fff;
-                        gap: 5px;
-                    }
-                    .visual .ctrl_btn .paging {
-                        display: flex;
-                        align-items: center;
-                        gap: 0 10px;
-                        color: var(--color-white);
-                        font-weight: var(--font-weight-blod);
-                        
+                        margin: 0 0 calc(10dvh + 60px) 0; 
                     }
                     .visual .ctrl_btn .bar {
-                        width: 146px;
-                        height: 3px;
-                        background-color: var(--color-white30);
-                        position: relative; /*before 정렬의 기준*/
+                        width: 71px;
                     }
-                    .visual .ctrl_btn .bar span {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 30%;
-                        height: 100%;
-                        background-color: var(--color-white);
-                    }
-                    .visual .ctrl_btn .stop,
-                    .visual .ctrl_btn .play {
-                        width: 22px;
-                        height: 22px;
-                        border-radius: 50%;
-                        background-color: var(--color-white30);
-                        display: flex;/*아이콘을 가운데 배치라려고*/
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    
-                    .visual .ctrl_btn .play i {
-                        display: block;
-                        width:  4px;
-                        margin: 0 0 2px 0;
-                    }
-                    .visual .ctrl_btn .stop i {
-                        display: block;
-                        width:  8px;
-                    }
-
 }
 
 
