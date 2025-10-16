@@ -1,6 +1,208 @@
 @import url(common.css);
 @import url(default.css);
 @import url(fonts.css);
+header {
+    position: fixed; /*무조건 body를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color:var(--color-white);
+    fill: var(--color-white); /*svg색상*/
+    display: flex; /*logo gnb util 좌우배치*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--wrapper-margin); /*위아래 좌우*/
+
+}
+header .logo a {
+    display: block;
+    width: 185.7px;
+    height: 44px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util {
+    display: flex; /*serch- mypage ->좌우배치*/
+}
+header .util .search .sch_open { /*잘눌리게 상자주기*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+}
+header .util .search .sch_open i {
+    display: block; /*block은 정령을 잘안함*/
+    width: 18.75px;
+    margin: 4px 0 0 0;
+
+}
+header .util .mypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 43px;
+}
+header .util .mypage i {
+    display: block;
+    width: 17px;
+    margin: 4px 0 0 0;
+}
+/************************************시작 : pc버전 메뉴 (1025이상)*********************************/
+/*1024 이하는 메뉴가 접힘=>1025이상일때 스타일*/
+@media screen and (min-width:1025px){ 
+    header .gnb .gnb_open,
+    header .gnb .gnb_wrap .gnb_logo,
+    header .gnb .gnb_wrap .gnb_close {
+        display: none; /*모바일 버전만  구현되니까*/
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /*li좌우배치*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /*depth2정렬의 기준*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a { /*> 는 하나만 부를때*/
+        display: block;
+        font-size: 22px;
+        font-weight: var(--font-weight-blod);
+        line-height: var(--header-h);
+        padding: 0 30px;
+        white-space: nowrap;
+        /*행간이 높아서 2줄이 되면 이상함, 따라서 무조건 2줄로 나오게함*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { 
+        /* depth2 가depth1 밑에 가기위해 absolute를 줌, 이 영역은 내놓은 자식이 되서 flex를 줄수없게된거 */
+        position: absolute;/*depth1 li기준으로 정렬*/
+        left: 50%; /*li넓이의 50% (반쪽을 왼쪽으로 가게해서 가운데 가게)*/ 
+        transform: translateX(-50%); /*오른쪽으로 치우치니 depth2(나 자신)넓이의 50% 앞으로가게 해서 중간배치*/ 
+        top: var(--header-h);
+        background-color: var(--color-white);
+        border-radius: 0 0 10px 10px;
+        border: 1px solid #F1F1F1; 
+        color: var(--color-basic);
+        min-width: 100%; /*li너비의  100%*/
+        padding: 14px 28px;
+        display: none; /*over했을때만 나오기 땜*/
+        
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 5px 0;
+        white-space: nowrap;/*줄바뀸금지*/
+        text-align: center;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        font-weight: var(--font-weight-blod);
+        color: var(--color-main);
+    }
+
+
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span {
+        position: relative;
+    }
+
+    /* 메뉴에 오버했을때 */ /*?*/
+    header.menu_pc {
+        background-color: var(--color-white);
+        color: var(----color-title); 
+        fill: var(--color-basic);
+        border-bottom: 1px solid #f1f1f1;
+    }
+    header.menu_pc .logo a {
+        background-image: url(../images/logo.svg);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a { /*?*/
+        color: var(--color-main);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over  > ul.depth2 {/*?*/
+        display: block; /*2차메뉴나옴*/
+    }
+
+
+
+}/*media*/
+/***************************************끝 : pc버전 메뉴 (1025이상 )**********************************/
+
+
+/***************************************시작 : 1025 이상~1280*****************************************/
+/* 1025 이상~1280이하 그사이에서만 적용*/
+@media screen and (min-width:1025px)and(max-width:1280px){ 
+    header .logo a {
+        width: 185px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > a  {
+        font-size: 20px;
+    }
+    
+}
+/***************************************pc최종끝 : 1025 이상~1280**********************************/
+
+
+
+/***************************************시작 : 모바일**************************************/
+
+@media screen and (max-width:1024px){
+    
+                header {
+                   padding-right: 0; /*오른쪽여백지우기*/
+                   height: clamp(56px, 20vw, 80px);
+                }
+                header .logo a {
+                    /* width: 145px;
+                    height: 22x; */
+                    width: clamp(145px, 2vw, 200px);
+                    /* 
+                    최소값, 평소값, 최대값
+                    100vw가 브라우저 넓이
+                    */
+                }
+                header .util {
+                    display: none; /*숨김*/
+                }
+                header .gnb .gnb_open {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: clamp(56px, 20vw, 90px);
+                    height: clamp(56px, 20vw, 90px);
+                    background-color: blue;
+                }
+                header .gnb .gnb_open i {
+                    display: block;
+                    width: 50%;
+                }
+                header .gnb .gnb_wrap {
+                    display: none;
+                    position: absolute; /*header기준으로 정렬*/
+                    right: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100dvh;
+                    background-color: var(--color-white);
+                    color: var(--color-basic);
+                    fill: var(--color-basic);
+                }
+
+                /* 메뉴가 열렸을때 */
+                header.menu_mo .gnb .gnb_wrap {
+                    display: block;
+                }
+} /*모바일*/
+header {
+    border-radius: 1px solid red;
+}
+
+
+
+
+
+
+
+
+
 
 .visual {
     position: relative; /*ctrl_btn의 정렬의 기준*/
@@ -122,8 +324,14 @@
 }
 
 
+/*< 10.16다시볼거 >
 
+ * rem em차이
+ * html메뉴에 오버햇을때
+ * 제이쿼리(현재 (pc)인지 ,(모바일)인지 체크 )
+ * 8교시 수업
+ */
 
 footer {
-    margin: 150px 0 0 0;
+    margin: 1000px 0 0 0;
 }

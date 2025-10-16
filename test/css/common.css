@@ -102,7 +102,7 @@ button {
 
     좌우여백30px => 1260+60(30px+30px=60) =1320
  */
-@media screen and (max-width:1360px){
+@media screen and (max-width:1360px){ /*wrapper해지*/
                 .wrapper{
                     width: auto;
                     margin: var( --content-margin) ; 

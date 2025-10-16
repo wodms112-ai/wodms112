@@ -17,7 +17,9 @@
     --color-white30 : rgba(225, 225, 225, 0.3);
     --color-white20 : rgba(225, 225, 225, 0.2);
     --color-white05 : rgba(225, 225, 225, 0.05);
-    --header-h : 90px;
+    --color-white03 : rgba(225, 225, 225, 0.03);
+    --header-h : 80px;
+    --wrapper-margin : 30px;
 
 }
 @media screen and (max-width:768px){ 
@@ -26,6 +28,8 @@
         --font-size-title : 24px;
         --font-size-title2 : 20px;
         --header-h : 56px;
+        --wrapper-margin : 30px;
+
     }
 }
 body {
@@ -75,18 +79,6 @@ blind 클래스를 주면 사라짐*/
 @media screen and (max-width:1320px){ /*pc버전일때*/
     .wrapper {
         width: auto;
-        margin: 0 30px; /*가운데 정렬*/
+        margin: 0 var(--wrapper-margin); /*가운데 정렬*/
     }
 }
-
-
-@media screen and (max-width:768px){/*모바일버전일때*/
-    .wrapper{
-        width: auto;
-        margin: 0 16px; /*모바일 여백*/
-    }
-    #wrap { /*id 선택자는->#으로 줌*/
-        min-width: 0;
-    }
-
-}/*@media*/

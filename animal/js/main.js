@@ -1,6 +1,33 @@
+
 $(document).ready(function(){
 
-//---------------------------------- visual swiper 시작 ---------------------------------
+//**************************** 시작 : 현재 (pc)인지 ,(모바일)인지 체크 => 메뉴상태보고********************?********
+    let mobile_size = 1024
+    let window_w
+    let device_status //pc,mobile구분
+
+    function device_chk(){  // 함수를 선언 한다
+        window_w = $(window).width()
+        if(window_w > mobile_size){ // 브라우저 넓이가 1024보다 클때 =pc버전이다
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }
+
+    device_chk() //html 로딩이 완료된 이후 단1번 실행
+    $(window).resize(function(){ // 브라우져가 리사이즈 될때 마다 실행
+        device_chk()
+    })
+
+
+//--------------------------------끝 : 현재 (pc)인지 ,(모바일)인지 체크 => 메뉴상태보고----------------------------
+
+
+
+
+//**************************** visual swiper 시작 ****************************
     let visual_time = 5000 /*변수 만들기-> 하나만 바뀌면 다 바뀌게 */
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -61,9 +88,40 @@ $(document).ready(function(){
 //---------------------------------- visual swiper 끝 ----------------------------------
 
 
+/*****************************시작 : pc버전 메뉴오버************************************ ?
+ * 메뉴에 마우스를 오버햇을때 (header .gnb)
+ * header에 menu_pc 클래스 추가
+ * 마우스를 오버한 메뉴의 1차메뉴 li에 over클래스 추가( header .gnb .gnb_wrap ul.depth1 > li )
+                                                    ->over한 li에만 over클래스를 줌
+                                                    ->모든 li에서 over를 빼고 오버한 li에만 over클래스를 줌
+ * (pc버전에서만 구현 ->let으로 조건붙이기)
+ * 메뉴를 오버해서 바뀐 색상 색상의 영역 내부에서는 오버가 : 유지되고
+   -> 그 밖에 나갈때는 : 아웃
+ */ 
 
 
+$('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){ //?
+                                                      //focusin =키보드접근성
+    if( device_status == 'pc'){  //pc일때만 동작
+         // console.log('오버함')
+         $('header').addClass('menu_pc')
+         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+         $(this).addClass('over')
+    }
+       
+})
+$('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave' , function(){
+    $(this).removeClass('over')
+})
+$('header').on('mouseleave' , function(){
+    $(this).removeClass('menu_pc')  //왜this 를 넣어야 먹히지?header는 안되나
+})
+
+$('header .util .search .sch_open ').on('focusin' , function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+})
 
 
+//------------------------------끝  : pc버전 메뉴오버 ------------------------------------
 
 })//맨끝
