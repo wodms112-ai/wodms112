@@ -89,13 +89,12 @@ $(document).ready(function(){
 
 
 /*****************************시작 : pc버전 메뉴오버************************************ ?
- * 메뉴에 마우스를 오버햇을때 (header .gnb)
- * header에 menu_pc 클래스 추가
- * 마우스를 오버한 메뉴의 1차메뉴 li에 over클래스 추가( header .gnb .gnb_wrap ul.depth1 > li )
+ * 메뉴에 마우스를 오버햇을때 (header .gnb)  : pc버전에서만(let으로 조건붙이기)
+  1) header에 menu_pc 클래스 추가
+  2)마우스를 오버한 메뉴의 1차메뉴 li에 ->over클래스 추가( header .gnb .gnb_wrap ul.depth1 > li )
                                                     ->over한 li에만 over클래스를 줌
                                                     ->모든 li에서 over를 빼고 오버한 li에만 over클래스를 줌
- * (pc버전에서만 구현 ->let으로 조건붙이기)
- * 메뉴를 오버해서 바뀐 색상 색상의 영역 내부에서는 오버가 : 유지되고
+   -> 메뉴를 오버해서 바뀐 색상 색상의 영역 내부에서는 오버가 : 유지되고
    -> 그 밖에 나갈때는 : 아웃
  */ 
 

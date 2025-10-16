@@ -83,16 +83,16 @@ header .util .mypage i {
         border-radius: 0 0 10px 10px;
         border: 1px solid #F1F1F1; 
         color: var(--color-basic);
-        min-width: 100%; /*li너비의  100%*/
+        min-width: 100%; /*li너비의  100%f를 최소 넓이로 주기*/
         padding: 14px 28px;
         display: none; /*over했을때만 나오기 땜*/
         
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
         display: block;
-        padding: 5px 0;
+        padding: 5px 0; /*a 글자간 간격*/
         white-space: nowrap;/*줄바뀸금지*/
-        text-align: center;
+        text-align: center; /*가운데로*/
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
         font-weight: var(--font-weight-blod);
@@ -114,11 +114,11 @@ header .util .mypage i {
     header.menu_pc .logo a {
         background-image: url(../images/logo.svg);
     }
-    header .gnb .gnb_wrap ul.depth1 > li.over > a { /*?*/
+    header .gnb .gnb_wrap ul.depth1 > li.over > a { /*li에 오버됐을때 a*/
         color: var(--color-main);
     }
     header .gnb .gnb_wrap ul.depth1 > li.over  > ul.depth2 {/*?*/
-        display: block; /*2차메뉴나옴*/
+        display: block; /*li오버될떄 ->2차메뉴나옴*/
     }
 
 
@@ -148,14 +148,15 @@ header .util .mypage i {
     
                 header {
                    padding-right: 0; /*오른쪽여백지우기*/
-                   height: clamp(56px, 20vw, 80px);
+                   height: clamp(56px, 9vw, 80px);
+                
                 }
                 header .logo a {
                     /* width: 145px;
                     height: 22x; */
-                    width: clamp(145px, 2vw, 200px);
+                    width: clamp(145px, 2vw, 185.7px);
                     /* 
-                    최소값, 평소값, 최대값
+                    width : clamp(최소값, 평소값, 최대값)
                     100vw가 브라우저 넓이
                     */
                 }
@@ -163,18 +164,17 @@ header .util .mypage i {
                     display: none; /*숨김*/
                 }
                 header .gnb .gnb_open {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: clamp(56px, 20vw, 90px);
-                    height: clamp(56px, 20vw, 90px);
-                    background-color: blue;
+                   display: flex; /*i태그 가운데 정렬*/
+                   justify-content: center;
+                   align-items: center;
+                   width: var(--header-h);
+                   height: var(--header-h);
                 }
                 header .gnb .gnb_open i {
                     display: block;
-                    width: 50%;
+                    width: 32%; /*open(56px)에서 i(18px)은 몇퍼센트인지 입력*/
                 }
-                header .gnb .gnb_wrap {
+                header .gnb .gnb_wrap { 
                     display: none;
                     position: absolute; /*header기준으로 정렬*/
                     right: 0;
@@ -183,20 +183,14 @@ header .util .mypage i {
                     height: 100dvh;
                     background-color: var(--color-white);
                     color: var(--color-basic);
-                    fill: var(--color-basic);
+                    fill: var(--color-basic); /*아이콘색*/
                 }
 
-                /* 메뉴가 열렸을때 */
-                header.menu_mo .gnb .gnb_wrap {
+                /*menu_mo 추가 될때*/
+                 header.menu_mo .gnb .gnb_wrap {
                     display: block;
-                }
+                 }
 } /*모바일*/
-header {
-    border-radius: 1px solid red;
-}
-
-
-
 
 
 
@@ -228,7 +222,9 @@ header {
 }
 
 .visual .swiper-slide p {
-    font-size: 60px;
+    /* font-size: 60px; -> 최대크기(pc)
+    font-size: 38px; ->최소크기(모바일)*/
+    font-size: clamp(38px, 5vw, 60px);
     font-weight: var(--font-weight-blod);
     line-height: var(--line-height-title);
     margin: 0 0 calc(10dvh + 80px) 0;  /*p테그 높이 + 떨어지고 싶은 높이 =일정간격 두기위해*/
@@ -315,7 +311,7 @@ header {
                     }
                      */
                     .visual .swiper-slide p {
-                        font-size: 38px;
+
                         margin: 0 0 calc(10dvh + 60px) 0; 
                     }
                     .visual .ctrl_btn .bar {
@@ -326,8 +322,8 @@ header {
 
 /*< 10.16다시볼거 >
 
- * rem em차이
- * html메뉴에 오버햇을때
+ * rem em차이 v
+ * html메뉴에 오버햇을때 
  * 제이쿼리(현재 (pc)인지 ,(모바일)인지 체크 )
  * 8교시 수업
  */
