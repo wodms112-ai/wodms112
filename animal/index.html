@@ -16,9 +16,10 @@
 </head>
 <body>
     <div id="wrap">
-        <!----- pc버전에서      메뉴오버하면=> menu_pc 클래스 추가
-                모바일 버전에서 메뉴오버하면 => menu_mo 클래스 추가-------->
-        <header class="menu_mo">
+        <!----- pc버전에서     : 메뉴오버하면  => menu_pc 클래스 추가
+                모바일 버전에서 : 메뉴오버하면 => menu_mo 클래스 추가
+                header가 상단에 고정될때      => fixed 클래스 추가 -------->
+        <header>
             <h1 class="logo"><a href="index.html"><span class="blind">로고</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open">
@@ -30,12 +31,12 @@
                     </i>
                 </button>
                 <div class="gnb_wrap">
-                    <div class="gnb_logo"><span class="blind">petcare</span></div>
+                    <div class="gnb_logo"><span class="blind">petcare</span></div> <!--? 모바일용 로고-->
                     <ul class="depth1">
                         <!-- pc버전일때  -> 오버한li에 -> over  추가  
                              모바일일때  ->  오버한li에 -> open  추가-->
                         <li>
-                            <a href="#n"><span>찾습니다</span></a>
+                            <a href="https://www.naver.com/"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>반려동물 실종신고</span></a></li>
                                 <li><a href="#n"><span>유기동물 보호 </span></a></li>
@@ -71,17 +72,17 @@
                             </ul>
                         </li>
                     </ul>
-                    <button class="gnb_close">
-                        <span>메뉴닫기</span>
+                    <button class="gnb_close"> <!--접근성 땜에 뒤에 적어야함-->
+                        <span class="blind">메뉴닫기</span>
                         <i>
                             <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 10.75L2.875 16.875C2.64583 17.1042 2.35417 17.2188 2 17.2188C1.64583 17.2188 1.35417 17.1042 1.125 16.875C0.895833 16.6458 0.78125 16.3542 0.78125 16C0.78125 15.6458 0.895833 15.3542 1.125 15.125L7.25 9L1.125 2.875C0.895833 2.64583 0.78125 2.35417 0.78125 2C0.78125 1.64583 0.895833 1.35417 1.125 1.125C1.35417 0.895833 1.64583 0.78125 2 0.78125C2.35417 0.78125 2.64583 0.895833 2.875 1.125L9 7.25L15.125 1.125C15.3542 0.895833 15.6458 0.78125 16 0.78125C16.3542 0.78125 16.6458 0.895833 16.875 1.125C17.1042 1.35417 17.2188 1.64583 17.2188 2C17.2188 2.35417 17.1042 2.64583 16.875 2.875L10.75 9L16.875 15.125C17.1042 15.3542 17.2188 15.6458 17.2188 16C17.2188 16.3542 17.1042 16.6458 16.875 16.875C16.6458 17.1042 16.3542 17.2188 16 17.2188C15.6458 17.2188 15.3542 17.1042 15.125 16.875L9 10.75Z">
-                                </svg>
+                            </svg>
                                 
                         </i>
-                    </button>
+                    </button><!--gnb_close-->
                 </div><!--gnb_wrap-->
-            </nav>
+            </nav><!--gnb-->
             <div class="util">
                 <div class="search">
                     <button class="sch_open">
@@ -159,13 +160,469 @@
                 
             </section><!--visual-->
 
-            <section class="find"></section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="tab_list">
+                        <ul>
+                            <!--선택된 텝-> active클래스 추가
+                                button안에 span 태그한테 선택됨이란 글자를 줌-->
+                            <li class="item1 active"><button>가족을<span class="blind">선택됨</span></button></li>
+                            <li class="item2 "><button>주인을<span></span></button></li>
+                        </ul>
+                    </div><!--tab_list-->
+                    <div class="tab_content">
+                        <!--선택된tab_item은 active클래스추가 title에 선택됨이라고 써줌-->
+                        <div class="tab_item item1 active" title="선택됨"> <!--?1017-->
+                            <h3 class="blind">가족을</h3>
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_01.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>브리티시 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span> 강원 영람동 </span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span> 2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>  마당에서 놀다가 돌아오지않았습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_02.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>포메라니안</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>부산 금정구 금정로20</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 완료 아파트앞 cctv확인</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_03.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>푸들</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>서울 양청구 신월3동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-08</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>바디라는 연노랑 하네스 착용</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_04.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티즈</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 집앞</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-02</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 안되있고 13살 노견</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_05.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티즈</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 집앞</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-02</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 안되있고 13살 노견</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find01_06.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티즈</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 집앞</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-02</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 안되있고 13살 노견</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                    
+                            </div>
+                            <div class="ctrl_btn">
+                                <button class="prev"> <!--1017 ?-->
+                                    <span class="blind">이전팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.91202 5.35453L13.1743 5.35454C13.4226 5.35454 13.6305 5.43834 13.7979 5.60595C13.9655 5.77337 14.0493 5.98123 14.0493 6.22954C14.0493 6.47784 13.9655 6.6857 13.7979 6.85312C13.6305 7.02073 13.4226 7.10453 13.1743 7.10453L2.91202 7.10453L6.78915 10.9814C6.95054 11.143 7.03318 11.346 7.03707 11.5907C7.04076 11.8351 6.95812 12.0419 6.78915 12.211C6.61998 12.38 6.41504 12.4645 6.17432 12.4645C5.93359 12.4645 5.72865 12.38 5.55948 12.211L0.316191 6.96774C0.105413 6.75677 2.47955e-05 6.5107 2.47955e-05 6.22953C2.47955e-05 5.94837 0.105413 5.7023 0.316191 5.49133L5.55948 0.248035C5.72107 0.086646 5.92416 0.00400711 6.16877 0.000118227C6.41319 -0.00357621 6.61998 0.0790627 6.78915 0.248035C6.95812 0.417202 7.04261 0.622146 7.04261 0.862868C7.04261 1.10359 6.95812 1.30853 6.78915 1.4777L2.91202 5.35453Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <button class="next">
+                                    <span class="blind">다음팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.1373 7.11031L0.875 7.11031C0.626695 7.11031 0.418833 7.0265 0.251417 6.85889C0.0838055 6.69148 7.13254e-08 6.48361 7.42865e-08 6.23531C7.72475e-08 5.987 0.0838055 5.77914 0.251417 5.61173C0.418833 5.44411 0.626695 5.36031 0.875 5.36031L11.1373 5.36031L7.26017 1.48348C7.09878 1.32189 7.01614 1.1188 7.01225 0.874184C7.00856 0.629768 7.09119 0.422975 7.26017 0.253808C7.42933 0.0848364 7.63428 0.000350423 7.875 0.000350437C8.11572 0.00035045 8.32067 0.0848365 8.48983 0.253808L13.7331 5.4971C13.9439 5.70807 14.0493 5.95414 14.0493 6.23531C14.0493 6.51648 13.9439 6.76255 13.7331 6.97352L8.48983 12.2168C8.32825 12.3782 8.12515 12.4608 7.88054 12.4647C7.63613 12.4684 7.42933 12.3858 7.26017 12.2168C7.09119 12.0476 7.00671 11.8427 7.00671 11.602C7.00671 11.3613 7.09119 11.1563 7.26017 10.9871L11.1373 7.11031Z"/>
+                                        </svg>
+                                            
+                                    </i>
+                                </button>
+                                <a href="#n" class="more">
+                                    <span>더보기</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                       <!-------------------------------------------------------------------------------------------------->
+
+                        <div class="item2"> 
+                            <h3 class="blind">주인을</h3>
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_01.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>시츄</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>강원 영람동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 완료 아파트앞 cctv확인됨</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_02.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>푸들</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>부산 금정구 금정로20</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>바디라는 연노랑 하네스 착용</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_03.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>포메마리안 </strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>서울 양청구 신월3동</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-08</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 좋아하고 호기심이 많습니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_04.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>한국고양이 </strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 집앞</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-02</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 안되있고 12살 입니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_05.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>한국고양이 </strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 집앞</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-02</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 안되있고 12살 입니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find02_06.jpg" alt="">
+                                                    <div class="date"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>한국고양이 </strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종장소</strong>
+                                                            <strong class="mo_only">장소</strong>
+                                                            <span>경남 집앞</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">날짜</strong>
+                                                            <span>2025-10-02</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화 안되있고 12살 입니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                    
+                            </div>
+                            <div class="ctrl_btn">
+                                <button class="prev"> <!--1017 ?-->
+                                    <span>이전팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2.91202 5.35453L13.1743 5.35454C13.4226 5.35454 13.6305 5.43834 13.7979 5.60595C13.9655 5.77337 14.0493 5.98123 14.0493 6.22954C14.0493 6.47784 13.9655 6.6857 13.7979 6.85312C13.6305 7.02073 13.4226 7.10453 13.1743 7.10453L2.91202 7.10453L6.78915 10.9814C6.95054 11.143 7.03318 11.346 7.03707 11.5907C7.04076 11.8351 6.95812 12.0419 6.78915 12.211C6.61998 12.38 6.41504 12.4645 6.17432 12.4645C5.93359 12.4645 5.72865 12.38 5.55948 12.211L0.316191 6.96774C0.105413 6.75677 2.47955e-05 6.5107 2.47955e-05 6.22953C2.47955e-05 5.94837 0.105413 5.7023 0.316191 5.49133L5.55948 0.248035C5.72107 0.086646 5.92416 0.00400711 6.16877 0.000118227C6.41319 -0.00357621 6.61998 0.0790627 6.78915 0.248035C6.95812 0.417202 7.04261 0.622146 7.04261 0.862868C7.04261 1.10359 6.95812 1.30853 6.78915 1.4777L2.91202 5.35453Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <button class="next">
+                                    <span>다음팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.1373 7.11031L0.875 7.11031C0.626695 7.11031 0.418833 7.0265 0.251417 6.85889C0.0838055 6.69148 7.13254e-08 6.48361 7.42865e-08 6.23531C7.72475e-08 5.987 0.0838055 5.77914 0.251417 5.61173C0.418833 5.44411 0.626695 5.36031 0.875 5.36031L11.1373 5.36031L7.26017 1.48348C7.09878 1.32189 7.01614 1.1188 7.01225 0.874184C7.00856 0.629768 7.09119 0.422975 7.26017 0.253808C7.42933 0.0848364 7.63428 0.000350423 7.875 0.000350437C8.11572 0.00035045 8.32067 0.0848365 8.48983 0.253808L13.7331 5.4971C13.9439 5.70807 14.0493 5.95414 14.0493 6.23531C14.0493 6.51648 13.9439 6.76255 13.7331 6.97352L8.48983 12.2168C8.32825 12.3782 8.12515 12.4608 7.88054 12.4647C7.63613 12.4684 7.42933 12.3858 7.26017 12.2168C7.09119 12.0476 7.00671 11.8427 7.00671 11.602C7.00671 11.3613 7.09119 11.1563 7.26017 10.9871L11.1373 7.11031Z"/>
+                                        </svg>
+                                            
+                                    </i>
+                                </button>
+                                <a href="#n" class="more">
+                                    <span>더보기</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div><!--tab_content-->
+                </div><!--wrapper-->
+            </section>
             <section class="slogan"></section>
             <section class="adopt"></section>
             <section class="review"></section>
 
 
-
+                        
 
 
 

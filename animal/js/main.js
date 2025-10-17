@@ -1,28 +1,29 @@
 
 $(document).ready(function(){
 
-//**************************** 시작 : 현재 (pc)인지 ,(모바일)인지 체크 => 메뉴상태보고********************?********
-    let mobile_size = 1024
-    let window_w
-    let device_status //pc,mobile구분
+//**************************** 시작 : 현재 (pc)인지 ,(모바일)인지 체크 => 메뉴상태보고************************
+    
+    let mobile_size = 1024 //브라우저 너비가 1024px 이하이면 모바일
+    let window_w // 지금 브라우저의 실제 너비값(px) 을 담는 변수.
+    let device_status //지금 기기가 pc인지 mobile인지 상태를 저장할 변수
 
-    function device_chk(){  // 함수를 선언 한다
-        window_w = $(window).width()
-        if(window_w > mobile_size){ // 브라우저 넓이가 1024보다 클때 =pc버전이다
-            device_status = 'pc'
-        }else{
-            device_status = 'mobile'
+    function device_chk(){  // 함수를 선언 한다 (pc인지 mobile인지 구분해주는 검사기)
+        window_w = $(window).width() //현재 브라우저 창의 가로 길이(px 단위)가
+        if(window_w > mobile_size){ // 브라우저 넓이가 1024보다 클때
+            device_status = 'pc'    //=pc버전이다
+        }else{                      //아니면
+            device_status = 'mobile'//=모바일 버전이다
         }
-        console.log(device_status)
+        console.log(device_status)  //
     }
 
-    device_chk() //html 로딩이 완료된 이후 단1번 실행
-    $(window).resize(function(){ // 브라우져가 리사이즈 될때 마다 실행
-        device_chk()
+    device_chk() //페이지가 처음 열릴 때 한 번 실행해서 초기 상태가 PC인지 모바일인지 확인해서
+    $(window).resize(function(){ // 윈도우 사이즈가 리사이즈 될때마다 실행
+        device_chk() 
     })
 
 
-//--------------------------------끝 : 현재 (pc)인지 ,(모바일)인지 체크 => 메뉴상태보고----------------------------
+//*****************************끝 : 현재 (pc)인지 ,(모바일)인지 체크 => 메뉴상태보고**********************
 
 
 
@@ -31,10 +32,10 @@ $(document).ready(function(){
     let visual_time = 5000 /*변수 만들기-> 하나만 바뀌면 다 바뀌게 */
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-        // autoplay: {  /* 팝업 자동 실행 */
-        //     delay: 3000,
-        //     disableOnInteraction: true,
-        // },
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 4000,
+            disableOnInteraction: true,
+        },
 
         effect: "fade", /* fade 효과 */
 
@@ -43,7 +44,7 @@ $(document).ready(function(){
     });
 
 
-        //클릭하는지 감시-> 실행(숨기기기능)시키기
+        //클릭하는지 감시-> 실행(숨기기기능)시키기 ?
         $('.visual .ctrl_btn .stop').on('click' , function(){
             visual_swiper.autoplay.stop(); /* 일시정지 기능 */
             $(this).hide()
@@ -88,7 +89,7 @@ $(document).ready(function(){
 //---------------------------------- visual swiper 끝 ----------------------------------
 
 
-/*****************************시작 : pc버전 메뉴오버************************************ ?
+/*****************************시작 : pc버전 메뉴오버************************************ 
  * 메뉴에 마우스를 오버햇을때 (header .gnb)  : pc버전에서만(let으로 조건붙이기)
   1) header에 menu_pc 클래스 추가
   2)마우스를 오버한 메뉴의 1차메뉴 li에 ->over클래스 추가( header .gnb .gnb_wrap ul.depth1 > li )
@@ -99,21 +100,24 @@ $(document).ready(function(){
  */ 
 
 
-$('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){ //?
+$('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){ //? 마우스로 메뉴 위에 올렸을 때 작동시켜
                                                       //focusin =키보드접근성
-    if( device_status == 'pc'){  //pc일때만 동작
-         // console.log('오버함')
-         $('header').addClass('menu_pc')
-         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-         $(this).addClass('over')
+    if( device_status == 'pc'){  //pc일때만 이걸 동작해
+        $('header').addClass('menu_pc') //헤더에 '메뉴 열림' 상태 표시
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over') // 기존에준 over없애기
+        $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').hide()// 기존 2차메뉴 숨기기
+        $(this).addClass('over')// 내가 올린 메뉴에 over클래스 추가
+        $(this).find('.depth2').slideDown()// 그 메뉴의 2차메뉴를 슬라이드로 열기
     }
        
 })
 $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave' , function(){
     $(this).removeClass('over')
+    $(this).find('.depth2').hide()
 })
 $('header').on('mouseleave' , function(){
-    $(this).removeClass('menu_pc')  //왜this 를 넣어야 먹히지?header는 안되나
+    $(this).removeClass('menu_pc')  //
+                                   //왜this 를 넣어야 먹히지header는 안되나
 })
 
 $('header .util .search .sch_open ').on('focusin' , function(){
@@ -123,4 +127,168 @@ $('header .util .search .sch_open ').on('focusin' , function(){
 
 //------------------------------끝  : pc버전 메뉴오버 ------------------------------------
 
+
+/**************************** 시작 : mobile 버전1차메뉴 클릭**********************
+ * 1차메뉴a에 링크기는 없애기(depth2 열려야하니까)
+ * 
+ * 닫혀있는 메뉴를 클릭하면-> 기존에 열려있던 다른 메뉴를 다고 나만열기 (li open)클래스 추가
+ * 열려있는 메뉴를 클릭하면-> 나 자신을 닫고 끝남
+    (열린 메뉴, 닫힌메뉴 구분하는 방법 => open있으면 열린메뉴/ 없으면 닫힌메뉴)
+ */
+ 
+
+
+// * 1차메뉴a에 링크기는 없애기(depth2 열려야하니까) ? 1017
+$('header .gnb .gnb_wrap ul.depth1 > li > a').on('click' , function(e){
+    if( device_status == 'mobile'){
+        e.preventDefault();
+        if($(this).parent().hasClass('open') == true){ //열려있는 메뉴를 다시클릭햇을때
+            // console.log('열림')
+            $(this).parent().removeClass('open') //li에오픈클래스추가
+            $(this).next().slideUp()//2차 메뉴를 슬라이드로 ekerl
+        }else{ //열려있지 않은 다른 메뉴를 여는거
+             // console.log('닫힘')
+            $('header .gnb .gnb_wrap ul.depth1 > li > a').removeClass('open')
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() //
+            $(this).parent().addClass('open')
+            $(this).next().slideDown() //2차 메뉴를 슬라이드로 열기
+        }
+    }
+})
+/**************************** 끝 : mobile 버전1차메뉴 클릭************************/
+
+
+
+/**************************** 시작 : mobile 버전 menu-mo  (메뉴열기)***********************
+ * 열기를 클릭하면 헤더에  -> menu_mo  추가 (header .gnb .gnb_open )
+ * 닫기를 클릭하면  헤더에  -> menu_mo  삭제( header .gnb .gnb_wrap .gnb_close)
+*/  
+
+
+$('header .gnb .gnb_open').on('click' , function(){
+    $('header').addClass('menu_mo')
+})
+$('header .gnb .gnb_wrap .gnb_close').on('click' , function(){
+    $('header').removeClass('menu_mo')
+})
+
+
+/**************************** 끝 : mobile 버전 menu-mo  (메뉴열기)************************/
+
+
+/**************************** 시작 : 스크롤시 header에 fixed클래스주기***********************
+ * pc 모바일 둘다
+ * 스크롤이 조금만 되도 header에 fixed클래스 줌
+ * 다시 맨 꼭대기로 올라가면 fixed클래스 해지
+*/
+
+let scrolling //스크롤된 값
+function scroll_chk(){
+    scrolling = $(window).scrollTop() //현재스크롤값 넣어주기
+    if(scrolling > 0){
+        $('header').addClass('fixed')
+    }else{
+        $('header').removeClass('fixed')
+    }
+}
+
+
+scroll_chk() //문서가 로딩되고 단1번 실행
+$(window).scroll(function(){
+    scroll_chk() //스크롤 될때마다 1번실행
+})
+
+/**************************** 끝 : 스크롤시 header에 fixed클래스주기************************/
+
+
+/**************************** 시작 : '찾습니다' swiper ************************/
+const find01_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	
+	navigation: {
+		nextEl: '.find .item1 .next',
+		prevEl: '.find .item1 .prev',
+	},
+	
+});
+const find02_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		640: {    /* 640px 이상일때 적용 */
+			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24,
+		},
+	},
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	
+	navigation: {
+		nextEl: '.find .item2 .next',
+		prevEl: '.find .item2 .prev',
+	},
+	
+});
+
+
+
+
+
+/**************************** 끝 : '찾습니다' swiper ************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*     <1017 어려운거 >
+ * = ==차이 ? 
+ * 1차메뉴a에 링크기는 없애기 (뒷부분 : pc에서 2차메뉴 안열림)
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })//맨끝
+
+
+/* <다시볼거>
+  1. 현재 (pc)인지 ,(모바일)인지 (v)()
+  2.클릭하는지 감시 ()
+*/

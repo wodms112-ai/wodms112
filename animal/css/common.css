@@ -19,6 +19,7 @@
     --color-white05 : rgba(225, 225, 225, 0.05);
     --color-white03 : rgba(225, 225, 225, 0.03);
     --header-h : 80px;
+    --header-var : clamp(56px, 9vw, 80px);
     --wrapper-margin : 30px;
 
 }
@@ -28,8 +29,7 @@
         --font-size-title : 24px;
         --font-size-title2 : 20px;
         --header-h : 56px;
-        --wrapper-margin : 30px;
-
+        --wrapper-margin : 16px;
     }
 }
 body {
