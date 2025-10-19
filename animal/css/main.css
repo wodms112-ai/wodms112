@@ -51,7 +51,7 @@ header .util .mypage i {
     margin: 4px 0 0 0;
 }
 
-/*  header가 fixed 되었을때 ?*/ 
+/*  header가 fixed 되었을때 */ 
 header.fixed {
         background-color: var(--color-white);
         color: var(----color-title); 
@@ -64,7 +64,7 @@ header.fixed .logo a {
 
 
 /************************************시작 : pc버전 메뉴 (1025이상)*********************************/
-/*1024 이하는 메뉴가 접힘=>1025이상일때 스타일*/
+/*1024 이하는 메뉴가 접힘=> 1025이상일때 스타일*/
 @media screen and (min-width:1025px){ 
     header .gnb .gnb_open,
     header .gnb .gnb_wrap .gnb_logo,
@@ -117,7 +117,7 @@ header.fixed .logo a {
         position: relative;
     }
 
-    /* menu_pc 했을때 */ /*?*/
+    /* menu_pc 했을때 */ 
     header.menu_pc {
         background-color: var(--color-white);
         color: var(----color-title); 
@@ -127,10 +127,10 @@ header.fixed .logo a {
     header.menu_pc .logo a {
         background-image: url(../images/logo.svg);
     }
-    header .gnb .gnb_wrap ul.depth1 > li.over > a { /*li에 오버됐을때 a*/
+    header .gnb .gnb_wrap ul.depth1 > li.over > a { /*찾습니다 li에 오버됐을때 a*/
         color: var(--color-main);
     }
-    header .gnb .gnb_wrap ul.depth1 > li.over  > ul.depth2 {/*?*/
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {/*?*/
         /* display: block !important;  */
     }
 
@@ -516,8 +516,10 @@ header.fixed .logo a {
 
  /*< 10.17 궁금한거 >
 
- * logo 중복으로 주는 이유 = logo(pc로고) /gnb_logo(모바일열릴때로고, 메뉴가 열리면 로고를 가리니 따로줘야함)
- * height: calc(100dvh - var(--header-var)); 
+ header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {/*?*/
+        /* display: block !important;  */
+    
+ * /*height: calc(100dvh - var(--header-var)); 
  * 두배주는거 다시보기
  * 왜li에 border를 주는건지
  */
