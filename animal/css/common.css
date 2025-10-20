@@ -1,8 +1,15 @@
 /*중복되는 스타일 입력*/
 :root {
     --font-size-basic : 17px;
-    --font-size-title : 40px;
-    --font-size-title2 : 32px;
+     --font-size-title : clamp(24px, 3vw, 40px);
+     --font-size-title2 : clamp(20px, 2.5vw, 32px);
+    /* --font-size-title : 40px;
+        --font-size-title : 24px;
+
+    --font-size-title2 : 32px; 
+        --font-size-title : 20px; 
+    */
+   
     --font-weight-basic : 400;
     --font-weight-blod : 700;
     --line-height-basic : 1.5;
@@ -26,8 +33,6 @@
 @media screen and (max-width:768px){ 
     :root {
         --font-size-basic : 16px;
-        --font-size-title : 24px;
-        --font-size-title2 : 20px;
         --header-h : 56px;
         --wrapper-margin : 16px;
     }

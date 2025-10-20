@@ -425,10 +425,10 @@ header.fixed .logo a {
 }
 .find .tab_list ul li button {
     display: block;
-    padding: 8px 18px 8px 18px;
+    padding: 0.3125em 1.0938em 0.3125em 1.0938em; /*?*/
     border-radius: 40px;
     color: var(--color-white80);
-    font-size: 28px;
+    font-size: var(--font-size-title2);
     font-weight: var(--font-weight-blod);
 }
 .find .tab_list ul li.active button {
@@ -444,14 +444,86 @@ header.fixed .logo a {
 }
 .find .tab_content .tab_item {
     position: relative;  /*ctrl_btn 정렬의 기준*/
+    display: none; /*active 클래스 있는 것만 보이게 하기 위해*/
 }
 
+.find .tab_content .tab_item.active {
+    display: block;
+}
+.find .tab_content .tab_item .list .swiper-slide {
+    width: 297px;
+}
+.find .tab_content .tab_item .list .swiper-slide a {
+    display: block;
+
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 386px;
+    border-radius: 30px;
+    position: relative; /*data정렬의 기준*/
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo .date { /*?*/
+    position: absolute;
+    right: 18px;
+    bottom: 10px;
+    border-radius: 40px;
+    background-color: var(--color-main);
+    color: #F1F1F1;
+    padding: 3px 13px 3px 13px;
+}
+.find .tab_content .tab_item.item2 .list .swiper-slide a .photo .date {
+    background-color: #EA591A;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 {
+    display: flex;
+    gap: 0 7px ;
+    align-items: center;
+    margin: 30px 0 0 0;
+}
+
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 strong {
+    font-size: 24px;
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+    color: var(--color-white);
+    /*1줄제한*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul {
+    margin: 12px 0 0 0;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li {
+    display: flex;
+    gap: 0 12px;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li strong {
+    color: var(--color-white80);
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li span {
+    /*1줄제한*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li strong.mo_only {
+    display: none; /* 모바일글짜는 모바일에서만 보이게*/
+}
 .find .tab_content .tab_item .prev {
     position: absolute;
     left: -22px;
     top: 180px;
     z-index: 10;
+    display: flex;
     align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -464,7 +536,9 @@ header.fixed .logo a {
     right: -22px;
     top: 180px;
     z-index: 10;
+    display: flex;
     align-items: center;
+    justify-content: center;
     width: 44px;
     height: 44px;
     background-color:  rgba(0, 0, 0, 0.5);
@@ -484,31 +558,340 @@ header.fixed .logo a {
      }
 
 
+@media screen and (max-width:768px){
+            .find {
+                padding: 156px 0 140px 0;
+            
+            }
+            .find h2 {
+                text-align: left;
+            }
+            .find .tab_list {
+                margin: 17px 0 0 0;
+            }
+            .find .tab_list ul {
+                justify-content: flex-start; /*중앙배치*/
+                gap: 0 10px   ;
+            }
+            .find .tab_list ul li button {
+                display: block;
+                padding: 7px 10px 7px 10px; /*?*/
+                border-radius: 5px;
+                font-size: 24px;
+            }
+            
+            .find .tab_content { 
+                margin: 26px 0 0 0;
+            }
+            
+            .find .tab_content .tab_item .list .swiper-slide a .photo {
+                overflow: hidden;
+                height: 350px;
+                border-radius: 10px;            
+            }
+            
+            /* .find .tab_content .tab_item .list .swiper-slide a .photo .date {
+                position: absolute;
+                right: 18px;
+                bottom: 10px;
+                border-radius: 40px;
+                background-color: var(--color-main);
+                color: #F1F1F1;
+                padding: 3px 13px 3px 13px;
+            } */
+             /*?*/
+            .find .tab_content .tab_item .list .swiper-slide a .txt h4 {
+                margin: 20px 0 0 0;
+            }
+            
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul {
+                margin: 12px 0 0 0;
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul li {
+                gap: 0 12px;
+            }
+
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul li strong.mo_only {
+                display: block; /* 모바일글짜는 모바일에서만 보이게*/
+            }
+            .find .tab_content .tab_item .list .swiper-slide a .txt ul li strong.pc_only {
+                display: none; /* 모바일글짜는 모바일에서만 보이게*/
+            }
+            .find .tab_content .tab_item .prev {
+                position: absolute;
+                left: -22px;
+                top: 180px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                fill: var(--color-white);
+            }
+            
+            .find .tab_content .tab_item .next {
+                position: absolute;
+                right: -22px;
+                top: 180px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background-color:  rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                fill: var(--color-white);
+            }
+            .find .tab_content .tab_item .prev i,
+            .find .tab_content .tab_item .next i
+            {
+                display: block;
+                width: 13px;
+            }
+            .find .tab_content .tab_item .next, 
+            .find .tab_content .tab_item .prev {
+                display: none   ;
+            }
 
 
+/* ?
+            .find .tab_content .tab_item .more {
+                position: absolute;
+                right: 0;
+                top: -50px;
+                background-color: var(--color-white05);
+                border-radius: 50%;
+                background-image: url(../images/plus.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: contain;
+                } */
 
+} /*media*/
 
+.slogan {
+    margin: 245px 0 131px 0;
+    /* margin: clamp(98px, 10vw, 210px) 0 clamp(113px, 10vw, 142px);  */
+    text-align: center;
+}
+.slogan h2 {
+    font-size: clamp(30px, 5vw, 60px);
+    font-weight: var(--font-weight-blod);
+    line-height: 2.0;
+    color: var(--color-title);
+}
+.slogan h2 strong {
+    display: inline-block; /*?*/    
+    position: relative;/*before정렬의 기준*/
+    vertical-align: middle;
 
+}
+.slogan h2 strong::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%); /*좌우의 위아래가운데ㅔ*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 85%;
+    height: 3em;
+}
+.slogan h2 br.mo_only {
+    display: none; /*모바일에서만 보임*/
+}
+.slogan h2 strong.place { /*?*/
+    width: 4.05em;
+}
+.slogan h2 strong.place::before {
+    width: 4.05em;
+    background-image: url(../images/slogan_place.png);
+}
 
+.slogan h2 strong.amimal {
+    width: 3.5em;
+}
+.slogan h2 strong.amimal::before {
+    background-image: url(../images/slogan_amimal.png);
+}
 
+.slogan h2 strong.center {
+    width: 3.5em;
+}
+.slogan h2 strong.center::before {
+    background-image: url(../images/slogan_center.png);
+}
+.slogan h2 strong.call {
+    width: 2.5333em;
+}
+.slogan h2 strong.call::before {
+    background-image: url(../images/slogan_call.png);
+}
+.slogan p {
+    margin: 53px 0 0 0;
+    clear: var(--color-basic);
+}
 
+@media screen and (max-width:768px){ 
+    .slogan h2 br.mo_only {
+        display: block;
+    }
+    .slogan h2 br.pc_only {
+        display: none;
+    }
+    .slogan p {
+        display: none;
+    }
+} /*media*/
 
+.adopt {
+    overflow: hidden;
+    background-color: #1A3541;
+    color: var(--color-white);
+    fill: var(--color-white);
+    padding: clamp(103px, 7vw, 184px) 0 clamp(172px, 7vw, 340px) 0;
+    position: relative; /*ctrl_btn정렬의기준*/
+}
+.adopt .tit h2 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-blod);
+    text-align: center;
+}
+.adopt .list {
+    margin: 120px 0 0 0;
+}
+.adopt .list .swiper-slide { /*? 왜 너비랑 높이를 다른클래스에 주는건지1020*/
+    width: clamp(249px, 25vw, 380px);
+}
+.adopt .list .swiper-slide a {
+    display: flex;
+    flex-direction: column; /*?*/
+    align-items: center; /*가운데*/
+    text-align: center;
+}
+.adopt .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: clamp(249px, 25vw, 380px);
+    border-radius: 50%;
+}
+.adopt .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
+.adopt .list .swiper-slide a .cate {
+    background-color: #004593;
+    border-radius: 40px;
+    padding: 6px 22px 6px 22px;
+    margin-top: -0.6111em; /*margin은 마이너스가 가능함(사진위로 올라가기위해)?*/
+}
+.adopt .list .swiper-slide a .cate.cate2 {
+    background-color: #FF636B;
+}
+.adopt .list .swiper-slide a h3 {
+    font-size: 24px;
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+    color: var(--color-white);
+    margin: 0.375em 0 0.125em 0;
+}
+.adopt .list .swiper-slide a p {
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em; /*행간*줄수 = 단위는(em) ?*/
+    margin: 0 10% 0 10%; /*li넓이의 10% */
+}
+/* .adopt .tit .wrapper {
+    border: 1px solid red;
+} */
+.adopt .ctrl_btn {
+    position: absolute;
+    right: calc(50% - 630px);
+    top: 0;
+    display: flex;
+    gap: 10px;
+}
+.adopt .ctrl_btn .prev, 
+.adopt .ctrl_btn .next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-white05);
+    border-radius: 50%;
+}
+.adopt .ctrl_btn .prev i, 
+.adopt .ctrl_btn .next i {
+    display: block;
+    width: 14px;
+    vertical-align: top;
+}
+.adopt .ctrl_btn .more a {
+    display: block;
+    height: 40px;
+    padding: 0 20px;
+    background-color: var(--color-white05);
+}
+.adopt .ctrl_btn .more a i {
+    width: 14px;
+    display: block;
+}
 
+.adopt .rolling {
+    position: absolute; /*adopt 기준으로 정렬*/
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+    font-size: clamp(50px, 20vw, 100px);
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+    color: #fff;
+    white-space: nowrap;
+}
+.adopt .rolling p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: adopt_roll 8s linear infinite; 
+}
 
+@media screen and (max-width:768px){ 
 
+    .adopt .ctrl_btn .prev, 
+    .adopt .ctrl_btn .next {
+        display: none;
+    }
+    .adopt .ctrl_btn .more a {
+        display: block; 
+    }
+    .adopt .ctrl_btn .more a i {
+        width: 11px;
+    }
+}
 
+    /*애니메이션이름, 3초동안 실행, 가속도x ,무한반복
 
-
-
-
-
-
-
+}
+@keyframes adopt_roll {
+    0% { transform: translateX(0); }
+    100%{ transform: translateX(-50.17%); }
+}
+@media screen and (max-width:1320px){
+    .adopt .ctrl_btn {
+        right:var(--wrapper-margin);
+    }
+}
 /*< 10.16 다시볼거 >
 
- * rem em차이 v (rem =html을 기준으로 가변글짜크기 , 폰트사이즈 줘도안바뀜) (em =부모 기준으로 가변글짜크기, 폰트사이즈 준 기준으로 바뀜)
+ * rem em차이 v (rem =html을 기준으로 가변글짜크기 , 폰트사이즈 줘도 안바뀜) (em =부모 기준으로 가변글짜크기, 폰트사이즈 준 기준으로 바뀜)
  * html메뉴에 오버햇을때 v
  * 제이쿼리(현재 (pc)인지 ,(모바일)인지 체크 ) (? 다시)
  * 
@@ -519,9 +902,18 @@ header.fixed .logo a {
  header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {/*?*/
         /* display: block !important;  */
     
- * /*height: calc(100dvh - var(--header-var)); 
+  /*height: calc(100dvh - var(--header-var)); 
  * 두배주는거 다시보기
  * 왜li에 border를 주는건지
+ */
+
+/****************************************************************/
+
+ /*1020 모르는거
+ 1)클램프
+ 
+ 
+ 
  */
 footer {
     margin: 1000px 0 0 0;

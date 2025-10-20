@@ -59,13 +59,13 @@ $(document).ready(function(){
         })
 
 
-    // 전체 슬라이드 개수 (loop 상태에서도 실제 슬라이드 개수만) /*? */
+  // 전체 슬라이드 개수 (loop 상태에서도 실제 슬라이드 개수만) /*? */
     const totalSlides = $('.visual .swiper .swiper-slide').not('.swiper-slide-duplicate').length;
                              // 이 슬라이드 하나하나를 찾아라!/“복사본은 빼고 진짜 슬라이드만 세라!
         $('.visual .paging .total').text(totalSlides); 
                            // 이 요소(예: “/5” )에 슬라이드수를 글자로 표시해줘!
 
-    // 현재 슬라이드 번호 표시 함수
+ // 현재 슬라이드 번호 표시 함수
     function updateCurrent() { //처음 로드시 실행해
         let realIndex = visual_swiper.realIndex + 1; // realIndex는 =실제 인덱스visual_swiper.realIndex +1이야 (0부터 시작하므로 +1)
         $('.visual .paging .current').text(realIndex);//realIndex의 숫자를 글짜로 써줘
@@ -168,12 +168,12 @@ $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click' , function(e){
 */  
 
 
-$('header .gnb .gnb_open').on('click' , function(){
-    $('header').addClass('menu_mo')
-})
-$('header .gnb .gnb_wrap .gnb_close').on('click' , function(){
-    $('header').removeClass('menu_mo')
-})
+    $('header .gnb .gnb_open').on('click' , function(){
+        $('header').addClass('menu_mo')
+    })
+    $('header .gnb .gnb_wrap .gnb_close').on('click' , function(){
+        $('header').removeClass('menu_mo')
+    })
 
 
 /**************************** 끝 : mobile 버전 menu-mo  (메뉴열기)************************/
@@ -185,62 +185,71 @@ $('header .gnb .gnb_wrap .gnb_close').on('click' , function(){
  * 다시 맨 꼭대기로 올라가면 fixed클래스 해지
 */
 
-let scrolling //스크롤된 값
-function scroll_chk(){
-    scrolling = $(window).scrollTop() //현재스크롤값 넣어주기
-    if(scrolling > 0){
-        $('header').addClass('fixed')
-    }else{
-        $('header').removeClass('fixed')
+    let scrolling //스크롤된 값
+    function scroll_chk(){
+        scrolling = $(window).scrollTop() //현재스크롤값 넣어주기
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
     }
-}
 
 
-scroll_chk() //문서가 로딩되고 단1번 실행
-$(window).scroll(function(){
-    scroll_chk() //스크롤 될때마다 1번실행
-})
+    scroll_chk() //문서가 로딩되고 단1번 실행
+    $(window).scroll(function(){
+        scroll_chk() //스크롤 될때마다 1번실행
+    })
 
 /**************************** 끝 : 스크롤시 header에 fixed클래스주기************************/
 
 
 /**************************** 시작 : '찾습니다' swiper ************************/
-const find01_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-		640: {    /* 640px 이상일때 적용 */
-			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-			spaceBetween: 24,
-		},
-	},
-	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-	
-	navigation: {
-		nextEl: '.find .item1 .next',
-		prevEl: '.find .item1 .prev',
-	},
-	
-});
-const find02_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-		640: {    /* 640px 이상일때 적용 */
-			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
-			spaceBetween: 24,
-		},
-	},
-	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
-	
-	navigation: {
-		nextEl: '.find .item2 .next',
-		prevEl: '.find .item2 .prev',
-	},
-	
-});
+    const find01_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            1024: {    /* 640px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        navigation: {
+            nextEl: '.find .item1 .next',
+            prevEl: '.find .item1 .prev',
+        },
+        
+    });
+    const find02_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+            1024: {    /* 640px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        
+        navigation: {
+            nextEl: '.find .item2 .next',
+            prevEl: '.find .item2 .prev',
+        },
+        
+    });
 
 
 
@@ -250,6 +259,61 @@ const find02_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼�
 
 
 
+/**************************** 시작 : 찾습니다 tab기능 ***********************
+ * .find .tab_list ul li 를 클릭했을때 1번째를 클릭하면->자기자신에게active클래스를 주고
+                                                 ->.find .tab_list ul li .tab_item 에->active클래스
+                                                 ( li에서 어떤 tab_item에 보이게 해야하는지 단서를 줘야함 )
+ * 
+*/
+    let tab_name //? 설명 꼭다시보기1020 (1교시)
+    $('.find .tab_list ul li').on('click' , function(){
+        //클릭한 li에만 엑티브 클래스 추가
+        $('.find .tab_list ul li').removeClass('active')
+        $(this).addClass('active')
+        //클릭한li의 버튼에 선택됨이라 글자쓰기
+        $('.find .tab_list ul li button span').text('')
+        $(this).find('button span').text('선택됨')
+
+        //클릭한li와 관련된.tab_content .tab_item 에 엑티브클래스 추가
+        tab_name = $(this).attr('data-tab')
+        $('.find .tab_content .tab_item').removeClass('active')
+        //find로 찾을땐: 클래스명이면 .이 추가되야함 , 내가 가져온 이름에 . 이 없으면(tab_name)? => .추가해야함('.'+ tab_name)
+            $('.find .tab_content').find('.'+ tab_name).addClass('active')
+        //선택된 tab_item의 tutle에만 '선택됨'이라 써주기
+        $('.find .tab_content .tab_item').attr('title', '')
+        $('.find .tab_content').find('.'+ tab_name).attr('title', '선택됨' )
+    })
+
+
+
+/**************************** 끝 : 찾습니다 tab기능 ************************/
+
+/*************************시작 :입양 swiper***************************************/
+const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	centeredSlides: false, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	breakpoints: {
+		769: {    /* 640px 이상일때 적용 */
+			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 24
+		},
+	},
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	// autoplay: {  /* 팝업 자동 실행 */
+	// 	delay: 2500,
+	// 	disableOnInteraction: true,
+	// },
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	
+});
+
+
+
+/*************************끝 :입양 swiper***************************************/
 
 
 
@@ -259,12 +323,7 @@ const find02_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼�
 
 
 
-
-
-/*     <1017 어려운거 >
- * = ==차이 ? 
- * 1차메뉴a에 링크기는 없애기 (뒷부분 : pc에서 2차메뉴 안열림)
-
+/*     1020
 
 */
 
