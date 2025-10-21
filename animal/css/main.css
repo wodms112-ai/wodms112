@@ -674,9 +674,24 @@ header.fixed .logo a {
 } /*media*/
 
 .slogan {
+    position: relative;
+    background-color: #fff; /*?*/
+
     margin: 245px 0 131px 0;
     /* margin: clamp(98px, 10vw, 210px) 0 clamp(113px, 10vw, 142px);  */
     text-align: center;
+}
+.slogan .spin { /*?*/
+    position: absolute;
+    left: 0;
+    top: -322px;
+    z-index: 5;
+    mix-blend-mode: difference;
+    animation: spin 10s linear infinite;
+}
+@keyframes spin {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
 }
 .slogan h2 {
     font-size: clamp(30px, 5vw, 60px);
