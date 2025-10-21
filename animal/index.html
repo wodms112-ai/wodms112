@@ -7,7 +7,9 @@
     <!--라이브러리 파일-->
     <script src="js/jquery-3.7.1.min.js"></script>  <!--js는 불러오는순서도 중요함 -->
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/aos.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/aos.css">
     <!--내파일-->
     <script src=""></script>
     <link rel="stylesheet" href="css/main.css">
@@ -162,7 +164,7 @@
 
             <section class="find">
                 <div class="wrapper">
-                    <h2>찾습니다</h2>
+                    <h2 data-aos="fade-up">찾습니다</h2>
                     <div class="tab_list">
                         <ul>
                             <!--선택된 텝-> active클래스 추가
@@ -180,7 +182,7 @@
                     <div class="tab_content">
                         <!--선택된tab_item은 active클래스추가 title에 선택됨이라고 써줌-->
                         <div class="tab_item item1 active" title="선택됨"> 
-                            <h3 class="blind">가족을</h3>
+                            <h3 class="blind"  data-aos="fade-up">가족을</h3>
                             <div class="list">
                                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
@@ -625,11 +627,11 @@
             </section>
             <section class="slogan">
                 <div class="wrapper">
-                    <h2>공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는<br> 
+                    <h2 data-aos="fade-up">공공장소<strong class="place"></strong>에서<br class="mo_only"> 주인 없이 떠도는<br> 
                         동물<strong class="amimal"></strong>을 발견한 경우 <br> 
                         관할 시군구청 또는<br class="mo_only">  동물보호센터<strong class="center"></strong>에 <br> 
                         신고<strong class="call"></strong>하시기<br class="mo_only">  바랍니다.</h2>
-                    <p>
+                    <p  data-aos="fade-up">
                         소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는<br>  
                         동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.
                     </p>
@@ -637,7 +639,7 @@
             </section>
             <section class="adopt">
                 <div class="tit">
-                    <div class="wrapper"><h2>가족이 되어주세요</h2></div>
+                    <div class="wrapper"><h2 data-aos="fade-up">가족이 되어주세요</h2></div>
                 </div>
                 <div class="list">
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
@@ -753,17 +755,170 @@
                     <p>BE THE REASON THEY SMILE AGAIN BE THE REASON THEY SMILE AGAIN</p>
                 </div>
             </section>
-            <section class="review"></section>
-
-
-                        
-
-
-
+            <section class="review">
+                <div class="wrapper">
+                    <h2><span>행복한</span> 만남 그후</h2>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review01.jpg" alt=""></div>
+                                        <h3>쿠키가 온 지 25개월</h3>
+                                        <p>세상에서 제일 착하고 예쁜 우리 쿠키~잘 지내고 있답니다사고 친 적이 단 한번도 없는 천재견파쿠르 진짜 잘하고 던지는 인형 족족 받아내는 차기 올림픽 금메달~</p>
+                                        <div class="date">
+                                            <strong>류**</strong>
+                                            <span>2025-09-16</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review02.jpg" alt=""></div>
+                                        <h3>여울이 입양 3주차</h3>
+                                        <p>낯가리던 여울이는 이제 깨발랄 여울이가 되었답니다.밖에서 낯선 소리가 들리면 우렁차게 짖고, 잔디밭에서 뛰뛰하는 것도 좋아하는 여울이에요</p>
+                                        <div class="date">
+                                            <strong>김**</strong>
+                                            <span>2025-07-31</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review03.jpg" alt=""></div>
+                                        <h3>입양 후 5개월</h3>
+                                        <p>너무 귀엽구 사고도 많이 치지만 하루 하루 행복해요!</p>
+                                        <div class="date">
+                                            <strong>이**</strong>
+                                            <span>2025-07-31</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review04.jpg" alt=""></div>
+                                        <h3>뽀야와 안면도 여행</h3>
+                                        <p>뽀야와 여름휴가로 안면도에가서 바다도 보고 수영도하고 재밌게 놀고왔습니다.</p>
+                                        <div class="date">
+                                            <strong>박**</strong>
+                                            <span>2025-07-30</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review05.jpg" alt=""></div>
+                                        <h3>순둥이 만두가 입양온지 1년이 되었습니다.</h3>
+                                        <p>미용도 잘받고, 배변도 잘가리고, 순하디 순한 만두는 산책도 잘가고, 강아지 친구들도 많이 사귀면서 즐거운 하루를 보내고있습니다. 인사 개인기로 예쁨 받는 만두를 만나게해주셔서 감사합니다! 매일매일 만두와 행복한 추억만들며 지내겠습니다!!!!</p>
+                                        <div class="date">
+                                            <strong>박**</strong>
+                                            <span>2025-07-28</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review06.jpg" alt=""></div>
+                                        <h3>입양후, 3년차 된 알리오</h3>
+                                        <p>대전동물보호센터에서 근무하시는분들!!알리오가 입양한지 벌써 3년차가 되었어요!! 3년전, 다친 알리오가 보호소에 들어온 후 반년동안 정성껏 돌봐주시고 케어해주셔서 다시한번 감사드려요. </p>
+                                        <div class="date">
+                                            <strong>장**</strong>
+                                            <span>2025-07-27</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review07.jpg" alt=""></div>
+                                        <h3>찹쌀이랑 함께 한 8개월</h3>
+                                        <p>찹쌀이 잘 지내고 있어요! 마지막 사진처럼 길에서 처음 만났을때 앞이 안보이도록 쌓인 눈곱과 엉덩이에 오물들로 냄새가 심했는데, 요즘 찹쌀이한테는 상상도 할 수 없는 모습이예요 ㅎㅎ </p>
+                                        <div class="date">
+                                            <strong>류**</strong>
+                                            <span>2025-07-22</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/review08.jpg" alt=""></div>
+                                        <h3>뽀야 2개월차</h3>
+                                        <p>유기견을 입양한다는게 처음이라 걱정도 많이되고망설여졌지만 현재 뽀야는 아주 완벽 적응하여좋은 견생을 살고있답니다. </p>
+                                        <div class="date">
+                                            <strong>박**</strong>
+                                            <span>2025-07-15</span>
+                                        </div>
+                                    </a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="prev">
+                        <span class="blind">이전팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.91202 5.35453L13.1743 5.35454C13.4226 5.35454 13.6305 5.43834 13.7979 5.60595C13.9655 5.77337 14.0493 5.98123 14.0493 6.22954C14.0493 6.47784 13.9655 6.6857 13.7979 6.85312C13.6305 7.02073 13.4226 7.10453 13.1743 7.10453L2.91202 7.10453L6.78915 10.9814C6.95054 11.143 7.03318 11.346 7.03707 11.5907C7.04076 11.8351 6.95812 12.0419 6.78915 12.211C6.61998 12.38 6.41504 12.4645 6.17432 12.4645C5.93359 12.4645 5.72865 12.38 5.55948 12.211L0.316191 6.96774C0.105413 6.75677 2.47955e-05 6.5107 2.47955e-05 6.22953C2.47955e-05 5.94837 0.105413 5.7023 0.316191 5.49133L5.55948 0.248035C5.72107 0.086646 5.92416 0.00400711 6.16877 0.000118227C6.41319 -0.00357621 6.61998 0.0790627 6.78915 0.248035C6.95812 0.417202 7.04261 0.622146 7.04261 0.862868C7.04261 1.10359 6.95812 1.30853 6.78915 1.4777L2.91202 5.35453Z"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <button class="next">
+                        <span class="blind">다음팝업보기</span>
+                        <i>
+                            <svg viewBox="0 0 15 13" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.1373 7.11031L0.875 7.11031C0.626695 7.11031 0.418833 7.0265 0.251417 6.85889C0.0838055 6.69148 7.13254e-08 6.48361 7.42865e-08 6.23531C7.72475e-08 5.987 0.0838055 5.77914 0.251417 5.61173C0.418833 5.44411 0.626695 5.36031 0.875 5.36031L11.1373 5.36031L7.26017 1.48348C7.09878 1.32189 7.01614 1.1188 7.01225 0.874184C7.00856 0.629768 7.09119 0.422975 7.26017 0.253808C7.42933 0.0848364 7.63428 0.000350423 7.875 0.000350437C8.11572 0.00035045 8.32067 0.0848365 8.48983 0.253808L13.7331 5.4971C13.9439 5.70807 14.0493 5.95414 14.0493 6.23531C14.0493 6.51648 13.9439 6.76255 13.7331 6.97352L8.48983 12.2168C8.32825 12.3782 8.12515 12.4608 7.88054 12.4647C7.63613 12.4684 7.42933 12.3858 7.26017 12.2168C7.09119 12.0476 7.00671 11.8427 7.00671 11.602C7.00671 11.3613 7.09119 11.1563 7.26017 10.9871L11.1373 7.11031Z"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <div class="more">
+                        <a href="#n">
+                            <strong>3,832</strong>
+                            <span>건의후기</span>
+                            <i>
+                                <svg  viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.90625 9.96875H1.03125C0.739062 9.96875 0.494198 9.86986 0.296656 9.67209C0.0988856 9.47432 0 9.22934 0 8.93716C0 8.64474 0.0988856 8.39987 0.296656 8.20256C0.494198 8.00502 0.739062 7.90625 1.03125 7.90625H7.90625V1.03125C7.90625 0.739062 8.00514 0.494198 8.20291 0.296656C8.40068 0.0988856 8.64566 0 8.93784 0C9.23026 0 9.47513 0.0988856 9.67244 0.296656C9.86998 0.494198 9.96875 0.739062 9.96875 1.03125V7.90625H16.8438C17.1359 7.90625 17.3808 8.00514 17.5783 8.20291C17.7761 8.40068 17.875 8.64566 17.875 8.93784C17.875 9.23026 17.7761 9.47513 17.5783 9.67244C17.3808 9.86998 17.1359 9.96875 16.8438 9.96875H9.96875V16.8438C9.96875 17.1359 9.86986 17.3808 9.67209 17.5783C9.47432 17.7761 9.22934 17.875 8.93716 17.875C8.64474 17.875 8.39987 17.7761 8.20256 17.5783C8.00502 17.3808 7.90625 17.1359 7.90625 16.8438V9.96875Z" />
+                                </svg>
+                                    
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </section>
 
         </main>
            
-    <footer></footer>
-
+    <footer>
+        <div class="wrapper">
+            <button class="top">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.37948 3.43152L8.37948 15.5264C8.37948 15.819 8.28071 16.064 8.08317 16.2613C7.88586 16.4588 7.64088 16.5576 7.34823 16.5576C7.05559 16.5576 6.81061 16.4588 6.6133 16.2613C6.41575 16.064 6.31698 15.819 6.31698 15.5264L6.31698 3.43152L1.74786 8.00099C1.55742 8.1912 1.31806 8.2886 1.02976 8.29318C0.741702 8.29753 0.497982 8.20014 0.298607 8.00099C0.0994613 7.80162 -0.000111866 7.56008 -0.000111875 7.27637C-0.000111884 6.99266 0.0994612 6.75112 0.298607 6.55174L6.4782 0.372147C6.72685 0.123732 7.01686 -0.000476166 7.34823 -0.000476195C7.67961 -0.000476224 7.96962 0.123732 8.21826 0.372147L14.3979 6.55174C14.5881 6.74218 14.6855 6.98154 14.69 7.26984C14.6944 7.5579 14.597 7.80162 14.3979 8.00099C14.1985 8.20014 13.9569 8.29971 13.6732 8.29971C13.3895 8.29971 13.148 8.20014 12.9486 8.00099L8.37948 3.43152Z" />
+                    </svg> 
+                </i>
+                <span>TOP</span>
+            </button>
+            <div class="f_nav"> 
+                <ul>
+                    <li><a href="#n">개인정보처리방침</a></li>                           
+                    <li><a href="#n">회원가입</a></li>
+                    <li><a href="#n">로그인</a></li>
+                    <li><a href="#n">이용약관</a></li>
+                </ul>
+            </div>
+            <div class="f_info">
+                <span>(주)상상유니버스 유기견보호센터 </span>
+                <address>서울특별시 마포구 독막로28길 10</address>
+                <span>대표자 : 정민수 </span>
+                <span>사업자번호 : 898-87-00897</span>
+                <span>개인정보관리자 : 정민수</span>
+                <span>동물판매업 등록번호: 제3130000-045-2018-0050호</span>
+                <span>통신판매업 등록번호 : 제2020-서울마포-0181호</span>
+                <span>E-mail: master@zooseyo.com</span>
+            </div><!--f_info-->
+            <div class="copyright">
+                Copyright ⓒ 2013 종합유기견보호센터 All Rights Reserved
+            </div>
+        </div><!--wrapper-->
+    </footer>
+    <a href="https://unpkg.com/aos@2.3.1/dist/aos.css">다운로드1</a>
+    <a href="https://unpkg.com/aos@2.3.1/dist/aos.js">다운로드2</a>
 </body>
 </html>

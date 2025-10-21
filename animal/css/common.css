@@ -19,6 +19,7 @@
     --color-main : #007975;
     --color-main2 : #EA591A;
     --color-gray : #f4f4f4;
+    --color-gray2 : #f1f1f1;
     --color-white : #fff;
     --color-white80 : rgba(225, 225, 225, 0.8);
     --color-white30 : rgba(225, 225, 225, 0.3);
@@ -56,7 +57,7 @@ body {
     /* min-width: 1320px;  */
     /* 1260+30+30=1320 (최소 넓이주기) */
     position: relative; /*wrap을 기준으로 header를 정렬하기위해서*/
-    /* overflow: hidden;  *//*hidden이 있으면 sticky기능이 안됨*/
+    overflow: hidden; /*hidden이 있으면 sticky기능이 안됨*/
 }
 
 .blind {

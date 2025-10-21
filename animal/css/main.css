@@ -877,44 +877,302 @@ header.fixed .logo a {
     }
 }
 
-    /*애니메이션이름, 3초동안 실행, 가속도x ,무한반복
+
+.review {
+    margin: clamp(112px, 10vw, 130px) 0 clamp(109px, 11vw, 146px) 0;
+    
+}
+.review .wrapper {
+    position: relative;/*pre next more 정렬의 기준*/
+}
+.review .prev {
+    position: relative; /*pre next more 정렬의 기준*/
+}
+.review h2 {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+    color: var(--color-title);
+    position: relative; /*before정렬의 기준*/
+    padding: 0 0 20px 0;
+}
+.review h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100vw; /*브라우저의 넓이*/
+    height: 1px;
+    background-color: var(--color-gray2);
+    
+}
+.review h2 span {
+    position: relative; /*before정렬기준*/
+}
+
+.review h2 span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-main);
 
 }
-@keyframes adopt_roll {
-    0% { transform: translateX(0); }
-    100%{ transform: translateX(-50.17%); }
+
+.review .list {
+    margin: clamp(60px, 6vw, 90px ) 0 0 0;
 }
-@media screen and (max-width:1320px){
-    .adopt .ctrl_btn {
-        right:var(--wrapper-margin);
+.review .list .swiper-slide {
+    width: 267px;
+}
+.review .list .swiper-slide a {
+    display: block;
+}
+.review .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 289px;
+}
+.review .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /*이미자가 짤리지 않게 모두 나옴*/
+}
+.review .list .swiper-slide a h3 {
+    margin: 22px 0 5px 0;
+    font-size: 22px;
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+    color: var(--color-title);
+    /*1줄제한*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.review .list .swiper-slide a p {
+    /*2줄제한*/
+    overflow: hidden;
+    line-height: 1.5;
+    height: 3em; /* 행간*줄수 = 단위는 em*/
+    /*브라우저마다 일부는 작동 일부는 안될 수도있음*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.review .list .swiper-slide a .date {
+    margin:  clamp(14px, 2vw, 18px) 0 0 0;
+    display: flex;
+    gap: 0 20px;
+}
+.review .list .swiper-slide a .date strong {
+    color: var(--color-main);
+    position: relative;
+}
+.review .list .swiper-slide a .date strong::after {
+    content: "";
+    position: absolute;
+    right: -11px;
+    top: 6px;
+    width: 1px;
+    height: 13px;
+    background-color: var(--color-title);
+}
+.review .list .swiper-slide a .date span {
+   color: var(--color-title);
+}
+
+
+.review .prev,
+.review .next {
+    position: absolute;
+    left: -22px;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    z-index: 10;
+    border-radius: 50%;
+    background-color: var(--color-white80);
+    fill: var(--color-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.review .next {
+    left: auto; /*left값 풀어주기*/
+    right: -22px;
+}
+.review .prev i,
+.review .next i {
+    display: block;
+    width: 13px;
+    fill: var(--color-basic);
+}
+
+.review .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.review .more a {
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+}
+.review .more a strong{
+    color: var(--color-main);
+    font-size: 36px;
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+
+}
+.review .more span {
+    color: var(--color-basic);
+}
+.review .more a i {
+    display: block;
+    width: 18px;
+    fill: var(--color-basic);
+    margin-top: 5px;
+}
+/********? 놓친거1021*******/
+@media screen and (max-width:1400px){ 
+    .review .prev,
+    .review .next {
+        display: none; /*숨김*/
     }
+}/*media*/
+@media screen and (max-width:768px){ 
+    
+    .review .more a {
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: var(--color-main);
+        fill: var(--color-white);
+    }
+    .review .more a strong{
+        display: none;
+    }
+    .review .more span {
+        display: none;
+    }
+    .review .more a i {
+        width: 11px;
+        fill: var(--color-white);
+        margin-top: 5px;
+        margin: 0 0 1px 0;
+    }    
 }
-/*< 10.16 다시볼거 >
 
- * rem em차이 v (rem =html을 기준으로 가변글짜크기 , 폰트사이즈 줘도 안바뀜) (em =부모 기준으로 가변글짜크기, 폰트사이즈 준 기준으로 바뀜)
- * html메뉴에 오버햇을때 v
- * 제이쿼리(현재 (pc)인지 ,(모바일)인지 체크 ) (? 다시)
- * 
- */
+
+footer {
+    background-color: #0F222B;
+    color: var(--color-white80);
+    padding: 80px 0 70px 0;
+}
+footer .wrapper {
+    position: relative; /*top버튼 정렬의 기준*/
+}
+footer .top {
+    position: absolute;/*wrapper 기준으로 정렬*/
+    right: 0;
+    top: 0;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    fill: var(--color-white);
+    display:flex ; /*i , spqn이 위아래로 들어가게*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1; /*? i -span 사이의 여백*/
+
+}
+footer .top i {
+    width: 15px;
+    height: 17px;
+    display: block;
+}
+footer .top span {
+    font-size: 15px;
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap; /*모바일에서 여러개됨 ?*/
+    gap:2.3529em;
+}
+footer .f_nav ul li {
+    position: relative; /*after정렬의 기준*/
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1.1765em;
+    width: 1px;
+    height: 0.8824em;
+    background-color: rgba(225, 225, 225, 0.2);
+}
+footer .f_nav ul li:last-child:after {
+    display: none   
+}
+
+footer .f_info {
+    margin: 40px 0 30px 0;
+}
+footer .f_info span,
+footer .f_info address {
+    display: inline-block; /*사이즈 변동될때 글자가 단위별로 떨어지게 만듬*/
+    margin: 0 2.9412em 0 0;
+}
+@media screen and (max-width:768px){ 
+    footer {
+        padding: 120px 0 130px 0;
+    }
+    
+    footer .f_nav ul {
+        display: flex;
+        flex-wrap: wrap; /*모바일에서 여러개됨 ?*/
+        gap:2.3529em;
+    }
+
+    
+    footer .f_info {
+        margin: 50px 0 30px 0;
+    }
+    footer .f_info span,
+    footer .f_info address {
+        display: inline-block; /*사이즈 변동될때 글자가 단위별로 떨어지게 만듬*/
+        margin: 0 2.9412em 0 0;
+    }
+}/*media*/
+
+
+ 
+
+/****************************************************************/
+
+ /*1021 모르는거
+ 1) aos버튼
+ 
+
+
+
+
+
+
+
 
  /*< 10.17 궁금한거 >
 
  header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {/*?*/
         /* display: block !important;  */
     
-  /*height: calc(100dvh - var(--header-var)); 
- * 두배주는거 다시보기
- * 왜li에 border를 주는건지
- */
-
-/****************************************************************/
-
- /*1020 모르는거
- 1)클램프
- 
- 
- 
- */
-footer {
-    margin: 1000px 0 0 0;
-}
