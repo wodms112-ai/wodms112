@@ -319,11 +319,11 @@ const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요
 	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
 	breakpoints: {
-        769: {    /* 640px 이상일때 적용 */
+        769: {    /* 768px 이상일때 적용 */
 			slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 			spaceBetween: 24,
 		},
-        1025: {    /* 640px 이상일때 적용 */
+        1025: {    /* 1025px 이상일때 적용 */
 			slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 			spaceBetween: 24,
 		},
@@ -342,8 +342,8 @@ const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요
 /*****************************시작 : top버튼*****************?******************/
 $('footer .top').on('click' , function(){
     // console.log('top버튼클릭')
-    // $(window).scrollTop(0)
-    $('html, body').animate({
+    // $(window).scrollTop(0) => 
+    $('html, body').animate({ //animate 줄땐 body에 줘야함
         screenTop : 0
     }, 500)
 })
@@ -357,7 +357,8 @@ AOS.init({
     duration: 500, // 애니메이션 효과가 작동되는 시간
     easing: 'ease', // 가속도
     });
-
+    
+/*****************************끝 : 애니메이션효과***********************************/
 
 
 
