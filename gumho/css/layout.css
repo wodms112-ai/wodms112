@@ -1,0 +1,20 @@
+/****************
+
+파일명 : layout.css
+작성자 : 이재은
+작성일 : 25-10-23
+설 명  : header/footer에 공통으로 들어가는 속성)
+
+****************/
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--wrapper-margin); /*좌우사이드 여백*/
+}
