@@ -23,7 +23,6 @@ $(document).ready(function(){
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_pc')
-
         }
 
     })

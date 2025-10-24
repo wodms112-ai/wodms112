@@ -88,3 +88,7 @@ blind 클래스를 주면 사라짐*/
         display: block;
     }
 }
+::selection {
+    background-color: var(--color-main);
+    color: #fff;
+}
