@@ -9,7 +9,7 @@
 $(document).ready(function(){ //한개보이는 슬릭 
     $('.visual .popup').slick({
         autoplay: true, //팝업 자동 실행
-        autoplaySpeed: 3000, //팝업이 머무는 시간
+        autoplaySpeed: 5000, //팝업이 머무는 시간
         speed: 500, //팝업 전환 속도
         //fade: true,  //페이드 효과 적용
         dots: false, //하단 페이지 버튼 (true, false)

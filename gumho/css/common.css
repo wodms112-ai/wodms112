@@ -8,6 +8,11 @@
     --wrapper-margin : 30px;
 
 }
+@media screen and (max-width:1024px){ 
+    :root {
+        --header-h : 70px;
+    }
+}
 @media screen and (max-width:768px){ 
     :root {
         --header-h : 56px;
@@ -29,6 +34,7 @@ body {
     word-break: keep-all; /*단어별로 줄바꿈*/
     word-wrap: break-word; /*단어가 너무 길었을 때 강제 줄바꿈*/
 }
+
 @media screen and (max-width:768px){ 
     body {
         font-size: 1.6rem;
