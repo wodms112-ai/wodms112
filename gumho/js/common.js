@@ -42,6 +42,7 @@ $(document).ready(function(){
             console.log(gnb_open)
             if(gnb_open == true){ //열려있다면
                 $(this).parent().removeClass('open')
+                $(this).next().slideUp()
             }else{
                 $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
                 $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideup
@@ -63,7 +64,7 @@ $(document).ready(function(){
 
 
 // 스크롤을 내리면 header fixed
-    let scrolling //현재 스크롤된 값
+    let scrolling = $(window).scrollTop() //현재 스크롤된 값
     let prev_scroll//이전에 스크롤된 값
     let diff_scroll //차이값
     function scroll_chk(){
@@ -79,8 +80,7 @@ $(document).ready(function(){
             console.log('else냐')
         }
 
-        //console.log(scrolling)
-        if(scrolling > 0){
+        if(scrolling > 0){ //스크롤내림
             $('header').addClass('fixed')
         }else{ //0이거나 0보다 작은경우(fixed제거)
             $('header').removeClass('fixed')

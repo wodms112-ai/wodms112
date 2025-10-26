@@ -749,7 +749,7 @@ header.fixed .logo a {
 }
 .slogan p {
     margin: 53px 0 0 0;
-    clear: var(--color-basic);
+    color: var(--color-basic);
 }
 
 @media screen and (max-width:768px){ 
@@ -1173,14 +1173,6 @@ footer .f_info address {
  
 
 /****************************************************************/
-
- /*1021 모르는거
- 1) aos버튼
- 
-
-
-
-
 
 
 

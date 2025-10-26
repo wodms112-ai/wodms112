@@ -50,7 +50,7 @@
     position: relative;/*z-index필수값? 인덱스줄때 꼭 포시젼줘야되나?*/
     z-index: 10;
     color: #fff;
-    margin-bottom: 300px;
+    margin-bottom: 150px;
 }
 .visual .popup .slide .txt h2 {
     font-size: 6rem;
