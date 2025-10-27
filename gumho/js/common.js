@@ -39,7 +39,7 @@ $(document).ready(function(){
         if(device_status == 'moblie'){
             e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
             gnb_open = $(this).parent().hasClass('open')
-            console.log(gnb_open)
+            // console.log(gnb_open)
             if(gnb_open == true){ //열려있다면
                 $(this).parent().removeClass('open')
                 $(this).next().slideUp()
@@ -71,13 +71,11 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
-        console.log(diff_scroll)
+        // console.log(diff_scroll)
         if(diff_scroll < 0){ //위로스크롤
             $('header').addClass('up')
-            console.log('if냐')
         }else{//아래로스크롤
             $('header').removeClass('up')
-            console.log('else냐')
         }
 
         if(scrolling > 0){ //스크롤내림

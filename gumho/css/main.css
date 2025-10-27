@@ -133,10 +133,508 @@
             }
             .visual .popup .slide .txt p {
                 display: none; /*p태그 없애기*/
+            }           
+}/*media*/
+.biz {
+    margin: 140px 0 0 0;
+}
+.biz .tit strong {
+    color: var(--color-main);
+    font-weight: 700;
+}
+.biz .tit h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-title);
+    line-height: 1.3;
+}
+.biz .list {
+    margin: 90px 0 0 0 ;
+}
+.biz .list ul {
+    display: flex;
+    gap: 0 1px;
+}
+.biz .list ul li {
+    overflow: hidden;
+    width: 25%;
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/main/biz01.jpg);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0 1.8% 70px 1.8%;
+    position: relative; /*before정렬의 기준*/
+    transition: 0.5s;
+}
+.biz .list ul li.biz02 {
+    background-image: url(../images/main/biz02.jpg);
+}
+.biz .list ul li.biz03 {
+    background-image: url(../images/main/biz03.jpg);
+}
+.biz .list ul li.biz04 {
+    background-image: url(../images/main/biz04.jpg);
+}
+.biz .list ul li::before { /*그라데이션*/
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+.biz .list ul li .txt {
+    position: relative;
+    z-index: 10; /*before보다 먼저 배치하기 위해*/
+}
+.biz .list ul li .txt h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+
+@media screen and (min-width:1025px){/*1025이상일때 = pc버전일때*/
+        .biz .list ul li.active {
+            width: 62%; /*다른li도 %들어가니까 원래% 보다 더 줘서 넣기*/
+        }
+        .biz .list ul li .txt {
+            transform: translateY(100px);
+            transition: transform 0.5s;
+        }
+        .biz .list ul li.active .txt {
+            transform: translateY(0);
+        }
+        .biz .list ul li.active p {
+            opacity: 1; 
+        }
+        .biz .list ul li.active a {
+            opacity: 1; 
+        }
+        .biz .list ul li.active a:hover {
+            background-color: #fff;
+            color: var(--color-title);
+        }
+        .biz .list ul li.active a:hover::after {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill=%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.86525 3.24871L6.53324 0.916699C6.42781 0.811275 6.37581 0.687966 6.37723 0.546772C6.37853 0.405577 6.43053 0.280025 6.53324 0.170115C6.64303 0.0603234 6.76923 0.00359784 6.91184 -6.18657e-05C7.05445 -0.00372158 7.18065 0.0494036 7.29045 0.159313L10.4631 3.33176C10.591 3.45985 10.655 3.60925 10.655 3.77996C10.655 3.95067 10.591 4.10007 10.4631 4.22816L7.29045 7.40061C7.18514 7.50591 7.06006 7.55792 6.91521 7.55662C6.77035 7.5552 6.64303 7.49959 6.53324 7.3898C6.43053 7.27989 6.3774 7.15546 6.37386 7.01651C6.3702 6.87756 6.42333 6.75313 6.53324 6.64322L8.86525 4.31121L0.531352 4.31121C0.380595 4.31121 0.254394 4.26033 0.152748 4.15856C0.0509845 4.05692 0.00010236 3.93072 0.000102373 3.77996C0.000102386 3.6292 0.0509846 3.503 0.152748 3.40135C0.254394 3.29959 0.380595 3.24871 0.531352 3.24871L8.86525 3.24871Z' /%3E%3C/svg%3E%0A");
+        }
+        .biz .list.over ul li:not(.active) {
+            /*li중에서 active가 없는 li전부다*/
+            color: rgba(225, 225, 225, 0.8);
+        }
+        .biz .list ul li:not(.active)::before { /*active 들어있는거 빼고 다-> 검은색배경색넣기*/
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            /* background-image취소하하고 background-color를 추가해서  background로*/
+        }
+        .biz .list ul li .txt p {
+            opacity: 0;
+            margin: 6px 0 0 0;
+            white-space: nowrap;
+        }
+        .biz .list ul li .txt a {
+            opacity: 0;
+            border: 1px solid #fff;
+            border-radius: 30px;
+            padding: 1px 53px 1px 19px;
+            display: inline-block;
+            position: relative;
+            margin: 20px 0 0 0;
+        }
+        .biz .list ul li .txt a::after {
+            content: "";
+            position: absolute;
+            right: 12px;
+            top: 9px;
+            width: 10px;
+            height: 8px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 8' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.86525 3.24871L6.53324 0.916699C6.42781 0.811275 6.37581 0.687966 6.37723 0.546772C6.37853 0.405577 6.43053 0.280025 6.53324 0.170115C6.64303 0.0603234 6.76923 0.00359784 6.91184 -6.18657e-05C7.05445 -0.00372158 7.18065 0.0494036 7.29045 0.159313L10.4631 3.33176C10.591 3.45985 10.655 3.60925 10.655 3.77996C10.655 3.95067 10.591 4.10007 10.4631 4.22816L7.29045 7.40061C7.18514 7.50591 7.06006 7.55792 6.91521 7.55662C6.77035 7.5552 6.64303 7.49959 6.53324 7.3898C6.43053 7.27989 6.3774 7.15546 6.37386 7.01651C6.3702 6.87756 6.42333 6.75313 6.53324 6.64322L8.86525 4.31121L0.531352 4.31121C0.380595 4.31121 0.254394 4.26033 0.152748 4.15856C0.0509845 4.05692 0.00010236 3.93072 0.000102373 3.77996C0.000102386 3.6292 0.0509846 3.503 0.152748 3.40135C0.254394 3.29959 0.380595 3.24871 0.531352 3.24871L8.86525 3.24871Z' /%3E%3C/svg%3E%0A");
+        } 
+}/*media - pc*/
+section .tit h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-title);
+    line-height: 1.3;
+}
+
+@media screen and (max-width:1024px){
+    /*1024이하 :*/
+    .biz .list {
+        overflow-x: auto; /*가로스크롤허용*/
+    }
+    .biz .list ul {
+        gap: 0 8px;
+        width: 1024px;
+        margin: 0 var(--wrapper-margin) 0 var(--wrapper-margin);
+        /*
+        li넓이(250px)*4 = 1000px
+        li사이 여백(8px)*3 = 24px
+        1000 + 24 = 1024px
+
+        =>flex를 주면 넓이를 맘대로 줘버리니까 계산해서 넣기 
+        */
+    }
+    .biz .list ul li {
+        width: 300px;
+        height: 450px;
+        padding: 0 20px 40px 20px;
+        border-radius: 10px;
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 20px;
+        margin: 6px 0 0 0;
+        white-space: wrap;
+    }
+    .biz .list ul li .txt p {
+        display: none;
+    }
+    .biz .list ul li .txt a {
+        position: absolute; /*txt를 기준으로 정렬*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .biz .list ul li .txt a span {
+        display: none; /*글자숨기기*/
+    }
+
+}/*media - 태블릿*/
+
+
+
+@media screen and (max-width:768px){
+    .biz {
+        margin: 100px 0 0 0;
+    }
+    .biz .tit h2 {
+        font-size: 20px;
+    }
+    .biz .list {
+        margin: 25px 0 0 0 ;
+    }
+    .biz .list ul {
+        gap: 0 8px;
+        width: 1024px;
+
+        /*
+        li넓이(250px)*4 = 1000px
+        li사이 여백(8px)*3 = 24px
+        1000 + 24 = 1024px
+
+        =>flex를 주면 넓이를 맘대로 줘버리니까 계산해서 넣기 
+        */
+    }
+    .biz .list ul li {
+        width: 250px;
+        height: 320px;
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 20px;
+    }
+
+
+}/*media - 모바일*/
+.news {
+    margin: 210px 0 0 00;
+}
+.news .tit strong {
+    color: var(--color-main);
+    font-weight: 700;
+}
+.news .tit h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-title);
+    line-height: 1.3;
+    margin: 6px 0 0 0;
+} 
+.news .list {
+    margin: 27px 0 0 0;
+}
+.news .list .swiper-slide a {
+    display: block;
+    border-top: 1px solid #ccc;
+    position: relative; /*before정렬의기준*/
+}
+.news .list .swiper-slide a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-main);
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover:before {
+    width: 50%;
+}
+.news .list .swiper-slide a .date {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-title);
+    margin: 10px 0 15px 0;
+    display: block;
+}
+.news .list .swiper-slide a h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-title);
+
+    /*2줄제한*/
+    line-height: 1.3;
+    height: 2.6em; /*행간*줄수 = 단위em*/
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.news .list .swiper-slide a p {
+    margin: 15px 0 17px 0;
+    /*3줄제한*/
+    line-height: 1.5;
+    height: 4.5em; /*행간(1.5)*줄수(3) = 단위em*/
+    overflow: hidden;
+
+    word-break: break-all; /* 단어별로 줄바꿈해제*/
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 149px;
+
+}
+.news .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .ctrl_wrap {
+    margin: 42px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+.news .ctrl_wrap .scrollbar {
+    width: calc(100% - 213px);
+    height: 2px;
+    background-color: #D9D9D9;
+    border-radius: 2px;
+}
+.news .ctrl_wrap .inner {
+    display: flex;
+    gap: 0 6px;
+}
+.news .ctrl_wrap .scrollbar .swiper-scrollbar-drag {
+    height: 4px;
+    background-color: var(--color-main);
+    top: -1px;
+}
+.news .ctrl_wrap .btn_prev,
+.news .ctrl_wrap .btn_next {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 6px;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='11' viewBox='0 0 6 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.21943 5.39128L5.61353 9.78538C5.72942 9.90127 5.78586 10.0392 5.78284 10.1993C5.77983 10.3593 5.72038 10.4973 5.60449 10.6133C5.4886 10.7292 5.35064 10.7871 5.19061 10.7871C5.03059 10.7871 4.89258 10.7292 4.77659 10.6133L0.310741 6.13838C0.205352 6.03289 0.127234 5.91472 0.0763869 5.78386C0.0254426 5.653 -2.91036e-05 5.52214 -2.90922e-05 5.39128C-2.90807e-05 5.26042 0.0254426 5.12955 0.076387 4.99869C0.127234 4.86783 0.205352 4.74966 0.310741 4.64417L4.78564 0.169277C4.90153 0.0533885 5.03798 -0.00304801 5.19499 -3.43837e-05C5.3521 0.00297924 5.4886 0.0624313 5.60449 0.17832C5.72038 0.294209 5.77832 0.432167 5.77832 0.592195C5.77832 0.752222 5.72038 0.89023 5.60449 1.00622L1.21943 5.39128Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+
+}
+.news .ctrl_wrap .btn_next {
+    transform: rotate(180deg);
+}
+.news .ctrl_wrap a .more {
+    display: block;
+    height: 28px;
+    border: 1px solid #555;
+    border-radius: 20px;
+    padding: 0 53px 0 19px;
+    position: relative;
+
+}
+.news .ctrl_wrap a .more::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 9px;
+    width: 11px;
+    height: 8px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.86513 3.24871L6.53312 0.916699C6.42769 0.811275 6.37569 0.687966 6.37711 0.546771C6.3784 0.405577 6.43041 0.280024 6.53312 0.170115C6.64291 0.0603229 6.76911 0.0035974 6.91172 -6.23161e-05C7.05433 -0.00372203 7.18053 0.0494034 7.29032 0.159313L10.4629 3.33176C10.5909 3.45985 10.6549 3.60925 10.6549 3.77996C10.6549 3.95067 10.5909 4.10007 10.4629 4.22816L7.29032 7.40061C7.18502 7.50591 7.05994 7.55792 6.91508 7.55662C6.77023 7.5552 6.64291 7.49959 6.53312 7.3898C6.43041 7.27989 6.37728 7.15546 6.37374 7.01651C6.37008 6.87756 6.42321 6.75313 6.53312 6.64322L8.86513 4.31121L0.53123 4.31121C0.380473 4.31121 0.254272 4.26033 0.152626 4.15856C0.0508626 4.05692 -1.97102e-05 3.93072 -1.9697e-05 3.77996C-1.96838e-05 3.6292 0.0508627 3.503 0.152626 3.40135C0.254272 3.29959 0.380474 3.24871 0.53123 3.24871L8.86513 3.24871Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:768px){
+            .news {
+                margin: 100px 0 0 00;
+            }
+            .news .list {
+                margin: 38px 0 0 0;
+            }
+            .news .list .swiper-slide a .date {
+                font-size: 3.2rem;
+                margin: 18px 0 17px 0;
+            }
+            .news .list .swiper-slide a h2 {
+                font-size: 1.9rem;
             }
 
+            .news .list .swiper-slide a .photo {
+                overflow: hidden;
+                height: 140px;
+            }
+            .news .ctrl_wrap {
+                margin: 48px 0 0 0;
+            }
+            .news .ctrl_wrap .scrollbar {
+                width: calc(100% - 213px);
+                height: 2px;
+                background-color: #D9D9D9;
+                border-radius: 2px;
+            }
+            .news .ctrl_wrap .inner {
+                display: flex;
+                gap: 0 6px;
+            }
+            .news .ctrl_wrap .scrollbar .swiper-scrollbar-drag {
+                height: 4px;
+                background-color: var(--color-main);
+                top: -1px;
+            }
+            .news .ctrl_wrap .btn_prev,
+            .news .ctrl_wrap .btn_next {
+                display: none;
+            }
+            .news .ctrl_wrap .btn_next {
+                transform: rotate(180deg);
+            }
+            .news .ctrl_wrap a {
+                display: block;
+                height: 28px;
+                border: 1px solid #555;
+                border-radius: 20px;
+                padding: 0 53px 0 19px;
+                position: relative;
             
-}/*media*/
+            }
+            .news .ctrl_wrap a::after {
+                content: "";
+                position: absolute;
+                right: 12px;
+                top: 9px;
+                width: 11px;
+                height: 8px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.86513 3.24871L6.53312 0.916699C6.42769 0.811275 6.37569 0.687966 6.37711 0.546771C6.3784 0.405577 6.43041 0.280024 6.53312 0.170115C6.64291 0.0603229 6.76911 0.0035974 6.91172 -6.23161e-05C7.05433 -0.00372203 7.18053 0.0494034 7.29032 0.159313L10.4629 3.33176C10.5909 3.45985 10.6549 3.60925 10.6549 3.77996C10.6549 3.95067 10.5909 4.10007 10.4629 4.22816L7.29032 7.40061C7.18502 7.50591 7.05994 7.55792 6.91508 7.55662C6.77023 7.5552 6.64291 7.49959 6.53312 7.3898C6.43041 7.27989 6.37728 7.15546 6.37374 7.01651C6.37008 6.87756 6.42321 6.75313 6.53312 6.64322L8.86513 4.31121L0.53123 4.31121C0.380473 4.31121 0.254272 4.26033 0.152626 4.15856C0.0508626 4.05692 -1.97102e-05 3.93072 -1.9697e-05 3.77996C-1.96838e-05 3.6292 0.0508627 3.503 0.152626 3.40135C0.254272 3.29959 0.380474 3.24871 0.53123 3.24871L8.86513 3.24871Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+            }
+} /*media*/
+.service {
+    margin: 120px 0 0 0;
+}
+.service .tit {
+    display: none;
+}
+.service .list { /*?*/
+    background: url(../images/main/service_bg01.jpg) no-repeat center center / cover;
+    color: #fff;
+    transition: 0.5s;
+}
+.service .list[data-bg="service01"]{
+    background-image: url(../images/main/service_bg01.jpg);
+}
+.service .list[data-bg="service02"] {
+    background-image: url(../images/main/service_bg02.jpg);
+}
+.service .list[data-bg="service03"] {
+    background-image: url(../images/main/service_bg03.jpg);
+}
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    width: 33.33%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.service .list ul li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 240px;
+    width: 1px;
+    height: 130px;
+    background-color: rgba(225, 225, 225, 0.4);
+
+}
+.service .list ul li:last-child:after {
+    display: none;
+}
+.service .list ul li a {
+    display: block;
+    transform: translateY(0);
+    transition: transform 0.5s;
+}
+.service .list ul li:hover a { /*?*/
+    transform: translateY(23px);
+}
+.service .list ul li a h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 6px 0 0 0;
+}
+.service .list ul li a .more {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 1px 53px 1px 19px;
+    position: relative; /*after정렬의 기준*/
+    display: inline-block;
+    margin: 17px 0 0 0;
+
+}
+.service .list ul li a .more::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 11px;
+    width: 11px;
+    height: 8px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.86525 3.24871L6.53324 0.916699C6.42782 0.811275 6.37581 0.687966 6.37723 0.546771C6.37853 0.405577 6.43053 0.280024 6.53324 0.170115C6.64303 0.0603229 6.76923 0.0035974 6.91184 -6.23161e-05C7.05445 -0.00372203 7.18065 0.0494034 7.29045 0.159313L10.4631 3.33176C10.591 3.45985 10.655 3.60925 10.655 3.77996C10.655 3.95067 10.591 4.10007 10.4631 4.22816L7.29045 7.40061C7.18514 7.50591 7.06006 7.55792 6.91521 7.55662C6.77035 7.5552 6.64303 7.49959 6.53324 7.3898C6.43053 7.27989 6.3774 7.15546 6.37386 7.01651C6.3702 6.87756 6.42333 6.75313 6.53324 6.64322L8.86525 4.31121L0.531352 4.31121C0.380595 4.31121 0.254394 4.26033 0.152748 4.15856C0.0509847 4.05692 0.00010236 3.93072 0.000102373 3.77996C0.000102386 3.6292 0.0509847 3.503 0.152748 3.40135C0.254394 3.29959 0.380596 3.24871 0.531352 3.24871L8.86525 3.24871Z' fill='white'/%3E%3C/svg%3E%0A");
+}
 
 
 
@@ -144,20 +642,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*23일-> em기능 */
 
 footer {
     margin: 500px;
