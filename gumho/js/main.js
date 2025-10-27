@@ -22,7 +22,7 @@ $(document).ready(function(){ //한개보이는 슬릭
 * .biz .list ul li에 마우스를 오버하면-> li에 ative클래스추가
 * .biz .list에는-> over클래스 추가
 
-=> 그럼언제? : 
+=> 그럼언제 out? : 
 ******** */
 
     $('.biz .list ul li').on('mouseenter' , function(){
@@ -67,13 +67,13 @@ const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소�
 
 let service_name
 $('.service .list ul li').on('mouseenter' , function(){
-    service_name = $(this).attr('data-bg')
+    service_name = $(this).attr('data-bg') //지금 마우스를 올린 그 li의 data-bg 속성 값을 가져와서 service_name 변수에 저장해.
     // console.log(service_name)
     $('.service .list').attr('data-bg' , service_name)
     /*attr = 기존에 있는 값은 지우고 내가 준 값으로 새로 채우는 것
       add =  추가하는것 */
 })
-$('.service .list ul li').on('mouseleave' , function(){
+$('.service .list').on('mouseleave' , function(){
     $('.service .list').attr('data-bg' ,' ')
     
 })
