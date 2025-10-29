@@ -12,7 +12,7 @@ $(document).ready(function(){
         }else{
             device_status = 'moblie'
         }
-        console.log(device_status)
+        // console.log(device_status)
     }
 
     device_chk()//문서가 로딩되었을때 1번실행
@@ -89,4 +89,26 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scroll_chk() //스크롤할때마다 실행
     })
+
+    /* family_site 열고 닫기
+        footer .f_util .family_site .family_open 열기을 클릭하면
+        footer .f_util .family_site 에 open 클래스 추가
+        footer .f_util .family_site .family_close 닫기를 클릭하면
+    */
+        $('footer .f_util .family_site .family_open').on('click', function(){
+            $('footer .f_util .family_site').addClass('open')
+            $('footer .f_util .family_site .family_wrap').slideDown()
+        })
+        $('footer .f_util .family_site .family_close').on('click', function(){
+            $('footer .f_util .family_site').removeClass('open')
+            $('footer .f_util .family_site .family_wrap').slideUp()
+        })
+    
+        /* top버튼을 클릭하면 상단으로 이동 */
+        $('footer .f_util .top').on('click', function(){
+            $('html, body').animate({
+                scrollTop : 0
+            }, 500)
+        })
+
 })//맨끝
