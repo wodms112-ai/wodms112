@@ -351,12 +351,12 @@ header.up:not(.menu_pc, .menu_mo) {
         background-size: 19px;
     }
 }/*@media*/
-/****************************서브에서 이미 선택되어 있는 메뉴 디자인하기*****************************/
+/**************************서브에서 이미 선택되어 있는 메뉴 디자인하기**************************/
 
 header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
     color: var(--color-main);
     font-weight: 700;
-    text-decoration: underline;
+    text-decoration: underline; /*pc 모바일 공통으로 들어가는 언더라인*/
 }
 @media screen and (min-width:1025px){
     header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a > span::after {
