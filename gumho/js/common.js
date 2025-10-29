@@ -34,7 +34,7 @@ $(document).ready(function(){
     })
 
     let gnb_open 
-
+    let gnb_active
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
         if(device_status == 'moblie'){
             e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
@@ -44,7 +44,7 @@ $(document).ready(function(){
                 $(this).parent().removeClass('open')
                 $(this).next().slideUp()
             }else{
-                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')   
                 $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideup
                 $(this).parent().addClass('open')
                 $(tnis).next().slideDown()
