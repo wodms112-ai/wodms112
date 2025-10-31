@@ -18,8 +18,11 @@
     *영역에서 벗어났을때(종료)
 */
 $(document).ready(function(){
-     let ceo_length = $('.ctn_ceo').length
+    let ceo_length = $('.ctn_ceo').length
+    /*.ctn_ceo 라는 클래스를 가진 박스가 몇 개인지 세서(length),
+    ceo_length라는 이름으로 저장해둬 =>있을 때만 실행하기위해*/
     function ceo_ani(){
+    
         let ceo_win_h = $(window).height() //브라우저의 높이
         let ceo_scroll = $(window).scrollTop() //현재 스크롤 된값
         let ceo_area_name = $('.ctn_ceo .ceo_head') //선택자
@@ -59,7 +62,7 @@ $(document).ready(function(){
             ceo_obj.height(ceo_obj_end + '%')
             ceo_obj_bg.css('opacity', ceo_obj_bg_end)
         }else if(ceo_scroll < ceo_area_start){
-            //console.log('시작전')
+            // console.log('시작전')
             ceo_obj_wrap.attr('data-status', 'start')
             ceo_obj.width(ceo_obj_start + '%')
             ceo_obj.height(ceo_obj_start + '%')
@@ -86,14 +89,51 @@ $(document).ready(function(){
             ceo_obj_bg.css('opacity', ceo_obj_bg_count)
         }
     }
+    /* function 안에는 “어떻게 작동할지(기능 자체)”를 넣고,
+      function 밖에서는 “언제 실행할지(조건이나 시점)”을 정하는 것.*/
+
+
     if(ceo_length > 0){
-        ceo_ani() //브라우저가 로딩되었을때 단 한번
+        ceo_ani() //이제 이 레시피를 =>브라우저가 로딩되었을때 단 한번
     }
     $(window).scroll(function(){
         if(ceo_length > 0){
-            ceo_ani() //브라우저가 스크롤 될때마다 한번씩
+            ceo_ani() //이제 이 레시피를 =>브라우저가 스크롤 될때마다 한번씩
         }
     })
+
+/***********************************************************************************
+ * 회사소개 > 연혁
+ * ********************************************************************************* */
+
+
+
+
+
+/****** */
+    function his_area(){
+        //함수 안에서 선언한 변수명은 지역변수라고함
+        //다른 함수안에 잇는 변수와 변수명이 같아도됨
+        let obj_name = $('.ctn_history .his_cont')
+        let obj_length = obj_name.length
+        let obj_top //각컨텐츠의 꼭대기부터의 거리값
+        let obj_start
+        let scrollig = $(window).scrollTop()
+        // console.log('obj_length')
+
+        for(i=0; i<obj_length; i++){
+            obj_top = obj_name.eq(i).offset.top
+            console.log(i, '번째', obj_top  )
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 

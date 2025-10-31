@@ -188,3 +188,331 @@
 
 
 }/*media*/
+
+
+
+/* ##########################기업소개 > 연혁 (시작)#############################*/
+.ctn_history .his_wrap {
+        border: 5px solid red;
+}
+.ctn_history .his_head {
+        font-size: clamp(20px, 2.5vw, 4rem);
+        padding: 3.5294em 0 3.5294em 0;
+        background: url(../images/contents/his_head01.jpg) no-repeat center center / contain;
+        color: rgba(225, 225, 225, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.ctn_history .his_head.bg2 {
+        background-image: url(../images/contents/his_head02.jpg);
+}
+.ctn_history .his_head.bg3 {
+        background-image: url(../images/contents/his_head03.jpg);
+}
+.ctn_history .his_head.bg4 {
+        background-image: url(../images/contents/his_head04.jpg);
+}
+.ctn_history .his_head h3 {
+        font-weight: 700;
+        line-height: 1.3;
+        position: relative; /*stron정렬의 기준*/
+        white-space: nowrap; /*줄바꿈금지*/
+}
+.ctn_history .his_head h3 strong {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50%; /*넓이로 인터렉티브주기 따라서 넓이가 글자만큼딱 잡혀있어야함(flex를 줘서 넓이제한)*/
+        overflow: hidden;
+        color: #fff;
+}
+.ctn_history .his_cont {
+        margin: 100px 0 140PX 0;
+}
+.ctn_history .his_cont .wrapper {
+        display: flex; /*his_tit 과 his_year=>좌우배치*/
+        justify-content: space-between;
+}
+.ctn_history .his_cont.tit_right .wrapper {
+        flex-direction: row-reverse; /*좌우반전*/
+        text-align: right;
+}
+.ctn_history .his_cont .his_tit strong{
+        font-weight: 700;
+        color: var(--color-main);
+}
+.ctn_history .his_cont .his_tit {
+        max-width: 45%;
+}
+.ctn_history .his_cont .his_tit h4 {
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--color-title);
+        line-height: 1.3;
+        margin: 14px 0 0 0;
+}
+.ctn_history .his_cont.tit_left .his_year {
+        padding-left: 60px;
+        padding-right: 0;
+}
+.ctn_history .his_cont .his_year {
+        width: 50%;
+        position: relative; /*before정렬의 기준*/
+        padding-right: 60px;
+}
+.ctn_history .his_cont .his_year::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: #ededed;
+}
+.ctn_history .his_cont.tit_right .his_year::before {
+        left: auto;
+        right: 0;
+}
+
+.ctn_history .his_cont .his_year .year_tit {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--color-title);
+        margin: 0 0 10px 0;
+        position: relative; /* before정렬의 기준*/
+}
+/*
+        [ 인접선택자 ]
+        <div class="year_tit">   => 첫번째 year_tit 에서는 적용x
+        <div class="year_list">
+        <div class="year_tit">   => 두번째 year_tit 에서만 적용할수있음
+        <div class="year_list">
+        
+        => .his_year .year_list + .year_tit  => year_list 다음에 나오는 year_tit 에만 적용하라는뜻
+
+*/
+.ctn_history .his_cont .his_year .year_list + .year_tit {
+        margin-top: 40px;
+}
+
+.ctn_history .his_cont .his_year .year_tit::before {
+        content: "";
+        position: absolute;
+        left: -63px;
+        top: 19px;
+        z-index: 1;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: var(--color-main);
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit::before {
+        left: auto;
+        right: -62px;
+}
+.ctn_history .his_cont .his_year .year_tit:first-child::after {
+        content: "";
+        position: absolute;
+        left: -60px;
+        top: 0;
+        width: 2px;
+        height: 19px;
+        background-color: #fff;
+}
+/*
+        <ul>
+                <li></li> -- 같은 태그가 연속으로 반복될때 first-child . ?
+                <li></li>
+                <li></li>
+        
+        </ul>
+
+
+*/
+.ctn_history .his_cont.tit_right .his_year .year_tit:first-child::after {
+        left: auto;
+        right: -60px;
+}
+.ctn_history .his_cont .his_year .year_list {
+        position: relative; /* after정렬의 기준*/
+}
+.ctn_history .his_cont .his_year .year_list:last-child::after {
+        content: "";
+        position: absolute;
+        left: -60px;
+        bottom: -15px;
+        width: 2px;
+        height: calc(100% + 41px);
+        background-color: #fff;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+        left: auto;
+        right: -60px;
+}
+.ctn_history .his_cont .his_year .year_list dl dt {
+        color: var(--color-title);
+        float: left;
+        /*dd가 왼쪽으로감*/
+        /* ?*/
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+        float: right;
+}
+.ctn_history .his_cont .his_year .year_list dl dd {
+        margin: 0 0 15px 98px;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+        margin: 0 98px 15px 0;
+}
+.ctn_history .his_bar {
+        position: fixed;
+        left: 50%;
+        bottom: 5%;
+        z-index: 99;/*헤더 바로아래*/
+        transform: translateX(-50%);
+        background-image: linear-gradient(90deg, #EAE7E7, #848282); /*그라데이션, (투명하게 하고싶으면 rgba넣기)*/
+        border-radius: 70px;
+        padding: 9px;
+        color: var(--color-title);
+        max-width: 95%;
+        overflow: hidden;
+}
+.ctn_history .his_bar ul {
+        display: flex;
+        gap: 10px;
+        overflow-y: hidden; /**/
+        overflow-x: auto;/*좌우스크롤생성*/
+        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;  /* IE, Edge */
+}
+.ctn_history .his_bar ul::-webkit-scrollbar {
+        display: none;  /* Chrome, Safari, Opera */
+      }
+.ctn_history .his_bar ul li button {
+        display: block;
+        padding: 0.75em 2.35em 0.75em 2.35em;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.3;
+        border-radius: 60px;
+        white-space: nowrap;
+}
+.ctn_history .his_bar ul li.active button {
+        color: #fff;
+        padding: 15px 48px;
+        background-color: var(--color-main);
+}
+@media screen and (max-width:1024px){ 
+                .ctn_history .his_head {
+                        height: 358px;
+                }
+                .ctn_history .his_head h3 {
+                        font-size: 24px;
+                }
+                
+                .ctn_history .his_cont {
+                        margin: 40px 0 70px 0;
+                }
+                .ctn_history .his_cont .wrapper {
+                        display: block; /*플랙스해지*/
+                }
+                .ctn_history .his_cont.tit_right .wrapper {
+                        text-align: left;
+                }
+                .ctn_history .his_cont .his_tit {
+                        max-width: 100%;
+                }
+                .ctn_history .his_cont .his_tit h4 {
+                        font-size: 24px;
+                        margin: 14px 0 0 0;
+                }
+                
+                .ctn_history .his_cont .his_year {
+                        width: auto;
+                        padding-left: 22px;
+                        margin: 34px 0 0 0;
+                }
+                .ctn_history .his_cont.tit_right .his_year {
+                        padding-left: 28px;
+                        padding-right: 0;
+                }
+                .ctn_history .his_cont.tit_right .his_year::before {
+                        left: 0;
+                        right: auto;
+                }
+
+                .ctn_history .his_cont .his_year .year_tit {
+                        font-size: 24px;
+                        margin: 0 0 10px 0;
+                }
+                
+                .ctn_history .his_cont .his_year .year_list + .year_tit {
+                        margin-top: 24px;
+                }
+                .ctn_history .his_cont .his_year .year_tit::before {
+                        left: -62px;
+                        top: 14px;
+                }
+                .ctn_history .his_cont.tit_right .his_year .year_tit::before {
+                        left: -30px;
+                        right: auto;
+                }
+
+                .ctn_history .his_cont .his_year .year_tit:first-child::after {
+                        left: -60px;
+                        height: 19px;
+                }
+                /*
+                        <ul>
+                                <li></li> -- 같은 태그가 연속으로 반복될때 first-child . ?
+                                <li></li>
+                                <li></li>
+                        
+                        </ul>
+                
+                
+                */
+                .ctn_history .his_cont.tit_right .his_year .year_tit:first-child::after {
+                        left: -60px;
+                        right: auto;
+                }
+
+                .ctn_history .his_cont .his_year .year_list:last-child::after {
+                        left: -60px;
+                        height: calc(100% + 34px);
+                }
+                .ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+                        left: -60px;
+                        right: auto;
+                }
+
+                .ctn_history .his_cont .his_year .year_list dl dd {
+                        margin: 0 0 15px 88px;
+                }
+                .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+                        margin: 0 0 15px 88px;
+                }
+                /****/
+               
+                .ctn_history .his_bar ul li button {
+                        padding: 0.75em 2.35em 0.75em 2.35em;
+                        font-size: 16px;
+                }
+                .ctn_history .his_bar ul li.active button {
+                        color: #fff;
+                        padding: 13px 32px;
+                        background-color: var(--color-main);
+                }
+
+
+}/*media*/
+
+
+
+
+
+/* ##########################기업소개 > 연혁 (끝)#############################*/
+
+
