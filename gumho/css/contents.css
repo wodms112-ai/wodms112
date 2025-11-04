@@ -226,6 +226,7 @@
         width: 50%; /*넓이로 인터렉티브주기 따라서 넓이가 글자만큼딱 잡혀있어야함(flex를 줘서 넓이제한)*/
         overflow: hidden;
         color: #fff;
+        transition: width;
 }
 .ctn_history .his_cont {
         margin: 100px 0 140PX 0;
@@ -381,18 +382,18 @@
 }
 .ctn_history .his_bar ul {
         display: flex;
-        gap: 10px;
-        overflow-y: hidden; /**/
-        overflow-x: auto;/*좌우스크롤생성*/
-        scrollbar-width: none;  /* Firefox */
-        -ms-overflow-style: none;  /* IE, Edge */
+        gap: 0 10px;
+        overflow-y: hidden;/* 위아래 스크롤 바는 숨김 */
+        overflow-x: auto; /* 좌우 스크롤바 생성 */
+        scrollbar-width: none;  /* Firefox 브라우저 없애기*/
+        -ms-overflow-style: none;  /* IE, Edge 브라우저 없애기                   */
 }
 .ctn_history .his_bar ul::-webkit-scrollbar {
-        display: none;  /* Chrome, Safari, Opera */
+        display: none;  /* Chrome, Safari, Opera  못생긴 스크롤바 없애기*/
       }
 .ctn_history .his_bar ul li button {
         display: block;
-        padding: 0.75em 2.35em 0.75em 2.35em;
+        padding: 0.6818em 2.1818em 0.6818em 2.1818em;
         font-size: 22px;
         font-weight: 700;
         line-height: 1.3;
@@ -401,7 +402,6 @@
 }
 .ctn_history .his_bar ul li.active button {
         color: #fff;
-        padding: 15px 48px;
         background-color: var(--color-main);
 }
 @media screen and (max-width:1024px){ 
@@ -494,16 +494,11 @@
                 .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
                         margin: 0 0 15px 88px;
                 }
-                /****/
+                /*******************his_bar*******************************/
                
                 .ctn_history .his_bar ul li button {
                         padding: 0.75em 2.35em 0.75em 2.35em;
                         font-size: 16px;
-                }
-                .ctn_history .his_bar ul li.active button {
-                        color: #fff;
-                        padding: 13px 32px;
-                        background-color: var(--color-main);
                 }
 
 

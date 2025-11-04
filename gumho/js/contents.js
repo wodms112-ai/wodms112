@@ -102,50 +102,127 @@ $(document).ready(function(){
         }
     })
 
-/***********************************************************************************
- * 회사소개 > 연혁
- * ********************************************************************************* */
 
+/*##############################회사소개 > 연혁(시작)##############################*/
+    let history_length = $('.ctn_history').length
 
+     const snbScroll = function() {
+        const $menu_wrap = $(".ctn_history .his_bar ul");  /* 선택자를 잘 입력해야함 */
+        const $menu_li = $(".ctn_history .his_bar ul li");  
+        function scrollToElement($element) {
+            const containerWidth = $menu_wrap.width();
+            const itemWidth = $element.outerWidth(true);
+            const totalItemsWidth = $menu_wrap[0].scrollWidth;
+            const newScrollPosition = ($element.index() === 0) ? 0 :
+                ($element.index() === $menu_li.length - 1) ? totalItemsWidth - containerWidth :
+                $element.position().left + $menu_wrap.scrollLeft() - (containerWidth - itemWidth) / 2;
+            $menu_wrap.animate({
+                scrollLeft: newScrollPosition
+            }, 500);
+        }
+        const $activeItem = $menu_wrap.find(".active");
+        if ($activeItem.length) {
+            scrollToElement($activeItem);
+        }
+    } 
 
+    if(history_length > 0){ /*스크롤보다 작으면 */
+            snbScroll(); /*함수실행해 */
+    }
+        
+    /*.ctn_history .his_head가 여러개인데(4개)
+        4개 각각 애니메니션 시작시기~ 종료시기 -> 를 계산해야함    
 
-
-/****** */
-    function his_area(){
-        //함수 안에서 선언한 변수명은 지역변수라고함
-        //다른 함수안에 잇는 변수와 변수명이 같아도됨
-        let obj_name = $('.ctn_history .his_cont')
+        콘텐츠가 브라우저 아래에서 위로 올라오는 위치
+        스크롤값+브라우저 높이 == 콘텐츠의 offset().top값과 같음
+        ++(더하기) 브라우높이의 몇% 를 더하면 애니메이션 시작시기
+    */
+    function his_head(){
+        //재료이름붙이기
+        let obj_name = $('.ctn_history .his_head') //영역
+        let obj_txt = 'h3 strong'//애니메이션글자
         let obj_length = obj_name.length
-        let obj_top //각컨텐츠의 꼭대기부터의 거리값
-        let obj_start
-        let scrollig = $(window).scrollTop()
-        // console.log('obj_length')
+        let obj_top //위에서 부터 해당요소까지의 거리
+        let obj_start //애니메이션 시작시기
+        let obj_end //애니메이션 종료시기
+        let obj_per
+        let scrolling = $(window).scrollTop()//스크롤값
+        let win_h = $(window).height()//브라우저높이 
+       
 
+        //for문 = ‘정해진 횟수만큼 반복해라!’
+        /*for (시작값; 반복조건; 증가식) {
+                실행할 코드
+                } */
+        for(i=0; i<obj_length; i++){ // (“처음엔 0부터 시작; i가 obj_length보다 작을 동안 계속 돌릴게; 돌 때마다 i에 1을 더할게)
+            obj_top = obj_name.eq(i).offset().top//obj_name 에서 i번째인걸찾아(eq=순서찾기)그래서 상단과의 거라를재(offset().top)
+            obj_start = obj_top - win_h + (win_h * 0.2) 
+            //시작은    //상단과의 거리-지금브라우저높이(= 스크롤링된 정도) 의 +20%더 가면 작동해
+            obj_end = obj_top - win_h + (win_h * 1)
+            //끝은     //상단과의 거리 -지금브라우저 높이+80% 더가면 멈춰
+            if(scrolling > obj_end){
+                //console.log(i, '종료')
+                obj_per = 100
+            }else if(scrolling < obj_start){ //에니메이션 시작전
+                //console.log(i, '시작전')
+                obj_per = 0
+            }else{
+                //console.log(i,'번째 진행중', obj_per)
+
+                //시작부터 스크롤한 값 / 스크롤해야하는 구간값 *100
+                obj_per = ( scrolling - obj_start) / (obj_end - obj_start )* 100
+            }
+            obj_name.eq(i).find(obj_txt).width(obj_per + '%') //+%=퍼센트 단위 붙인것
+        }
+
+
+    }//his_head
+
+    function his_area(){
+        //지역변수 : 함수안에서 선언한 변수명 
+        // ( 다른 함수안에 있는 변수와 변수이름이 같아도됨 - 이 함수에서만 통하는 이름)
+        let obj_name = $('.ctn_history .his_cont')
+        let obj_nav = $('.ctn_history .his_bar ul li')
+        let obj_length = obj_name.length
+        let obj_top //각 콘텐츠의 꼭대기 부터의 거리값
+        let obj_start //에니메이션 시작위치
+        let scrolling = $(window).scrollTop()//스크롤값
+        let win_h = $(window).height()//브라우저 높이
+       // console.log(obj_length)
+    
         for(i=0; i<obj_length; i++){
-            obj_top = obj_name.eq(i).offset.top
-            console.log(i, '번째', obj_top  )
+            obj_top = obj_name.eq(i).offset().top
+            obj_start = obj_top - win_h + (win_h * 0.5)
+            //console.log(i, '번째', obj_top - win_h, scrolling, obj_start)
+            obj_end = obj_top + obj_name.eq(i).height - (win_h * 0.5)
+            if((scrolling < obj_end) && (scrolling > obj_start)){
+                 console.log(i, '진행중')
+            }
         }
     }
 
+    
 
 
+     if(history_length > 0){ /*개수가 하나라도 있으면 */
+            his_head(); /*갯수 새는 함수실행해 */
+            his_area()
+    }
 
+    $(window).scroll(function(){ /*브라우저 스크롤되면 */
+        if(history_length > 0){ // (조금이라도 움직이면)
+            his_head() /*함수의 실행 */
+            his_area()
+        }
 
+    })
+    $(window).resize(function(){ /*브라우저 리사이즈되면 */
+        if(history_length > 0){// (조금이라도 움직이면)
+            his_head()/*함수의 실행 */
+        }
+    })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*##############################회사소개 > 연혁(끝)##############################*/
 
 
 
