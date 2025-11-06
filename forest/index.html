@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/fullpage.css">
     <link rel="stylesheet" href="css/fullpage.min.css">
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/count.js"></script>
 
         <!--내거-->
     <link rel="stylesheet" href="css/main.css">
@@ -19,7 +22,7 @@
     <header class="dark">
         <h1 class="logo"><a href="index.html"><span class="blind">생명의 숲 forest for life</span></a></h1>
         <nav class="gnb">
-            <button class="gnb_open"><span>메뉴열기</span></button>
+            <button class="gnb_open"><span class="blind">메뉴열기</span></button>
             <div class="gnb_wrqp">
                 <ul class="depth1">
                     <li><a href="#n"><span>소개</span></a></li>
@@ -44,10 +47,86 @@
               fp-auto-height 클래스를 주면
               fp-auto-height-responsive = 섹션의 높이를 자동으로 내용에 맞춰 늘려줌 -->
         <section class="visual section fp-auto-height-responsive"> <!--?-->
-            <h2>visual</h2>
-        </section>
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual01.jpg"></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의숲 후원의 달</strong>
+                                <h3>생명의 숲에서 만난 사람들<br>
+                                    숲을 위한 나눔이야기</h3>
+                                <a>자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <!--autoplay = 자동실행 / loop 무한반복 / muted=음소거 -->
+                        <div class="video">
+                           <video autoplay loop muted>
+                                <source src="images/main/vidio01 (2).mp4">
+                           </video>
+                        </div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2022 울진산불 이후</strong>
+                                <h3>사람의 손으로, 다시 숲이 되기까지<br>
+                                     시간을 함께했습니다.</h3>
+                                <a>자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual02.jpg"></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>도시 속 나무심기</strong>
+                                <h3>사람과 도시를 잇는<br>
+                                     숨결이 되었습니다</h3>
+                                <a>자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual03.jpg"></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>고목나무 이야기</strong>
+                                <h3>그 뿌리 아래에서<br>
+                                    자연의 지혜를 배웁니다</h3>
+                                <a>자세히보기</a>
+                            </div>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                </ul>
+                <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
+            </div><!--swiper-->
+            <div class="paging">
+                <ul>
+                    <!-- <li><span>뭄구</span></li> -->
+                </ul>
+            </div>
+        </section><!--visual-->
         <section class="tree section fp-auto-height-responsive">
-            <h2>tree</h2>
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <strong data-start="0" data-end="102,302">102,302</strong>
+                        <span>그루</span>
+                    </h2>
+                    <p>2024년 생명의 숲은 지구의 숨결을  되살리고 <br>
+                        푸른내일을 만들기 위해 102,302그루의 나무을 심었습니다.</p>
+                </div>
+                <div class="photo">
+                    <img src="images/main/tree01.png" alt="나무" class="tree_img">
+                    <img src="images/main/cloud1.png" alt="구름" class="cloud1_img">
+                    <img src="images/main/cloud2.png" alt="구름" class="cloud2_img">
+                    <img src="images/main/sun.png" alt="태양" class="sun_img">
+                </div>
+            </div>
         </section>
         <section class="work section fp-auto-height-responsive">
             <h2>work0</h2><h2>work1</h2><h2>work2</h2><h2>work3</h2><h2>work4</h2><h2>work5</h2><h2>work6</h2><h2>work7</h2><h2>work8</h2>
@@ -58,6 +137,18 @@
         <section class="footer section fp-auto-height-responsive">
             <h2>footer</h2>
         </section>
-    </div>
+    </div><!--fullpage-->
+    <aside class="quick open">
+        <button class="quick_open" title="열기"><span>Quick</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><a href="#Main"><span>TOP</span></button></a>
+            </ul>
+        </div>
+        <button class="quick_close" title="닫기"><span>Quick</span></button>
+    </aside>
 </body>
 </html>
