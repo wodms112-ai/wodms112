@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--라이브러리 파일-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+        <!--내파일-->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+
+    <title>라마다속초호텔</title>
+</head>
+<body>
+    <div id="wrap">
+         <!-- pc버전 ( 마우스를 오버) header에 ->  "menu_pc"
+              모바일버전  (클릭) header에 -> "menu_mo"
+            
+            header 상단에 고정 fixed클래스 
+            스크롤을 아래로 내려서 올라갈대는 up클래스 추가-->
+        <header class="fixed">
+            <h1 class="logo"><a href="index.html"><span class="blind"></span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">
+                    <span>메뉴열기</span>
+                    <i>
+                        <svg viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 1V0H16V1H0ZM0 12V11H16V12H0ZM3 6.5V5.5H16V6.5H3Z"/>
+                        </svg>
+                    </i>
+                </button>
+                <div class="gnb_wrap">
+                    <div class="gnb_logo"><span>ramada</span></div><!-- gnb_logo =모바일용 로고 /h1 logo=pc형로고-->
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>ABOUT</span></a>
+                            <ul class="depth2">
+                                <li><a><span>호텔소개</span></a></li>
+                                <li><a><span>공지사항</span></a></li>
+                                <li><a><span>보도자료</span></a></li>
+                                <li><a><span>주변명소</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>ROOMS</span></a>
+                            <ul class="depth2">
+                                <li><a><span>스탠다드</span></a></li>
+                                <li><a><span>디럭스</span></a></li>
+                                <li><a><span>스위트</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>FACILITIES</span></a>
+                            <ul class="depth2">
+                                <li><a><span>레스토랑</span></a></li>
+                                <li><a><span>카페 씨가든</span></a></li>
+                                <li><a><span>연회</span></a></li>
+                                <li><a><span>웨딩</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>EVENT</span></a>
+                            <ul class="depth2">
+                                <li><a><span>패키지 상품</span></a></li>
+                                <li><a><span>이벤트 상품</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>HALL</span></a>
+                            <ul class="depth2">
+                                <li><a><span>연회장</span></a></li>
+                                <li><a><span>웨딩홀</span></a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                    <button class="gnb_close">
+                        <span>메뉴닫기</span>
+                        <i>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.05375 13.3075L0 12.2538L5.6 6.65375L0 1.05375L1.05375 0L6.65375 5.6L12.2537 0L13.3075 1.05375L7.7075 6.65375L13.3075 12.2538L12.2537 13.3075L6.65375 7.7075L1.05375 13.3075Z" fill="#1C1B1F"/>
+                            </svg>
+                        </i>
+                    </button><!--gnb_close-->
+                </div><!--gnb_wrap-->
+            </nav><!--gnb-->
+            <div class="util">
+                <div class="lang">
+                    <button class="lang_open">
+                        <span>KO</span>
+                    </button>
+                </div><!--lang-->
+                <a href="#n">RESERVATION</a>
+            </div><!--util-->
+        </header>
+
+        <div class="container">
+            <h2 class="blind">팝업</h2>
+            <section class="visual">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide pop1">
+                            <div class="wrapper">
+                                <div class="visual_txt">
+                                    <strong>삶과 여행 사이, 바다와 함께 머물고 싶은 공간에서</strong>
+                                    <h3>Live by the Ocean for a While</h3>
+                                </div>
+                               <div class="reservation">
+                                    <div class="bookingbox">
+                                        <div class="booking_left">
+                                            <div class="check_in">
+                                                <span>CHECK IN</span>
+                                                <button>날짜 선택</button>
+                                            </div>
+                                            <div class="check_out">
+                                                <span>CHECK OUT</span>
+                                                <button>날짜 선택</button>
+                                            </div>
+                                            <div class="room">
+                                                <span>ROOM</span>
+                                                <button>1</button>
+                                            </div>
+                                
+                                            <div class="booking-item">
+                                                <span>ADULT</span>
+                                                <button>1</button>
+                                            </div>
+                                
+                                            <div class="booking-item">
+                                                <span>CHILDREN</span>
+                                                <button>0</button>
+                                            </div>
+                                        </div>
+                                
+                                        <button>SEARCH</button>
+                                    </div>
+                               </div><!--reservation-->
+                            </div><!--wrapper-->
+                        </li> 
+                        <li class="swiper-slide pop2">
+                            <div class="wrapper">
+                                <div class="visual_txt">
+                                    <strong>삶과 여행 사이, 바다와 함께 머물고 싶은 공간에서</strong>
+                                    <h3>Live by the Ocean for a While</h3>
+                                </div>
+                               <div class="reservation">
+                                    <div class="bookingbox">
+                                        <div class="booking_left">
+                                            <div class="check_in">
+                                                <span>CHECK IN</span>
+                                                <button>날짜 선택</button>
+                                            </div>
+                                            <div class="check_out">
+                                                <span>CHECK OUT</span>
+                                                <button>날짜 선택</button>
+                                            </div>
+                                            <div class="room">
+                                                <span>ROOM</span>
+                                                <button>1</button>
+                                            </div>
+                                
+                                            <div class="booking-item">
+                                                <span>ADULT</span>
+                                                <button>1</button>
+                                            </div>
+                                
+                                            <div class="booking-item">
+                                                <span>CHILDREN</span>
+                                                <button>0</button>
+                                            </div>
+                                        </div>
+                                
+                                        <button>SEARCH</button>
+                                    </div>
+                               </div><!--reservation-->
+                            </div><!--wrapper-->
+                        </li> 
+                        <li class="swiper-slide pop3">
+                            <div class="wrapper">
+                                <div class="visual_txt">
+                                    <strong>삶과 여행 사이, 바다와 함께 머물고 싶은 공간에서</strong>
+                                    <h3>Live by the Ocean for a While</h3>
+                                </div>
+                               <div class="reservation">
+                                    <div class="bookingbox">
+                                        <div class="booking_left">
+                                            <div class="check_in">
+                                                <span>CHECK IN</span>
+                                                <button>날짜 선택</button>
+                                            </div>
+                                            <div class="check_out">
+                                                <span>CHECK OUT</span>
+                                                <button>날짜 선택</button>
+                                            </div>
+                                            <div class="room">
+                                                <span>ROOM</span>
+                                                <button>1</button>
+                                            </div>
+                                
+                                            <div class="booking-item">
+                                                <span>ADULT</span>
+                                                <button>1</button>
+                                            </div>
+                                
+                                            <div class="booking-item">
+                                                <span>CHILDREN</span>
+                                                <button>0</button>
+                                            </div>
+                                        </div>
+                                
+                                        <button>SEARCH</button>
+                                    </div>
+                               </div><!--reservation-->
+                            </div><!--wrapper-->
+                        </li> 
+                        
+                    </ul>
+                    <div class="ctrl_btn"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                </div>  
+            </section><!--visual-->
+
+
+            <section class="room"></section><!--room-->
+            <section class="dining"></section><!--dining-->
+            <section class="event"></section><!--event-->
+            <section class="around"></section><!--around-->
+            <section class="hall"></section><!--hall-->
+           
+        </div>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>      

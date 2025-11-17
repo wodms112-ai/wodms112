@@ -1,0 +1,173 @@
+@import url(common.css);
+@import url(default.css);
+@import url(fonts.css);
+/******************** header (시작) ***********************/
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-white);
+    display: flex;/*logo gnb util 좌우배치*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--wrapper-margin);
+}
+header .logo a {
+    display: block;
+    width: 114px;
+    height: 26px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util {
+    display: flex;/*lang-  RESERVATION ->좌우배치*/
+    align-items: center;
+    gap: 12px;
+}
+header .util .lang .lang_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 65px;
+    position: relative;
+}
+header .util .lang .lang_open::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 28px;
+    width: 10px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0672 0.886327L6.03359 6.91992L-2.63737e-07 0.886328L0.887031 -0.000703135L6.03359 5.14602L11.1802 -0.000703585L12.0672 0.886327Z' /%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+header .util a {
+    display: block;
+    text-align: center;
+    width: 148px;       /* 길이 강제 */
+    height: 37px;       /* 높이 */
+    padding: 5px 8px 5px 8px;
+    color: #fff;
+}
+    /*------- header가 fixed되었을때 : 시작-------*/
+    header.fixed {
+        background-color: var(--color-white);
+        color: var(--color-basic);
+        fill: var(--color-basic);
+        box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+    }
+    header.fixed .logo a {
+        background-image: url(../images/logo.svg);
+    }
+    header.fixed .util .lang .lang_open::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23222222' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0672 0.886327L6.03359 6.91992L-2.63737e-07 0.886328L0.887031 -0.000703135L6.03359 5.14602L11.1802 -0.000703585L12.0672 0.886327Z' /%3E%3C/svg%3E%0A");
+    }
+    header.fixed .util a {
+        color: #222;
+    }
+    /* -------header가 fixed되었을때 : 끝 -------*/
+
+/* -----------------------------1025보다 클때 (pc버전) : 시작 -----------------------------*/
+    @media screen and (min-width:1025px){ 
+        header .gnb .gnb_open,
+        header .gnb .gnb_wrap .gnb_logo,
+        header .gnb .gnb_wrap .gnb_close {
+            display: none; /*모바일 일때만 보임*/
+        }
+        header .gnb .gnb_wrap ul.depth1 {
+            display: flex; /*li좌우배치*/
+            justify-content: space-between;
+        }
+        header .gnb .gnb_wrap ul.depth1 > li {
+            position: relative; /*ul.depth2 정렬의 기준*/
+            z-index: 10;
+        }
+        header .gnb .gnb_wrap ul.depth1 > li > a {
+            display: block;
+            font-size: 20px;
+            line-height: var(--header-h);
+            padding: 0 35px; /*반반씩  좌우여백 주기*/
+            white-space: nowrap;
+        }
+        header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+             /*2차 메뉴는 absolute처리*/
+             position: absolute; /*ul.depth1을 기준으로 정렬*/
+             left: 0;
+             top: var(--header-h);/*header높이 만큼 내려오기*/
+             width: 100%;
+             min-height: 160px; 
+             /* ㄴ 모든 2차메뉴의 길이를 동일하게 주려고 최소높이주기(최소준건 더긴걸 나중에 추가될수있으니)*/
+             background-color: #fff; 
+             padding: 13px 0 0 0;
+
+        }
+        header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+            display: block;
+            text-align: center;
+            line-height: 2.0;
+        }
+
+
+            /* 1차메뉴 li에 => over가 들어갔을때 (시작)*/
+            header .gnb .gnb_wrap ul.depth1 > li.over > a span {
+                color: #A9002B;
+            } 
+            /* 2차메뉴에 들어갔을때 => depth1의 오버가 여부에따라 depth2가 결정되니까.over 안붙여도됨*/
+
+          
+
+    }
+
+
+
+
+    /* -------1025보다 클때 (pc버전) : 끝 -------*/
+
+
+/********************* header (끝) *************************/
+
+/********************* visual (시작) ***********************/
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 100dvh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;    
+}
+.visual .swiper-slide.pop1 {
+    background-image: url(../images/visual01.jpg);
+}
+.visual .swiper-slide.pop2 {
+    background-image: url(../images/visual02.jpg);
+}
+.visual .swiper-slide.pop3 {
+    background-image: url(../images/visual03.jpg);
+}
+
+.visual .swiper-slide strong {
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-re);
+    margin: 0 0 11px 0;
+}
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    font-weight: var(--font-weight-re);
+}
+
+
+
+
+footer {
+    margin: 1000px 0 0 0;
+}

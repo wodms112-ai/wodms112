@@ -142,7 +142,7 @@ header .util .search .search_open {
                 background-color: #ededed;
             }
 
-        /* 1차메뉴 li에 =>over가 들어갔을때*/
+        /* 1차메뉴 li에 => over가 들어갔을때*/
             header .gnb .gnb_wrap ul.depth1 > li.over > a span {
                 position: relative; /*before정렬의 기준*/
                 color: #036580;  

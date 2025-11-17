@@ -54,7 +54,7 @@ header .util .mypage i {
 /*  header가 fixed 되었을때 */ 
 header.fixed {
         background-color: var(--color-white);
-        color: var(----color-title); 
+        color: var(--color-title); 
         fill: var(--color-basic);
 }
 header.fixed .logo a {
