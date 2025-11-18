@@ -162,7 +162,7 @@ header .util .search .search_open {
                 position: relative;
             }
             header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a span::after {
-                /*span 태그에 선긋기 애니메이션*/
+        /*span 태그에 선긋기 애니메이션*/
                 content: "";
                 position: absolute;
                 left: 0;

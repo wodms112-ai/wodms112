@@ -12,6 +12,11 @@
     --color-title : #0F1E3F; 
     --color-white : #fff;  
 }
+@media screen and (max-width:1024px){ 
+    :root {
+        --header-h : 65px;
+    }
+}
 @media screen and (max-width:768px){ 
     :root {
         --font-size-basic : 16px;

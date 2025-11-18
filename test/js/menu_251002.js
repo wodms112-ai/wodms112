@@ -84,7 +84,7 @@ $(document).ready(function(){
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){ 
         //선택자를-> 메뉴 클릭을 감시하고 처리해라
 		if(device_status == 'mobile'){ 
-        //모바일이면 기본 동작(링크 이동)을 막고 대신 메뉴 열기 동작 하겠다”
+        //    "원래 하려던 행동 금지!"          모바일이면 기본 동작(링크 이동)을 막고 대신 메뉴 열기 동작 하겠다 (2차메뉴 열려야하니까)”
             e.preventDefault();		
             if($(this).parent().hasClass('open') == true){
                 //메뉴가 열려있는 상태 : 나자신을 닫고 끝냄

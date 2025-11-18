@@ -14,12 +14,14 @@ $(document).ready(function(){
         }
         // console.log(device_status)
     }
-
+/**************************************pc******************************************* */
+    /*menu_pc 클래스 추가 */
     device_chk()//문서가 로딩되었을때 1번실행
     $(window).resize(function(){
         device_chk()//브라우저가 리사이즈 할때마다 1번씩 실행
     })
     
+    /*menu_pc클래스 추가 */
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_pc')
@@ -33,10 +35,15 @@ $(document).ready(function(){
         $('header').removeClass('menu_pc')
     })
 
+
+
+
+/**************************************모바일******************************************* */
+    /*open클래스 추가 */
     let gnb_open 
     $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
         if(device_status == 'mobile'){
-            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음(2차메뉴 열려야하니까) */
             gnb_open = $(this).parent().hasClass('open')
             // console.log(gnb_open)
             if(gnb_open == true){ // 둘중 하나 열려있다면
@@ -56,6 +63,7 @@ $(document).ready(function(){
 //    header .gnb .gnb_wrap .gnb_close
 //    header .gnb .gnb_open
 
+    /*menu_mo 클래스 추가 */
     $('header .gnb .gnb_open').on('click' , function(){
         $('header').addClass('menu_mo')
     })
@@ -86,6 +94,12 @@ $(document).ready(function(){
         }
 
     }
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+//family_site
     scroll_chk() // 문서가 로됭되고 단1번 실행
     $(window).scroll(function(){
         scroll_chk() //스크롤할때마다 실행
@@ -105,7 +119,7 @@ $(document).ready(function(){
             $('footer .f_util .family_site .family_wrap').slideUp()
         })
     
-        /* top버튼을 클릭하면 상단으로 이동 */
+    /* top버튼을 클릭하면 상단으로 이동 */
         $('footer .f_util .top').on('click', function(){
             $('html, body').animate({
                 scrollTop : 0
