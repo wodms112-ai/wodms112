@@ -17,8 +17,9 @@ header {
 }
 header .logo a {
     display: block;
-    width: 114px;
+    width: 6.7059rem;
     height: 26px;
+    margin-right: 6.4706rem;
     background: url(../images/logo_w.svg) no-repeat center center / contain;
 }
 header .util {
@@ -58,7 +59,7 @@ header .util a {
 header.fixed {
     color: var(--color-basic);
     background-color: var(--color-white);
-    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
 } 
 header.fixed .logo a {
     background-image: url(../images/logo.svg);
@@ -241,6 +242,7 @@ header.up:not(.menu_pc, .menu_mo) {
             padding: 20px 35px 20px 37px; /*글짜가 침범하지 않게 여백까지 포함시키기*/
             font-size: 1.1765rem;
             position: relative; /*after 정렬기준*/
+            color: var(--color-basic);
         }
         header .gnb .gnb_wrap ul.depth1 > li > a::before,
         header .gnb .gnb_wrap ul.depth1 > li > a::after {
@@ -259,6 +261,7 @@ header.up:not(.menu_pc, .menu_mo) {
         header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
             margin: 0 0 0 10px;
             display: none; /*메뉴를 클릭할때만 나옴*/
+            transition: 5s;
         }
         header .gnb .gnb_wrap .gnb_close {
             display: none;
@@ -275,20 +278,21 @@ header.up:not(.menu_pc, .menu_mo) {
         /* right: -110%; 으로 안보이게하고 -> menu_mo 클래스 추가되면 보임 : 끝*/
 
 
-        /* 시작 :  depth1 li에 -> over 클래스가 들어갔을때*/
-        header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        /* 시작 :  depth1 li에 -> open 클래스가 들어갔을때*/
+        header .gnb .gnb_wrap ul.depth1 > li.open > a {
             color: #A9002B;
         }
-        header .gnb .gnb_wrap ul.depth1 > li.over > a::after {
+        header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
             transform: rotate(0);
         }
-        header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
             display: block;
         }
-        header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 > li > a {
+        header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 > li > a {
             display: block;
             color: var(--color-basic);
             padding: 3px 0 3px 48px ;
+            line-height: 2.0;
         }
 
         /* 끝 :  depth1 li에 -> over 클래스가 들어갔을때*/
@@ -346,14 +350,188 @@ header.up:not(.menu_pc, .menu_mo) {
 }
 
 .visual .swiper-slide strong {
+    display: block; /* strong은 글자처럼 행동하는 요소”라서 박스형태(block처리)로 만들어주고 움직여야함*/
     font-size: var(--font-size-basic);
     font-weight: var(--font-weight-re);
-    margin: 0 0 11px 0;
+    transition: 0.6s;/*애니메이션 효과주기전에 속도명렬*/
+    transition-delay: 0.6s; /*기다렸다가 나타나*/
+    transform: translateY(100px); /*세로(Y축)로 50px 위로 옮겨라!*/
+    opacity: 0; /*안보였다가 ->엑티브에서 1로 보이게효과*/  
 }
 .visual .swiper-slide h3 {
-    font-size: 60px;
+    font-size: 3.5294rem;
     font-weight: var(--font-weight-re);
+    margin: 0 0 60px 0;
+
+    transition: 0.6s;/*애니메이션 효과주기전에 속도명렬*/
+    transition-delay: 0.6s; /*기다렸다가 나타나*/
+    transform: translateY(100px); /*세로(Y축)로 50px 위로 옮겨라!*/
+    opacity: 0; /*안보였다가 ->엑티브에서 1로 보이게효과*/
 }
+
+
+.visual .swiper-slide.swiper-slide-active strong {
+    transform: translateY(0);
+    opacity: 1;/*엑티브에서만 보이게*/
+}
+.visual .swiper-slide.swiper-slide-active h3 {
+    transform: translateY(0);
+    opacity: 1;/*엑티브에서만 보이게*/
+}
+
+
+.visual .paging {
+    position: absolute;
+    bottom: 5dvh;
+    left: 50%; /*중간에 오게하기위해*/
+    width: auto;
+    transform: translate(-50%);
+    /*자기 자신 크기의 50%만큼 왼쪽으로 이동.*/
+    /*transform: translate(x, y)에서 퍼센트(%)는 부모가 아니라 자기 자신 크기 기준으로 계산됨*/
+    z-index: 10;
+}
+.visual .paging .swiper-pagination-bullet {
+    width: 5px;
+    height: 5px;
+    border-radius: 3px; /* 너무작아서 깨질 수있으니 너비의 반을줌*/
+    background: rgba(225, 225, 225, 0.8); 
+    margin: 0 15px;
+}
+
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 6px;
+    height: 6px;
+    border-radius: 4px; 
+    background: var(--color-white);
+}
+
+.visual .swiper-button-next {
+    width: 34px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 13' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.1665 12.0995L31.2007 12.0995L33.6665 12.0995L22.2754 9.95838e-07L20.801 1.47448L29.3426 10.0161L-7.9233e-05 10.0161L-7.90509e-05 12.0995L29.3426 12.0995L29.1665 12.0995Z' /%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+.visual .swiper-button-next:after {
+    display: none;
+}
+.visual .swiper-button-prev {
+    width: 34px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 34 13' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 12.0995L2.46582 12.0995L0 12.0995L11.3911 9.95838e-07L12.8655 1.47448L4.32387 10.0161L33.6666 10.0161L33.6666 12.0995L4.32387 12.0995L4.5 12.0995Z' /%3E%3C/svg%3E ");
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+.visual .swiper-button-prev:after {
+    display: none;
+}
+
+/***************************** 예약상자**************************************/
+.visual .bookingbox {
+    position: absolute;      /* 겹쳐 올릴게! */
+    left: 50%;
+    transform: translateX(-50%); /* 나의 절반만큼이동*/
+    top: calc( 50% + 8% );
+    z-index: 20;             /* 슬라이드보다 위로 올라오게 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    color: #fff;
+}
+
+.visual .bookingbox .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px 0 ;
+}
+.visual .item.reservation span,
+.visual .item.check_in span,
+.visual .item.check_out span,
+.visual .item.adult span
+ {
+    position: relative;
+}
+.visual .item.reservation .label::after {
+    content: "";
+    position: absolute; /**/
+    right: -32px;
+    top: 6px;
+    width: 10px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0672 0.886327L6.03359 6.91992L-2.63737e-07 0.886328L0.887031 -0.000702897L6.03359 5.14602L11.1802 -0.000703347L12.0672 0.886327Z' /%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .item.check_in .label::before {
+    content: "";
+    position: absolute; /**/
+    left: -40px;
+    top: 0;
+    width: 2px;
+    height: 57px;
+    background-color: rgba(225, 225, 225, 0.4);
+} 
+.visual .item.check_out .label::before {
+    content: "";
+    position: absolute; /**/
+    left: -40px;
+    top: 0;
+    width: 2px;
+    height: 57px;
+    background-color: rgba(225, 225, 225, 0.4);
+} 
+.visual .item.adult .label::before {
+    content: "";
+    position: absolute; /**/
+    left: -40px;
+    top: 0;
+    width: 2px;
+    height: 57px;
+    background-color: rgba(225, 225, 225, 0.4);
+} 
+
+
+.visual .bookingbox .search {
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    padding: 19px 40px 19px 40px;
+}
+.visual .bookingbox .search:hover {
+    background-color: var(--color-white);
+    color: var(--color-title);
+}
+
+
+
+/***************************** visual :끝**************************************/
+
+/***************************** room : 시작 **************************************/
+.room .swiper-slide { 
+    width:528px; 
+    height: 396px;
+}
+.room .swiper-slide.swiper-slide-active {
+     width:400px; 
+    
+}  /* active된 팝업의 사이즈 - 절대 transition 금지 */
+
+
+
+
+
+
+
+
+/***************************** room : 끝 **************************************/
+
+
+
+
+
 
 
 

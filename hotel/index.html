@@ -29,9 +29,9 @@
                 <div class="gnb_wrap">
                     <div class="gnb_logo"><span class="blind">ramada</span></div><!-- gnb_logo =모바일용 로고 /h1 logo=pc형로고-->
                     <ul class="depth1">
-                         <!--모바일에서 메뉴가 열리면 class="open"추가(open)-->
-                         <!--모바일에서 li 오버하면=> class="over"추가(open)-->
-                        <li class="over"> 
+                         <!--pc에서 메뉴가 열리면 class="over"추가(over)-->
+                         <!--모바일에서 li 오버하면=> class="open"추가(open)-->
+                        <li> 
                             <a href="#n"><span>ABOUT</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>호텔소개</span></a></li>
@@ -98,36 +98,6 @@
                                     <strong>삶과 여행 사이, 바다와 함께 머물고 싶은 공간에서</strong>
                                     <h3>Live by the Ocean for a While</h3>
                                 </div>
-                               <div class="reservation">
-                                    <div class="bookingbox">
-                                        <div class="booking_left">
-                                            <div class="check_in">
-                                                <span>CHECK IN</span>
-                                                <button>날짜 선택</button>
-                                            </div>
-                                            <div class="check_out">
-                                                <span>CHECK OUT</span>
-                                                <button>날짜 선택</button>
-                                            </div>
-                                            <div class="room">
-                                                <span>ROOM</span>
-                                                <button>1</button>
-                                            </div>
-                                
-                                            <div class="booking-item">
-                                                <span>ADULT</span>
-                                                <button>1</button>
-                                            </div>
-                                
-                                            <div class="booking-item">
-                                                <span>CHILDREN</span>
-                                                <button>0</button>
-                                            </div>
-                                        </div>
-                                
-                                        <button>SEARCH</button>
-                                    </div>
-                               </div><!--reservation-->
                             </div><!--wrapper-->
                         </li> 
                         <li class="swiper-slide pop2">
@@ -136,36 +106,6 @@
                                     <strong>속초 바다와 함께하는 특별한 하루</strong>
                                     <h3>Remarkable Day with Sokcho Sea</h3>
                                 </div>
-                               <div class="reservation">
-                                    <div class="bookingbox">
-                                        <div class="booking_left">
-                                            <div class="check_in">
-                                                <span>CHECK IN</span>
-                                                <button>날짜 선택</button>
-                                            </div>
-                                            <div class="check_out">
-                                                <span>CHECK OUT</span>
-                                                <button>날짜 선택</button>
-                                            </div>
-                                            <div class="room">
-                                                <span>ROOM</span>
-                                                <button>1</button>
-                                            </div>
-                                
-                                            <div class="booking-item">
-                                                <span>ADULT</span>
-                                                <button>1</button>
-                                            </div>
-                                
-                                            <div class="booking-item">
-                                                <span>CHILDREN</span>
-                                                <button>0</button>
-                                            </div>
-                                        </div>
-                                
-                                        <button>SEARCH</button>
-                                    </div>
-                               </div><!--reservation-->
                             </div><!--wrapper-->
                         </li> 
                         <li class="swiper-slide pop3">
@@ -174,48 +114,92 @@
                                     <strong>머무는 순간마다 편안함이 스며드는 아늑한 공간</strong>
                                     <h3>Comfort in Every Moment</h3>
                                 </div>
-                               <div class="reservation">
-                                    <div class="bookingbox">
-                                        <div class="booking_left">
-                                            <div class="check_in">
-                                                <span>CHECK IN</span>
-                                                <button>날짜 선택</button>
-                                            </div>
-                                            <div class="check_out">
-                                                <span>CHECK OUT</span>
-                                                <button>날짜 선택</button>
-                                            </div>
-                                            <div class="room">
-                                                <span>ROOM</span>
-                                                <button>1</button>
-                                            </div>
-                                
-                                            <div class="booking-item">
-                                                <span>ADULT</span>
-                                                <button>1</button>
-                                            </div>
-                                
-                                            <div class="booking-item">
-                                                <span>CHILDREN</span>
-                                                <button>0</button>
-                                            </div>
-                                        </div>
-                                
-                                        <button>SEARCH</button>
-                                    </div>
-                               </div><!--reservation-->
                             </div><!--wrapper-->
                         </li> 
-                        
                     </ul>
-                    <div class="ctrl_btn"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
-                    <button class="swiper-button-prev"></button>
-                    <button class="swiper-button-next"></button>
-                </div>  
-            </section><!--visual-->
+                    <div class="ctrl_btn">
+                        <button class="swiper-button-prev"><span class="blind">이전버튼</span></button>
+                        <button class="swiper-button-next"><span class="blind">다음버튼</span></button>
+                    </div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <div class="paging"></div>
+                </div><!--swiper------------------>  
+                <div class="bookingbox">
+                    <div class="item reservation">
+                        <a href="#n"><span class="label">RESERVATION</span></a>
+                        <a href="#n"><span class="value">ROOM</span></a>
+                    </div>
+                  
+                    <div class="item check_in">
+                      <a href="#n"><span class="label">CHECK IN</span></a>
+                      <a href="#n"><span class="value">2025.11.11(화)</span></a>
+                    </div>
+                  
+                    <div class="item check_out">
+                        <a href="#n"><span class="label">CHECK OUT</span></a>
+                        <a href="#n"><span class="value">2025.11.13(수)</span></a>
+                    </div>
+                  
+                    <div class="item adult">
+                        <a href="#n"><span class="label">ADULT</span></a>
+                        <a href="#n"><span class="value">2</span></a>
+                    </div>
+                  
+                    <div class="item child">
+                        <a href="#n"><span class="label">CHILDREN</span></a>
+                        <a href="#n"><span class="value">1</span></a>
+                    </div>
+                  
+                    <button class="item search">SEARCH</button>
+                </div>
+            </section><!--visual----------------------------------------->
+
+            <section class="room">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h3>Stay ROOMS</h3>
+                        <P>라마다 속초만의 아늑하고 편안한 공간에서 품격 있는 휴식과 세심한 서비스를 제공합니다</P>
+                    </div><!--wrapper-->
+                </div><!--tit-->
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide"><!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <a href="#n">
+                                    <div class="photo"><img src="images/room01.jpg" alt=""></div>
+                                    <span class="name">STANDARD</span>
+                                    <p>합리적인 가격으로 가벼운 여행에도 잘 어울리는 기본 객실입니다.<br>
+                                        조용히 쉬어갈 수 있는 아늑함을 선물합니다.</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide"><!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <a href="#n">
+                                    <div class="photo"><img src="images/room02.jpg" alt=""></div>
+                                    <span class="name">Deluxe</span>
+                                    <p>대포항의 야경을 볼 수 있는 객실입니다.<br>
+                                        전면 바다로  탁 트인 바다전망을 즐기실 수 있습니다</p>
+                                </a>
+                            </li> 
+                            <li class="swiper-slide"><!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <a href="#n">
+                                    <div class="photo"><img src="images/room03.jpg" alt=""></div>
+                                    <span class="name">Suite</span>
+                                    <p> 여유로운 구조를 제공합니다 인원에 맞춰 다양하게<br>
+                                        침대 구성이 가능하며, 개방감 있는 휴식을 누릴 수 있습니다</p>
+                                </a>
+                            </li> 
+                        </ul>
+                        <div class="ctrl_btn">
+                            <button class="swiper-button-prev"><span class="blind">이전버튼</span></button>
+                            <button class="swiper-button-next"><span class="blind">다음버튼</span></button>
+                        </div> 
+                    </div><!--swiper-->
+                </div><!--list-->    
 
 
-            <section class="room"></section><!--room-->
+
+
+
+            </section><!--room-->    
             <section class="dining"></section><!--dining-->
             <section class="event"></section><!--event-->
             <section class="around"></section><!--around-->
@@ -228,3 +212,8 @@
     </div>
 </body>
 </html>      
+
+
+
+
+

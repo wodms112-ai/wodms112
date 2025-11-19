@@ -21,7 +21,7 @@ $(document).ready(function(){
         device_chk()//브라우저가 리사이즈 할때마다 1번씩 실행
     })
     
-    /*menu_pc클래스 추가 */
+
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin' , function(){
         if(device_status == 'pc'){
             $('header').addClass('menu_pc')
@@ -96,15 +96,15 @@ $(document).ready(function(){
     }
 
 
-
-/////////////////////////////////////////////////////////////////////
-
-//family_site
     scroll_chk() // 문서가 로됭되고 단1번 실행
     $(window).scroll(function(){
         scroll_chk() //스크롤할때마다 실행
     })
 
+
+
+
+/////////////////////////////////////////////////////////////////////
     /* family_site 열고 닫기
         footer .f_util .family_site .family_open 열기을 클릭하면
         footer .f_util .family_site 에 open 클래스 추가
