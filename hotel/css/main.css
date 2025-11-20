@@ -641,16 +641,22 @@ header .util a {
     
 }  /* active된 팝업의 사이즈 - 절대 transition 금지 */
 
-
-
+.room .swiper {
+    overflow: visible; /* 확대해도 잘림 방지 */
+}
 .room .swiper-slide {
-    width: 528px;
+    display: inline-block;
+    width: 300px;
+    transition: width 0.4s ease, transform 0.4s ease;
+}
+.room .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .room .swiper-slide-active {
-    width: 832px;
+    transform: scale(1.4); /* 가운데 확대 */
 }
-
-
 
 /***************************** room : 끝 **************************************/
 
