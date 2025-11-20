@@ -55,30 +55,32 @@ header .util a {
     padding: 5px 0 5px 8px;
     color: #fff;
 }
-/*header 스크롤 올리면fixed 고정*/
-header.fixed {
-    color: var(--color-basic);
-    background-color: var(--color-white);
-    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
-} 
-header.fixed .logo a {
-    background-image: url(../images/logo.svg);
-}
-header.fixed .util .lang::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23222222' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0672 0.886327L6.03359 6.91992L-2.63737e-07 0.886328L0.887031 -0.000703135L6.03359 5.14602L11.1802 -0.000703585L12.0672 0.886327Z' /%3E%3C/svg%3E%0A");
-}
-header.fixed .util a {
-    color: #222;
-}
+ /*header 스크롤 올리면fixed 고정*/
+        header.fixed {
+            color: var(--color-basic);
+            background-color: var(--color-white);
+            box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.3);
+        } 
+        header.fixed .logo a {
+            background-image: url(../images/logo.svg);
+        }
+        header.fixed .util .lang::after {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23222222' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0672 0.886327L6.03359 6.91992L-2.63737e-07 0.886328L0.887031 -0.000703135L6.03359 5.14602L11.1802 -0.000703585L12.0672 0.886327Z' /%3E%3C/svg%3E%0A");
+        }
+        header.fixed .util a {
+            color: #222;
+        }
 
-            /*스크롤을 아래로 내릴때 header 올림 : menu_pc
-            header에 menu_pc, menu_mo 있을때는 작동하면 앙대*/
-header.up:not(.menu_pc, .menu_mo) {
-    transform: translateY(-110%);
-}
+                    /*스크롤을 아래로 내릴때 header 올림 : menu_pc
+                    header에 menu_pc, menu_mo 있을때는 작동하면 앙대*/
+        header.up:not(.menu_pc, .menu_mo) {
+            transform: translateY(-110%);
+        }
 
-/* -----------------------------1025보다 클때 (pc버전) : 시작 -----------------------------*/
-    @media screen and (min-width:1025px){ 
+
+
+/* -----------------------------1070보다 클때 (pc버전) : 시작 -----------------------------*/
+    @media screen and (min-width:1271px){ 
         header .gnb .gnb_open,
         header .gnb .gnb_wrap .gnb_logo,
         header .gnb .gnb_wrap .gnb_close {
@@ -179,18 +181,14 @@ header.up:not(.menu_pc, .menu_mo) {
         header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover span::after {
         width: 100%;/*transition주기 : 너비 0->100%*/
         }
+
+       
+
     }/*@media 1025이상*/
-    /* --------------------- 1025보다 클때 (pc버전) : 끝 ---------------------*/
+    /* --------------------- 1270보다 클때 (pc버전) : 끝 ---------------------*/
 
-    @media screen and (max-width:1280px) and (min-width:1025px){   
-        /* 1280~1024사이*/
-        header .gnb .gnb_wrap ul.depth1 > li > a {
-            padding: 0 1.2em;
-        }
-    }
-
-    /* --------------------- 1024이하일때 : 시작 ---------------------*/
-    @media screen and (max-width:1024px){ 
+    /* --------------------- 1270이하일때 : (테블릿버전)시작 ---------------------*/
+    @media screen and (max-width:1270px){ 
         header {
             padding-right: 0;
         }
@@ -199,6 +197,9 @@ header.up:not(.menu_pc, .menu_mo) {
             height: 24px;
         }
         header .util {
+            display: none;
+        }
+        header .gnb .gnb_wrap {
             display: none;
         }
         header .gnb .gnb_open {
@@ -210,7 +211,10 @@ header.up:not(.menu_pc, .menu_mo) {
             background-repeat: no-repeat;
             background-size: 16px;
         }
-
+        header.fixed .gnb .gnb_open {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 12' fill='%23222222' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1V0H16V1H0ZM0 12V11H16V12H0ZM3 6.5V5.5H16V6.5H3Z'/%3E%3C/svg%3E%0A");
+            
+        }
         /* right: -110%; 으로 안보이게하고 -> menu_mo 클래스 추가되면 보임*//*(gnb_wrap 이보이면-> 후손도 보임)*/
         header .gnb .gnb_wrap {
             position: absolute;/*header기준으로정렬*/
@@ -310,7 +314,15 @@ header.up:not(.menu_pc, .menu_mo) {
         header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
             display: block;
         }
-          
+        .visual .swiper-button-next {
+            display: none;
+        }
+
+        .visual .swiper-button-prev {
+            display: none;
+            
+        }  
+        
             
 } /*@media 1024이하*/
 
@@ -438,7 +450,6 @@ header.up:not(.menu_pc, .menu_mo) {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
     color: #fff;
 }
 
@@ -448,14 +459,17 @@ header.up:not(.menu_pc, .menu_mo) {
     align-items: center;
     gap: 10px 0 ;
 }
-.visual .item.reservation span,
-.visual .item.check_in span,
-.visual .item.check_out span,
-.visual .item.adult span
+.visual .item.reservation ,
+.visual .item.check_in,
+.visual .item.check_out,
+.visual .item.adult
  {
     position: relative;
 }
-.visual .item.reservation .label::after {
+.visual .item.reservation {
+    margin-right: 100px;
+}
+.visual .item.reservation::after {
     content: "";
     position: absolute; /**/
     right: -32px;
@@ -466,28 +480,29 @@ header.up:not(.menu_pc, .menu_mo) {
     background-position: center center;
     background-repeat: no-repeat;
 }
-.visual .item.check_in .label::before {
+.visual .check {
+    display: flex;
+    justify-content: space-between;
+}
+.visual .check .check_in,
+.visual .check .check_out,
+.visual .person .adult,
+.visual .person .child {
+    padding: 0 40px;
+}
+.visual .check .check_in::before {
     content: "";
     position: absolute; /**/
-    left: -40px;
+    left: 0;
     top: 0;
     width: 2px;
     height: 57px;
     background-color: rgba(225, 225, 225, 0.4);
 } 
-.visual .item.check_out .label::before {
+.visual .check .check_out::before {
     content: "";
     position: absolute; /**/
-    left: -40px;
-    top: 0;
-    width: 2px;
-    height: 57px;
-    background-color: rgba(225, 225, 225, 0.4);
-} 
-.visual .item.adult .label::before {
-    content: "";
-    position: absolute; /**/
-    left: -40px;
+    left: 0;
     top: 0;
     width: 2px;
     height: 57px;
@@ -495,21 +510,128 @@ header.up:not(.menu_pc, .menu_mo) {
 } 
 
 
-.visual .bookingbox .search {
+.visual .person .only_mo {
+    display: none;
+}
+.visual .person {
+    display: flex;
+    justify-content: space-between;
+}
+.visual .item.adult::before {
+    content: "";
+    position: absolute; /**/
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 57px;
+    background-color: rgba(225, 225, 225, 0.4);
+} 
+
+
+.visual .bookingbox .search button {
     border: 1px solid var(--color-white);
     color: var(--color-white);
     padding: 19px 40px 19px 40px;
 }
-.visual .bookingbox .search:hover {
+.visual .bookingbox .search but:hover {
     background-color: var(--color-white);
     color: var(--color-title);
 }
+    /* --------------------- 1250~980 :시작 ---------------------*/
 
+@media screen and (min-width:979px) and (max-width:1250px) {
+    /* 1250~980*/
+    .visual .check .check_in, 
+    .visual .check .check_out, 
+    .visual .person .adult, 
+    .visual .person .child {
+        padding: 0 20px;
+    }
+    .visual .item.reservation {
+        margin-right: 50px;
+    }
+}
+
+    /* ---------------------  1250~980 : 끝 ---------------------*/
+
+
+ 
+    /* ---------------------  980~768 : 시작 ---------------------*/
+@media screen and (max-width:980px) {
+            .visual .bookingbox {
+                top: calc(50% + 10%);
+                width: calc(100% - 30px);   /* 양 옆 여백 */
+                padding: 20px 10px 20px 10px;
+                background: rgba(0,0,0,0.55);      /* 배경 어둡게 */    
+                backdrop-filter: blur(4px);
+                display: block; 
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .visual .bookingbox .reservation {
+                display: none;
+            }
+
+
+            .visual .check {
+                align-items: center;
+                margin: 6px 0 32px 0;
+            }
+            .visual .check .item {
+                width: 50%;
+            }
+            .visual .person .item {
+                width: 33.33%;
+                padding: 0;
+                margin: 0 0 21px 0;
+            }
+            .visual .check .check_in::before {
+                display: none;
+            }
+
+
+            .visual .person .only_mo {
+                display: flex;
+                justify-content: center;
+            }
+            .visual .person .child {
+                position: relative;
+            }
+            .visual .person .child::before {
+                content: "";
+                position: absolute; /**/
+                left: 0;
+                top: 0;
+                width: 2px;
+                height: 57px;
+                background-color: rgba(225, 225, 225, 0.4);
+            } 
+            .visual .search {
+                display: flex;
+                justify-content: center;
+            }
+
+    }
 
 
 /***************************** visual :끝**************************************/
 
+
+
 /***************************** room : 시작 **************************************/
+.room .tit {
+    text-align: center;
+}
+.room .tit h3 {
+    margin: 130px 0 10px 0;
+    font-size: 48px;
+    font-weight: var(--font-weight-blod);
+    color: var(--color-title);
+}
+.room .tit p {
+    margin: 0 0 58px 0;
+}
 .room .swiper-slide { 
     width:528px; 
     height: 396px;
@@ -521,8 +643,12 @@ header.up:not(.menu_pc, .menu_mo) {
 
 
 
-
-
+.room .swiper-slide {
+    width: 528px;
+}
+.room .swiper-slide-active {
+    width: 832px;
+}
 
 
 

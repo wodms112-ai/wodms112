@@ -1,6 +1,6 @@
 //******************************heder(common.css ):시작******************************* */
 $(document).ready(function(){
-    let mobile_size = 1024 //모바일 시작사이즈
+    let mobile_size = 1270 //모바일 시작사이즈
     let window_w //브라우저 넓이
     let device_status // pc인가 mobile인가 테스트
 
@@ -163,7 +163,7 @@ const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요
 });
 //************************************ visual : 끝*************************************** */
 
-//************************************ romm : 시작 *************************************** */
+//************************************ room : 시작 *************************************** */
 const room_swiper = new Swiper('.room .swiper', { /* 팝업을 감싼는 요소의 class명 */
 	slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
 	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
