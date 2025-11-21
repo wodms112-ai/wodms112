@@ -164,67 +164,187 @@ const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요
 //************************************ visual : 끝*************************************** */
 
 //************************************ room : 시작 *************************************** */
-const room_swiper = new Swiper('.room .swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 'auto', /* css에서 slide의 넓이ㅓ 지정 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	breakpoints: {
-		768: {    /* 768px 이상일때 적용 */
-			spaceBetween: 24,
-		},
-	},
-    loop: true, 
-	navigation: {
-        prevEl: '.room .swiper-button-prev',
-		nextEl: '.room .swiper-button-next',
-	},
-	on: {
-		slideChange: function() {
-              // 1) (active된) 슬라이드를 가져오기
-			const activeSlide = this.slides[this.activeIndex]
-             //    (active된) 슬라이드 넓이
-			const activeSlideWidth = activeSlide.offsetWidth
 
-            //2) 바로 이전에 active되어 있던 슬라이드를 가져오기
-			const otherSlides = this.slides[this.previousIndex]
-            //    이전 슬라이드 넓이
+// ======= 1. 공용 변수 =======
+let _syncTimer = null;
+let _resizeTimer = null;
 
-            // 3) 두 슬라이드의 넓이 차이 구하기
-			const otherSlideWidth = otherSlides.offsetWidth	
-            // 예: 이전 300px → 현재 350px = +50px 차이		
-			const slideWidthDifference = activeSlideWidth - otherSlideWidth;
+// ======= 2. 해상도별 슬라이드 너비 설정 =======
+function getWidthSettings() {
+    const vw = window.innerWidth;
 
-             // 4) Swiper가 기본으로 이동한 값에서
-            //  "슬라이드 너비 차이만큼" 위치를 다시 조정하기( 넓이가 다른 슬라이드를 넘길 때 튀지 않게 해주는 보정)
-			this.setTranslate(this.translate - slideWidthDifference);
-		},
-		slideChangeTransitionEnd: function() {
-			// 전환이 끝나면 Swiper를 다시 업데이트
-			setTimeout(() => {
-				this.update();// 스와이퍼 재계산!
-			}, 100);  //  0.1초 뒤에 실행 (조금 기다렸다가 실행)
-		}
-	},
-    
+    if (vw >= 981) {               // PC
+        return { NORMAL_W: 528, ACTIVE_W: 832, DURATION: 360 };
+    } else if (vw >= 768) {         // 태블릿
+        return { NORMAL_W: 380, ACTIVE_W: 380, DURATION: 360 };
+    } else {                        // 모바일
+        return { NORMAL_W: 260, ACTIVE_W: 260, DURATION: 300 };
+    }
+}
+
+// ======= 3. active 슬라이드를 가운데로 보내기 위한 translate 계산 =======
+function calcTranslateForIndex(swiper, activeIndex, normalW, activeW) {
+    const space = swiper.params.spaceBetween || 0;
+
+    // active 앞에 있는 슬라이드들의 총 너비 (전부 NORMAL_W 기준)
+    const beforeWidth = activeIndex * (normalW + space);
+
+    // 가운데 정렬을 위한 여유 값
+    const centeredOffset = (swiper.width - activeW) / 2;
+
+    // Swiper는 왼쪽(-) 방향으로 이동하니 마이너스 부호
+    const targetTranslate = -beforeWidth + centeredOffset;
+
+    return targetTranslate;
+}
+
+// ======= 4. 초기 적용 : 깜빡임 없이 width 세팅 =======
+function applyWidthsInstant(swiper, normalW, activeW, durationMs) {
+    const slides = swiper.slides;
+    const aIdx = swiper.activeIndex;
+
+    // transition 잠시 제거
+    slides.forEach(slide => { slide.style.transition = 'none'; });
+
+    // active만 큰 폭, 나머지는 작은 폭
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.width = (i === aIdx) ? activeW + 'px' : normalW + 'px';
+    }
+
+    // 강제 리플로우
+    void swiper.wrapperEl.offsetWidth;
+
+    // width에만 transition 다시 걸기
+    slides.forEach(slide => {
+        slide.style.transition = `width ${durationMs}ms cubic-bezier(.22,.9,.3,1)`;
+    });
+}
+
+// ======= 5. 슬라이드 전환 시 width + translate 동기화 =======
+function syncWidthAndTranslate(swiper, activeIndex, normalW, activeW, durationMs) {
+    // 이전 타이머 정리
+    if (_syncTimer) {
+        clearTimeout(_syncTimer);
+        _syncTimer = null;
+    }
+
+    const slides = swiper.slides;
+
+    // 1) width 목표값 설정
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.width = (i === activeIndex) ? activeW + 'px' : normalW + 'px';
+    }
+
+    // 2) 새 translate 계산
+    const targetTranslate = calcTranslateForIndex(swiper, activeIndex, normalW, activeW);
+
+    // 3) 일정 시간 동안 애니메이션
+    swiper.setTransition(durationMs);
+    swiper.setTranslate(targetTranslate);
+
+    // 4) 끝나고 transition 제거 + update
+    _syncTimer = setTimeout(() => {
+        swiper.setTransition(0);
+        swiper.update();
+        _syncTimer = null;
+    }, durationMs + 10);
+}
+
+// ======= 6. 리사이즈 대응 =======
+function onWindowResize(swiper) {
+    if (_resizeTimer) clearTimeout(_resizeTimer);
+    _resizeTimer = setTimeout(() => {
+        const { NORMAL_W, ACTIVE_W, DURATION } = getWidthSettings();
+
+        applyWidthsInstant(swiper, NORMAL_W, ACTIVE_W, DURATION);
+
+        const translate = calcTranslateForIndex(swiper, swiper.activeIndex, NORMAL_W, ACTIVE_W);
+        swiper.setTransition(0);
+        swiper.setTranslate(translate);
+        swiper.update();
+
+        _resizeTimer = null;
+    }, 120);
+}
+
+// ======= 7. room 섹션 Swiper 초기화 =======
+const room_swiper = new Swiper('.room .swiper', {
+    slidesPerView: 'auto',
+    centeredSlides: false,
+    spaceBetween: 16,
+    loop: false,
+    breakpoints: {
+        // 980px 이상 : PC/태블릿, loop 켜기
+        979: {
+            loop: true,
+            centeredSlides: true,
+        },
+    },
+    navigation: {
+        nextEl: '.room .btn_next',
+        prevEl: '.room .btn_prev',
+    },
+    pagination: {
+        el: '.room .swiper-pagination',
+        clickable: true,
+        type: 'fraction',
+    },
+    autoplay: false,   // 자동 넘김 없음!
+
+    on: {
+        init: function () {
+            const { NORMAL_W, ACTIVE_W, DURATION } = getWidthSettings();
+
+            // 1) 첫 active 기준으로 width 세팅
+            applyWidthsInstant(this, NORMAL_W, ACTIVE_W, DURATION);
+
+            // 2) 첫 위치를 가운데로 맞춰주기
+            const initialTranslate =
+                calcTranslateForIndex(this, this.activeIndex, NORMAL_W, ACTIVE_W);
+            this.setTransition(0);
+            this.setTranslate(initialTranslate);
+
+            // 3) 리사이즈 대응
+            window.addEventListener('resize', () => onWindowResize(this));
+        },
+
+        slideChangeTransitionStart: function () {
+            const { NORMAL_W, ACTIVE_W, DURATION } = getWidthSettings();
+            syncWidthAndTranslate(this, this.activeIndex, NORMAL_W, ACTIVE_W, DURATION);
+        },
+
+        slideChangeTransitionEnd: function () {
+            if (_syncTimer) { clearTimeout(_syncTimer); _syncTimer = null; }
+            this.setTransition(0);
+            this.update();
+        }
+    },
+
+    observer: true,
+    observeParents: true,
+
+    scrollbar: {
+        el: ".room .scrollbar",
+        hide: false,
+        draggable : true,//스크롤바 드레그해서이동
+        dragSize : 300, //스크롤바사이즈
+    },
 });
 
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //************************************ romm : 끝 *************************************** */
+
+
+
+
+//************************************ dining : 시작 *************************************** */
+$('.dining .list ul li').on('mouseenter', function(){
+        //li이에 오버했을때의 명령이다~
+        $('.dining .list ul li').removeClass('on')
+        //li에 오버했을때 일단 on들어간거 다뺴
+        $(this).addClass('on')
+        //오버한 나한테만 적용해줘
+    })
+//************************************ dining : 끝 *************************************** */
 
 }) // 맨끝(header)
 

@@ -51,7 +51,7 @@ const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소�
             },
         },
         scrollbar: {
-            el: ".news .ctrl_wrap .scrollbar",
+            el: ".news .ctrl_wrap .scrollbar .swiper-scrollbar-drag",
             hide: false,
             draggable : true,//스크롤바 드레그해서이동
             dragSize : 300, //스크롤바사이즈

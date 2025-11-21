@@ -147,12 +147,7 @@ header .util .flow::before {
 .culture .wrapper {
     position: relative;/*more 정렬의 기준 */
 }
-.tour .more,
-.culture .more {
-    position: absolute;/*wrapper를 기준으로 정렬*/
-    right: 15px;
-    top: 62px;
-}
+
 .culture .tit h2 {
     font-size: 40px;
     font-weight: 800;
@@ -197,6 +192,13 @@ header .util .flow::before {
     font-weight: 800;
     margin: 22px 0 10px 0;
 }
+.tour .more,
+.culture .more {
+    position: absolute;/*wrapper를 기준으로 정렬*/
+    right: 15px;
+    top: 62px;
+}
+
 .tour .more a,
 .culture .more a {
     padding: 0 16px 0 0;
@@ -224,6 +226,7 @@ header .util .flow::before {
     0%{transform: rotate(0deg);}
     100%{transform: rotate(360deg);}
 }
+
 .tour {
     margin: 111px 0 0 0;
     background-color: #f7f7f7;
@@ -316,6 +319,8 @@ header .util .flow::before {
     다만 block이 만만해서 대부분 block을 줌*/
     white-space: nowrap;/*줄바꿈 금지*/
 }
+
+
 .community {
     height:930px ;
     background: url(../images/cummunity_bg.jpg) no-repeat center center/ cover  ;
