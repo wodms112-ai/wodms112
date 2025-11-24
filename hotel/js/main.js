@@ -272,7 +272,7 @@ const room_swiper = new Swiper('.room .swiper', {
     slidesPerView: 'auto',
     centeredSlides: false,
     spaceBetween: 16,
-    loop: false,
+    loop: true,
     breakpoints: {
         // 980px 이상 : PC/태블릿, loop 켜기
         979: {
@@ -345,6 +345,77 @@ $('.dining .list ul li').on('mouseenter', function(){
         //오버한 나한테만 적용해줘
     })
 //************************************ dining : 끝 *************************************** */
+
+//************************************ event : 시작 *************************************** */
+const event_swiper = new Swiper('.event .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 1,     // 기본(최소 사이즈): 1개
+    spaceBetween: 16,
+
+    breakpoints: {
+        768: {            // 768px 이상 → 2개
+            slidesPerView: 2,
+            spaceBetween: 24,
+        },
+        981: {            // 981px 이상 → auto
+            slidesPerView: "auto",
+            spaceBetween: 24,
+        }
+    },
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	// autoplay: {  /* 팝업 자동 실행 */
+	// 	delay: 2500,
+	// 	disableOnInteraction: true,
+	// },
+	navigation: {
+		nextEl: '.event .swiper-button-next',
+		prevEl: '.event .swiper-button-prev',
+	},
+	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+		el: '.swiper-pagination', /* 해당 요소의 class명 */
+		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+	},
+});
+
+
+//************************************ event : 끝 *************************************** */
+
+//******************************** around .list_mo : 시작  ******************************** */
+const around_swiper = new Swiper('.around .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 1,     // 기본(최소 사이즈): 1개
+    spaceBetween: 16,
+
+    breakpoints: {
+        768: {            // 768px 이상 → 2개
+            slidesPerView: 2,
+            spaceBetween: 24,
+        },
+        981: {            // 981px 이상 → auto
+            slidesPerView: "auto",
+            spaceBetween: 24,
+        }
+    },
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	// autoplay: {  /* 팝업 자동 실행 */
+	// 	delay: 2500,
+	// 	disableOnInteraction: true,
+	// },
+	navigation: {
+		nextEl: '.around .list_mo .swiper-button-next',
+		prevEl: '.around .list_mo .swiper-button-prev',
+	},
+	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+		el: '.swiper-pagination', /* 해당 요소의 class명 */
+		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+	},
+});
+
+
+
+//******************************** around .list_mo : 끝  ******************************** */
 
 }) // 맨끝(header)
 
