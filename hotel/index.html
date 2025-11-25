@@ -88,8 +88,8 @@
         </header>
 
         <div class="container">
-            <h2 class="blind">팝업</h2>
             <section class="visual">
+                <h2 class="blind">팝업</h2>
                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                     <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                         <li class="swiper-slide pop1">
@@ -162,7 +162,7 @@
             <section class="room">
                 <div class="tit">
                     <div class="wrapper">
-                        <h3>Stay ROOMS</h3>
+                        <h2>Stay ROOMS</h2>
                         <P>라마다 속초만의 아늑하고 편안한 공간에서 품격 있는 휴식과 세심한 서비스를 제공합니다</P>
                     </div><!--wrapper-->
                 </div><!--tit-->
@@ -172,49 +172,306 @@
                             <li class="swiper-slide"><!-- 팝업 요소들 (div로 해도 상관없음) -->
                                 <a href="#n">
                                     <div class="photo"><img src="images/room01.jpg" alt=""></div>
-                                    <span class="name">STANDARD</span>
-                                    <p>합리적인 가격으로 가벼운 여행에도 잘 어울리는 기본 객실입니다.<br>
-                                        조용히 쉬어갈 수 있는 아늑함을 선물합니다.</p>
+                                    <div class="txt">
+                                        <h3>STANDARD</h3>
+                                        <p>합리적인 가격으로 가벼운 여행에도 잘 어울리는 기본 객실입니다.<br>
+                                            조용히 쉬어갈 수 있는 아늑함을 선물합니다.</p>
+                                    </div><!--txt--> 
+
                                 </a>
                             </li> 
                             <li class="swiper-slide"><!-- 팝업 요소들 (div로 해도 상관없음) -->
                                 <a href="#n">
                                     <div class="photo"><img src="images/room02.jpg" alt=""></div>
-                                    <span class="name">Deluxe</span>
-                                    <p>대포항의 야경을 볼 수 있는 객실입니다.<br>
-                                        전면 바다로  탁 트인 바다전망을 즐기실 수 있습니다</p>
+                                    <div class="txt">
+                                        <h3>Deluxe</h3>
+                                        <p>대포항의 야경을 볼 수 있는 객실입니다.<br>
+                                            전면 바다로  탁 트인 바다전망을 즐기실 수 있습니다</p>
+                                    </div><!--txt--> 
                                 </a>
                             </li> 
                             <li class="swiper-slide"><!-- 팝업 요소들 (div로 해도 상관없음) -->
                                 <a href="#n">
                                     <div class="photo"><img src="images/room03.jpg" alt=""></div>
-                                    <span class="name">Suite</span>
-                                    <p> 여유로운 구조를 제공합니다 인원에 맞춰 다양하게<br>
-                                        침대 구성이 가능하며, 개방감 있는 휴식을 누릴 수 있습니다</p>
+                                    <div class="txt">
+                                        <h3>Suite</h3>
+                                        <p> 여유로운 구조를 제공합니다 인원에 맞춰 다양하게<br>
+                                            침대 구성이 가능하며, 개방감 있는 휴식을 누릴 수 있습니다</p>
+                                    </div><!--txt-->    
                                 </a>
                             </li> 
                         </ul>
                         <div class="ctrl_btn">
-                            <button class="swiper-button-prev"><span class="blind">이전버튼</span></button>
-                            <button class="swiper-button-next"><span class="blind">다음버튼</span></button>
+                            <button class="btn_prev"><span class="blind">이전버튼</span></button>
+                            <button class="btn_next"><span class="blind">다음버튼</span></button>
                         </div> 
                     </div><!--swiper-->
                 </div><!--list-->    
 
-
-
-
-
             </section><!--room-->    
-            <section class="dining"></section><!--dining-->
-            <section class="event"></section><!--event-->
-            <section class="around"></section><!--around-->
-            <section class="hall"></section><!--hall-->
-           
-        </div>
-        <footer>
 
-        </footer>
+
+
+            <section class="dining">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>Dining & Facilities</h2>
+                        <p>여행의 편의를 채우는 다양한 부대시설을 이용하실 수 있습니다</p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <!--열려있는 li에 on클래스를 추가해줌
+                            단1개의li에만 on클래스 추가-->
+                            <li class="bg1 ">
+                                <a href="#n">
+                                    <h3>DINING</h3>
+                                    <p>프리미엄 라이브 뷔페 오션 갤리에서<br>
+                                     따뜻하고 정갈한 식사와 함께 여행의 <br>
+                                     즐거움을 함께하세요.</p>
+                                </a>
+                            </li>
+                            <li class="bg2 ">
+                                <a href="#n">
+                                    <h3>CAFE</h3>
+                                    <p>신선한 재료로 준비된 카페에서 <br>
+                                    여유로운 티타임을 즐겨보세요. <br>
+                                   (매일 07:00~10:30 / Last order 10:00)</p>
+                                </a>
+                            </li>
+                            <li class="bg3 ">
+                                <a href="#n">
+                                    <h3>FITNSESS</h3>
+                                    <p>여행 중에도 일상의 컨디션을<br> 
+                                        유지할 수 있도록 갖춰진 운동 공간입니다<br>
+                                        체력 관리와 가벼운 스트레칭을 자유롭게 이용해보세요</p>
+                                </a>
+                            </li>
+                            <li class="bg4 ">
+                                <a href="#n">
+                                    <h3>CONVENIENCE</h3>
+                                    <p>간단한 식품과 생활용품을<br> 
+                                    언제든지 구매할 수 있습니다 <br> 
+                                    여행의 편의를 채워보세요</p>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="more"><a href="#n">viewmore</a></div>
+
+                </div>
+
+
+            </section><!--dining-->
+            <section class="event">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>PROMOTIONS & EVENT</h2>
+                        <p>여행을 특별하게 하는 다양한 혜택과 이벤트를 만나보세요</p>
+                    </div>
+                </div><!--tit-->
+                <div class="list">
+                    <div class="wrapper">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/event01.jpg" alt=""></div>
+                                        <h3>11월 스페셜 디너 뷔페 안내</h3>
+                                        <span class="date">2025-10-21 ~ 2025-11-30</span>
+                                        <p>매주 토요일 및 지정일, 디너 뷔페 최대 20% 할인 혜택을 제공드립니다.매주 토요일 및 지정일, 디너 뷔페 최대 20% 할인 혜택을 제공드립니다.</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/event02.jpg" alt=""></div>
+                                        <h3>2연박 프로모션</h3>
+                                        <span class="date">2025-10-23 ~ 2025-12-30</span>
+                                        <p>2박 이상 투숙 고객을 대상으로 할인 프로모션이 진행됩니다.</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/event03.jpg" alt=""></div>
+                                        <h3>겨울 마중 프로모션</h3>
+                                        <span class="date">2025-11-03 ~ 2025-11-23</span>
+                                        <p>겨울시즌 전객실 15% 할인 프로모션이 진행됩니다. 차가운 겨울의 설렘이 머무는 곳, 오션뷰 호텔에서</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/event04.jpg" alt=""></div>
+                                        <h3>선착순 객실 업그레이드</h3>
+                                        <span class="date">2025-08-11 ~ 2025-11-30</span>
+                                        <p>푸른 동해바다의 일출을 볼 수있는 스위트룸을 합리적인 가격으로 이용하세요.</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/event05.jpg" alt=""></div>
+                                        <h3>더하노이풋앤바디 대포항점 제휴 안내</h3>
+                                        <span class="date">2025-06-19 ~ 2025-12-31</span>
+                                        <p>푸른 동해바다의 일출을 볼 수있는 스위트룸을 합리적인 가격으로 이용하세요.</p>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                            </ul>
+                        </div>
+                        <div class="more"><a href="#n">view more</a></div>
+                    </div>
+                </div><!--list-->
+            </section><!--event-->
+
+            <section class="around">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>AROUND RAMADA</h2>
+                        <p>라마다 속초 인근에서 즐길 수 있는 대표 관광지를 한눈에 확인해보세요.</p>
+                    </div>      
+                </div>
+                <div class="list_pc">
+                    <div class="wrapper">
+                            <div class="colgroup">
+                                <div class="beach">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/beach01.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3># 속초해수욕장</h3>
+                                            <p>맑은 바다와 넓은 백사장이 있는 속초 대표 해변입니다.숙소에서 차량으로 약 8~10분 거리에 있습니다.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="rowgroup">
+                                        <div class="market">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/market01.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h3># 대포항 수산시장</h3>
+                                                    <p>싱싱한 활어와 해산물을 구매할 수 있는 전통 시장입니다.숙소에서 도보 약 6~8분 거리에 있습니다.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="port">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/port01.jpg" alt=""></div>
+                                                <div class="txt">
+                                                    <h3># 속초대포항</h3>
+                                                    <p>해산물 식당과 항구 풍경을 즐길 수 있는 속초의 대표 관광지입니다.숙소에서 도보 약 5분 거리에 있습니다.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="way">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/way01.jpg" alt=""></div>
+                                    <div class="txt">
+                                        <h3># 속초포차거리</h3>
+                                        <p>다양한 길거리 음식을 맛볼 수 있는 포장마차 거리입니다. 숙소에서 차량으로 약 5~7분 거리에 있습니다.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="more"><a href="#n">view more</a></div>
+                    </div><!--wrapper-->
+                </div><!--list_pc-->
+
+                <div class="list_mo">
+                    <div class="wrapper">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images//beach01.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3># 속초해수욕장</h3>
+                                            <p>맑은 바다와 넓은 백사장이 있는 속초 대표 해변입니다.숙소에서 차량으로 약 8~10분 거리에 있습니다.</p>
+                                        </div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images//market01.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3># 대포항 수산시장</h3>
+                                            <p>싱싱한 활어와 해산물을 구매할 수 있는 전통 시장입니다.숙소에서 도보 약 6~8분 거리에 있습니다.</p>
+                                        </div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images//port01.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3># 속초대포항</h3>
+                                            <p>해산물 식당과 항구 풍경을 즐길 수 있는 속초의 대표 관광지입니다.숙소에서 도보 약 5분 거리에 있습니다.</p>
+                                        </div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images//way01.jpg" alt=""></div>
+                                        <div class="txt">
+                                            <h3># 속초포차거리</h3>
+                                            <p>다양한 길거리 음식을 맛볼 수 있는 포장마차 거리입니다. 숙소에서 차량으로 약 5~7분 거리에 있습니다.</p>
+                                        </div>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                            </ul>
+                        </div>
+                        <div class="more"><a href="#n">view more</a></div>
+                    </div>
+                    
+
+                </div><!--list_mo-->
+            </section>
+
+
+            <section class="hall">
+                <!--  pc만  -->
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>WEDDING & BANQUET</h2>
+                        <p>하루의 쉼을 넘어, 인생의 순간까지.<br>
+                            품격 있는 연회와 웨딩으로
+                            당신의 소중한 날을 라마다 속초에서 함께하세요.</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="wrapper">
+                        <ul>
+                            <li class="wedding"><a href="#n"><span>WEDDING HALL</span></a></li>
+                            <li class="banquet"><a href="#n"><span>BANQUET HALL</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--hall-->
+        </div><!--container-->
+<footer>
+    <div class="wrapper">
+        <div class="f_logo"><img src="images/logo_f.svg" alt=""></div>
+        <div class="inner">
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">이용약관</a></li>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">이메일 무단 수집 금지</a></li>
+                        <li><a href="#n">영상정보처리기기 설치 및 운영방침</a></li>
+                    </ul>
+                </div><!--f_nav-->
+                <div class="f_info">
+                    <address>강원특별자치도 속초시 대포항희망길 106 라마다 속초   </address><br>
+                    <span>Tel:1577. 0130 </span> <span>Fax: 033.630.6803</span> <span>e-mail: admin@ramadasc.co.kr</span><br>
+                    <span>대표자 : 박종모</span> <span>사업자등록번호 : 241-86-00852</span> <span>통신판매신고번호 : 제 2018-강원속초-0067호</span>
+                </div>
+                <div class="copyright">Copyright © 2018 RamadaSokcho inc. All rights reserved.</div>
+        </div>
+        <div class="sns">
+              <ul>
+                  <li class="facebook"><a href="#n"><span class="blind">페이스북</span></a></li>
+                  <li class="kakao"><a href="#n"><span class="blind">카카오톡</span></a></li>
+                  <li class="insta"><a href="#n"><span class="blind">인스타</span></a></li>
+              </ul>
+        </div>
+    </div>
+</footer>
     </div>
 </body>
 </html>      
