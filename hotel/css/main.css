@@ -1384,6 +1384,7 @@ header .util a {
             .hall {
                 margin: 173px 0 0 0;
                 background: none;
+                height: auto;
             }
             .hall .tit h2 {
                 font-size: 35px;
@@ -1451,11 +1452,11 @@ footer .inner {
 }
 footer .inner .f_nav ul {
     display: flex;
-    gap: 38px;
+    gap: 0 38px;
     flex-wrap: wrap; /*여러줄 허용*/
 }
 footer .inner .f_info {
-    margin: 21px 0;
+    margin: 18px 0;
 }
 
 footer .inner .f_info address,
@@ -1469,7 +1470,7 @@ footer .inner .copyright {
 footer .sns {
     position: absolute;
     right: 0;
-    top: 0;
+    top: -7px;
 
 }
 footer .sns ul {
@@ -1496,4 +1497,17 @@ footer .sns ul li.kakao a {
 footer .sns ul li.insta a {
    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.2946 3.41602C14.6489 3.41602 14.1211 3.92169 14.1211 4.54034C14.1211 5.159 14.6489 5.66467 15.2946 5.66467C15.9403 5.66467 16.4681 5.159 16.4681 4.54034C16.4681 3.92169 15.9403 3.41602 15.2946 3.41602Z' fill='white'/%3E%3Cpath d='M10.0785 4.85742C7.36093 4.85742 5.1543 6.97698 5.1543 9.57531C5.1543 12.1736 7.36655 14.2932 10.0785 14.2932C12.7905 14.2932 15.0027 12.1736 15.0027 9.57531C15.0027 6.97698 12.7905 4.85742 10.0785 4.85742ZM10.0785 12.604C8.33791 12.604 6.92296 11.2484 6.92296 9.58069C6.92296 7.91302 8.33791 6.55737 10.0785 6.55737C11.8191 6.55737 13.234 7.91302 13.234 9.58069C13.234 11.2484 11.8191 12.604 10.0785 12.604Z' fill='white'/%3E%3Cpath d='M13.9921 19.162H6.00787C2.69512 19.162 0 16.5798 0 13.4059V5.75614C0 2.58219 2.69512 0 6.00787 0H13.9921C17.3049 0 20 2.58219 20 5.75614V13.4059C20 16.5798 17.3049 19.162 13.9921 19.162ZM6.00225 1.79678C3.72824 1.79678 1.87535 3.57204 1.87535 5.75076V13.4005C1.87535 15.5792 3.72824 17.3545 6.00225 17.3545H13.9865C16.2605 17.3545 18.1134 15.5792 18.1134 13.4005V5.75076C18.1134 3.57204 16.2605 1.79678 13.9865 1.79678H6.00225Z' /%3E%3C/svg%3E%0A");
    background-size: 20px;
+}
+@media screen and (max-width:1240px) {
+    footer .wrapper {
+        display: block;
+    }
+    footer .inner {
+        margin: 20px 0 0 0;
+    }
+}
+@media screen and (max-width:430px) {
+    footer .sns {
+        display: none;
+    }
 }
