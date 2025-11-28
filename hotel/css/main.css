@@ -120,7 +120,7 @@ header .util a {
         }
 
 
-            /*메뉴에 마우스를 오버했을때 menu_pc가 추가되었을때*/
+        /*메뉴에 마우스를 오버했을때 menu_pc가 추가되었을때*/
         header.menu_pc {
             color: var(--color-basic);
             box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.1);

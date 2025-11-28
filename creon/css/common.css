@@ -1,0 +1,78 @@
+/*중복되는 스타일 입력*/
+:root {
+    --font-size-basic : 17px;
+    --font-weight-re : 400;
+    --font-weight-blod : 700;
+
+    --line-height-basic : 1.5;
+    --line-height-title : 1.3;
+
+    --header-h : 80px;
+    --wrapper-margin : 30px;
+
+    --color-basic : #1d1d1d;
+    --color-title : #305AD1;
+   
+}
+
+@media screen and (max-width:768px){ 
+    :root {
+        --font-size-basic : 16px;
+        --header-h : 56px;
+        --wrapper-margin : 16px;
+    }
+}
+body {
+    font-family: Pre; /*sans-serif =고딕체 -> im체가 없으면 고딕체 사용해*/
+    /*영문폰트와 한글폰트를 쓸때 반드시 영품폰트는
+    한글이 지원되는 폰트를 쓰면안돰
+    font-family에서 영문폰트를 먼저 선언하고 다음에 한글 폰트를 선언
+    영문폰트를 먼저 적용하고 지원이안되는 한글을 만나면 다믐 폰트가 적용*/
+    font-size: var(--font-size-basic);
+    font-weight: var(--font-weight-re);
+    line-height: var(--line-height-basic);
+    color: var(--color-basic);
+    word-break: keep-all; /*단어별로 줄바꿈*/
+    word-wrap: break-word; /*단어가 너무 길었을 때 강제 줄바꿈*/
+}
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /*가운데 정렬*/
+}
+
+#wrap {
+    /* min-width: 1320px;  */
+    /* 1260+30+30=1320 (최소 넓이주기) */
+    position: relative; /*wrap을 기준으로 header를 정렬하기위해서*/
+    overflow: hidden; /*hidden이 있으면 sticky기능이 안됨*/
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+} /*html 문서 구조상 글짜를 써줘야 하는데  그글자를 안보이게 하고 싶을때
+blind 클래스를 주면 사라짐*/
+
+
+
+/*
+    <좌우 여백 주는 방법>
+   좌우여백 50px : 1260 + 50 +50 =1360 
+   좌우여백 30px  :1260 +30 + 30 =1320
+   좌우여백  5% : 1260 + (1260*0.05 =63 ) = 1386
+   좌우여백  3% : 1260 + (1260*0.0 = 37.8 ) = 1335.6
+
+
+*/
+
+@media screen and (max-width:1320px){ /*pc버전일때*/
+    .wrapper {
+        width: auto;
+        margin: 0 var(--wrapper-margin); /*가운데 정렬*/
+    }
+}

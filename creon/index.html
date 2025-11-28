@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--라이브러리 파일-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+        <!--내파일-->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <title>크레온</title>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+                <!-- pc버전 ( 마우스를 오버) header에 ->  "menu_pc" -> GNB 열림
+                모바일버전  (클릭) header에 -> "menu_mo" -> GNB 열림 --> 
+            <h1 class="logo"><a href="index.html"><span class="blind"></span></a></h1><!--pc로고-->
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴열기</span></button><!--모바일메뉴열기-->
+                <div class="gnb_wrap">
+                    <div class="gnb_logo"><span class="blind">reon</span></div><!--모바일로고-->
+                    <ul class="depth1">
+                         <!--pc에서 메뉴가 열리면 class="over"추가(over)-->
+                         <!--모바일에서 li 오버하면=> class="open"추가(open)-->
+                        <li>
+                            <a href="#n"><span>트레이딩</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>국내주식</span></a></li>
+                                <li><a href="#n"><span>해외주식</span></a></li>
+                                <li><a href="#n"><span>주문/정정/취소</span></a></li>
+                                <li><a href="#n"><span>체결·잔고</span></a></li>
+                                <li><a href="#n"><span>거래내역 조회</span></a></li>
+                                <li><a href="#n"><span>입출금·이체</span></a></li>
+                                <li><a href="#n"><span>해외선물/옵션</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>투자상품</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>펀드상품</span></a></li>
+                                <li><a href="#n"><span>ELS/DLS</span></a></li>
+                                <li><a href="#n"><span>리츠상품</span></a></li>
+                                <li><a href="#n"><span>ISA상품</span></a></li>
+                                <li><a href="#n"><span>CMA상품</span></a></li>
+                                <li><a href="#n"><span>연금상품</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>리서치센터</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>일간/주간 리포트</span></a></li>
+                                <li><a href="#n"><span>기업분석</span></a></li>
+                                <li><a href="#n"><span>산업분석</span></a></li>
+                                <li><a href="#n"><span>글로벌전략</span></a></li>
+                                <li><a href="#n"><span>뉴스/공시</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>계좌·고객센터</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>계좌개설</span></a></li>
+                                <li><a href="#n"><span>인증센터/OTP</span></a></li>
+                                <li><a href="#n"><span>증명서 발급</span></a></li>
+                                <li><a href="#n"><span>개인정보 변경</span></a></li>
+                                <li><a href="#n"><span>민원/전자민원</span></a></li>
+                                <li><a href="#n"><span>보안센터</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>회사소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>회사소개</span></a></li>
+                                <li><a href="#n"><span>브랜드스토리</span></a></li>
+                                <li><a href="#n"><span>공지사항</span></a></li>
+                                <li><a href="#n"><span>IR</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴닫기</span></button>
+                </div><!--gnb_wrap-->
+                <div class="gnb_bg"></div><!--메뉴배경-->
+            </nav><!--gnb-->
+            <div class="util">
+                <a href="mypage.html" class="mypage"><span class="blind">마이페이지</span></a>
+                <button type="button" class="allmenu"><span class="blind">전체메뉴열기</span></button>
+            </div>
+        </header>
+        <!----------------------main_pop :시작--------------------------->
+        <div class="container">
+            <section class="main_pop">
+                <div class="wrapper">
+                    <div class="popup">
+                        <h2 class="blind">팝업</h2>
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide pop1">
+                                    <h3>해외주식 투자,<br>  
+                                        이제 더 쉽게 시작하세요</h3>
+                                    <p>미국·중국·일본 등 글로벌 시장 정보를<br>
+                                        한눈에 확인하고 간편하게 매수할 수 있습니다.</p>
+                                    <p>※ 환율 변동 및 시장 변동성에 따라 손실이 발생할 수 있습니다.
+                                        이제 더 쉽게 시작하세요</p>
+                                    <a href="#n">자세히보기</a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide pop2">
+                                    <h3>처음 하는 투자,
+                                         ETF로 더 쉽고 안전하게</h3>
+                                    <p>다양한 자산에 분산투자되는 ETF로<br>
+                                         리스크는 줄이고 안정적인 성장에 도전하세요.</p> 
+                                    <p>※ 투자 전 상품설명서를 꼭 읽어보세요.</p>
+                                    <a href="#n">자세히보기</a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner">
+                        <div class="event">
+                            <h2 class="blind">이벤트</h2>
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                    <li class="swiper-slide pop1">
+                                        <h3>대신증권<br> 
+                                            신용이자<br>
+                                            ZERO 혜택안내</h3>
+                                        <p>신용거래 이자율 0% <br> 
+                                            혜택을 확안하세요</p>
+                                    </li> 
+                                    <li class="swiper-slide pop2">
+                                        <h3>11월<br>  
+                                            국내주식 <br> 
+                                            거래이벤트</h3>
+                                        <p>신용거래 이자율 0% <br> 
+                                            혜택을 확안하세요</p>
+                                    </li> 
+                                    <li class="swiper-slide pop2">
+                                        <h3>대신증권<br> 
+                                            주주 <br>
+                                            감사 이벤트</h3>
+                                        <p>신용거래 이자율 0% <br> 
+                                            혜택을 확안하세요</p>
+                                    </li> 
+                                </ul>
+                                <button class="swiper-button-prev"></button>
+                                <button class="swiper-button-next"></button>
+                            </div>
+                        </div>
+                        <div class="creon">
+                               <h3>CREON</h3>
+                               <p>빠르고 안정적인<br> 
+                                온라인 투자 플랫폼 </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section></section>
+            <section></section>
+            <section></section>
+
+        </div><!--container-->
+        <footer></footer>
+
+    </div>
+</body>
+</html>
