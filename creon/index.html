@@ -20,7 +20,6 @@
                 모바일버전  (클릭) header에 -> "menu_mo" -> GNB 열림 --> 
             <h1 class="logo"><a href="index.html"><span class="blind"></span></a></h1><!--pc로고-->
             <nav class="gnb">
-                <button class="gnb_open"><span class="blind">메뉴열기</span></button><!--모바일메뉴열기-->
                 <div class="gnb_wrap">
                     <div class="gnb_logo"><span class="blind">reon</span></div><!--모바일로고-->
                     <ul class="depth1">
@@ -116,10 +115,15 @@
                                 </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
                             </ul>
                         </div>
+                        <div class="btn_wrap">
+                            <button class="btn_stop"><span class="blind">일시정지</span></button>
+                            <button class="btn_play"><span class="blind">재생버튼</span></button>
+                        </div>
+                        <div class="scrollbar"></div>
                     </div>
                     <div class="inner">
                         <div class="event">
-                            <h2 class="blind">이벤트</h2>
+                            <h2>이벤트</h2>
                             <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                                 <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
                                     <li class="swiper-slide pop1">
@@ -144,8 +148,11 @@
                                             혜택을 확안하세요</p>
                                     </li> 
                                 </ul>
-                                <button class="swiper-button-prev"></button>
-                                <button class="swiper-button-next"></button>
+                                <div class="btn_wrap">
+                                    <button class="btn_prev"><span class="blind">이전팝업</span></button>
+                                    <button class="btn_next"><span class="blind">다음팝업</span></button>
+
+                                </div>
                             </div>
                         </div>
                         <div class="creon">
@@ -155,9 +162,60 @@
                         </div>
                     </div>
                 </div>
+            </section><!--main_pop-->
+
+            <section class="service">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>자주 찾는 서비스</h2>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li class="ico1">
+                                <a href="#">
+                                    <span>계좌개설</span>
+                                </a>
+                            </li>
+                            <li class="ico2">
+                                <a href="#">
+                                    <span>잔고/거래내역</span>
+                                </a>
+                            </li>
+                            <li class="ico3">
+                                <a href="#">
+                                    <span>관심종목</span>
+                                </a>
+                            </li>
+                            <li class="ico4">
+                                <a href="#">
+                                    <span>투자상품</span>
+                                </a>
+                            </li>
+                            <li class="ico5">
+                                <a href="#">
+                                    <span>해외주식</span>
+                                </a>
+                            </li>
+                            <li class="ico6">
+                                <a href="#">
+                                    <span>신용/대출</span>
+                                </a>
+                            </li>
+                            <li class="ico7">
+                                <a href="#">
+                                    <span>이벤트</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
-            <section></section>
+
+
+
+
+
             <section></section>
             <section></section>
 

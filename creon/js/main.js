@@ -74,7 +74,57 @@ $(document).ready(function(){
 //****************************** main_pop:시작******************************* */
 
 /*popup */
-const popup_swiper = new Swiper('.popup .swiper', { /* 팝업을 감싼는 요소의 class명 */
+const popup_swiper = new Swiper('.main_pop .popup .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+	// autoplay: {  /* 팝업 자동 실행 */
+	// 	delay: 2000,
+	// 	disableOnInteraction: true,
+	// },
+
+	// effect: "fade", /* fade 효과 */
+
+	//loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
+		el: '.swiper-pagination', /* 해당 요소의 class명 */
+		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
+		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+		renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
+		    return '<span class="' + className + '">' + (index + 1) + "</span>";
+		},
+	},
+	
+
+	// navigation: {  /* 이전, 다음 버튼 */
+	// 	nextEl: '.swiper-button-next',  /* 다음 버튼의 클래스명 */
+	// 	prevEl: '.swiper-button-prev',  
+	// },
+    scrollbar: {
+        el: ".main_pop .popup .scrollbar",
+        hide: false,
+        draggable : true,//스크롤바 드레그해서이동
+        //dragSize : 120, //스크롤바사이즈
+    },
+    breakpoints: {
+        768: {  // 768px 이하 적용
+            scrollbar: {
+                dragSize: 390,// 모바일
+            }
+        }
+    }
+});
+	
+$('.main_pop .popup .btn_wrap .btn_stop').on('click' , function(){
+    popup_swiper.autoplay.stop();  /* 일시정지 기능 */
+    $('.main_pop .popup .btn_wrap .btn_play').show()
+    $(this).hide()
+})
+$('.main_pop .popup .btn_wrap .btn_play').on('click' , function(){
+    popup_swiper.autoplay.start();  /* 재생 기능 */
+    $('.main_pop .popup .btn_wrap .btn_stop').show()
+    $(this).hide()
+})
+const event_swiper = new Swiper('.main_pop .inner .event .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
 	// autoplay: {  /* 팝업 자동 실행 */
 	// 	delay: 2500,
@@ -95,16 +145,14 @@ const popup_swiper = new Swiper('.popup .swiper', { /* 팝업을 감싼는 요�
 	},
 	
 
-	// navigation: {  /* 이전, 다음 버튼 */
-	// 	nextEl: '.swiper-button-next',  /* 다음 버튼의 클래스명 */
-	// 	prevEl: '.swiper-button-prev',  
-	// },
+	navigation: {  /* 이전, 다음 버튼 */
+		prevEl: '.main_pop .inner .event .btn_wrap .btn_prev',  
+		nextEl: '.main_pop .inner .event .btn_wrap .btn_next',  /* 다음 버튼의 클래스명 */
+	},
 
 });
-swiper.autoplay.stop();  /* 일시정지 기능 */
-swiper.autoplay.start();  /* 재생 기능 */
-	
 
+	
 
 
 
