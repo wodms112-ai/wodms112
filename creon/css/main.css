@@ -593,7 +593,7 @@ header .util .allmenu {
 .product h2 {
     font-size: 40px;
     font-weight: var(--font-weight-blod);
-    padding: 0 0 24px 0;
+    margin: 0 0 24px 0;
 }
 .product .tab ul {
     display: flex;
@@ -618,27 +618,32 @@ header .util .allmenu {
 }
 .product .list ul li {
     width: calc(33.33% - 16px);
-    background-color: #fff;
-    border-radius: 30px;
 }
 
 .product .list ul li a {
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     justify-content: space-between;
     padding: 45px 40px 45px 40px;
-    gap: 103px 0;
+    height: 315px;
+    background-color: #fff;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position:  right 11% bottom 20% ;
+
 }
 .product .list ul li.pro01 a {
-    background: url(../images/product01.jpg) no-repeat right 11% bottom 20% / 30%;
+    background-image: url(../images/product01.jpg) ;
     background-size: 113px;
 }
 .product .list ul li.pro02 a {
-    background: url(../images/product02.jpg) no-repeat right 11% bottom 20% / 30%;
+    background-image: url(../images/product02.jpg) ;
     background-size: 151px;
 }
 .product .list ul li.pro03 a {
-    background: url(../images/product03.jpg) no-repeat right 11% bottom 20% / 30%;
+    background-image: url(../images/product03.jpg) ;
     background-size: 149px;
 }
 
@@ -648,6 +653,306 @@ header .util .allmenu {
     line-height: var(--line-height-title);
     margin: 0 0 15px 0;
 }
+
+.product .list ul li a .more {
+    position: relative;
+    padding: 0 30px 0 0;
+}
+.product .list ul li a .more::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 13px;
+    height: 9px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 13' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.673 12.6925L10.9595 12.004L16.1173 6.84625H0V5.84625H16.1365L10.9845 0.688499L11.673 0L18.0193 6.34625L11.673 12.6925Z' /%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width:1024px) {
+    .product {
+        padding: 85px 0 71px 0;
+    }
+    .product h2 {
+        margin: 0 0 20px 0;
+    }
+    .product .tab ul {
+        gap: 12px;
+    }
+    .product .tab ul li button {
+        padding: 10px 20px 10px 20px;
+        margin: 0 0 33px 0;
+    }
+    
+    .product .list ul li.pro01 a {
+        background-size: 80px;
+    }
+    .product .list ul li.pro02 a {
+        background-size: 120px;
+    }
+    .product .list ul li.pro03 a {
+        background-size: 110px;
+    }
+}
+@media screen and (max-width:980px) {
+    .product h2 {
+        font-size: 26px;
+    }
+    .product .tab ul li button {
+        font-size: 20px;
+    }
+    .product .list ul {
+        display: block;
+    }
+    .product .list ul li {
+        width: auto;
+        border-radius: 20px;
+        margin: 0 0 16px 0;
+    }
+    .product .list ul li a {
+        height: auto;
+        gap: 60px 0;
+        background-position:  right 5% bottom 20%  ;
+        padding: 30px 22px 30px 20px;
+    }
+    .product .list ul li a .tit h3 {
+        font-size: 19px;
+        margin: 0 0 16px 0;
+    }
+}
+
+/******************** ranking (시작) ***********************/
+.ranking {
+    margin: 104px 0 0 0;
+}
+.ranking .wrapper {
+    display: flex; /*tit - list 좌우배치*/ 
+    justify-content: space-between;
+}
+.ranking .tit h2 {
+    font-size: 40px;
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+}
+
+.ranking .tit .tab {
+    margin: 65px 0 0 0;
+}
+.ranking .tit .tab ul {
+    display: flex;
+    flex-direction: column;
+    gap: 73px 0;
+}
+
+.ranking .tit .tab ul li button {
+    display: block;
+    font-size: 22px;
+}
+.ranking .tit .tab ul li button span.mo_only {
+    display: none;
+}
+.ranking .tit .tab ul li.active {
+    position: relative;
+    transition: 0.2s;
+    color: #fff;
+    padding: 20px 50px 20px 0;
+}
+.ranking .tit .tab ul li.active::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    width: 50vw;
+    height: 100%;
+    background-color: #305AD1;
+    border-radius: 40px;
+}
+.ranking .list {
+    width: calc(100% - 321px);
+    display: flex; /*photo - h3 좌우배치*/
+}
+.ranking .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px 0;
+}
+.ranking .list ul li {
+    width: calc(50% - 12px);
+    background-color: #F3F6F9;
+    border-radius: 30px;
+    height: 433px;
+    padding: 75px 44px 68px 44px;
+}
+.ranking .list ul li a {
+    display: block;
+}
+.ranking .list ul li a .writing strong {
+    font-size: 15px;
+    padding: 0 0 0 17px;
+    position: relative;
+}
+.ranking .list ul li a .writing strong::before {
+    content: "";
+    position: absolute; /*span태그를 중심으로 정렬*/
+    left: 0;
+    top: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #FE8821;
+}
+.ranking .list ul li.rank01 a .writing strong::before {
+    background-color: #CF4D59;
+}
+.ranking .list ul li a .writing h3 {
+    font-size: 24px;
+    font-weight: var(--font-weight-blod);
+    line-height: var(--line-height-title);
+    margin: 13px 0 8px 0;
+}
+.ranking .list ul li a .percent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 35px;
+}
+.ranking .list ul li a .percent .photo {
+    overflow: hidden;
+}
+.ranking .list ul li a .percent .photo img {
+    width: 100%;
+    height: 100%;
+    margin: 59px 0 0 0;
+    object-fit: cover;
+}
+.ranking .list ul li a .percent h3 {
+    font-size: 40px;
+    font-weight: var(--font-weight-blod);
+    color: #CF4D59;
+}
+.ranking .list ul li a .percent p {
+    font-size: 15px;
+    padding: 0 0 0 101px;
+}
+@media screen and (max-width:1280px) {
+    .ranking .list ul li a .percent {
+        gap: 20px;
+    }
+    .ranking .list ul li a .percent p {
+        padding: 0 0 0 33px;
+    }
+    .ranking .list ul li a .percent h3 {
+        font-size: 28px;
+    }
+    .ranking .list ul li a .percent .photo img {
+        margin: 40px 0 0 0;
+    }
+}
+@media screen and (max-width:1250px) {
+    .ranking .list ul li {
+        padding: 60px 30px 50px 30px;
+        height: 497px;
+    }
+    .ranking .list ul li a .percent {
+        flex-direction: column;
+    }
+    .ranking .list ul li a .percent .photo img {
+        padding: 0 45px;
+    }
+}
+@media screen and (max-width:980px) {
+    .ranking {
+        margin: 86px 0 0 0;
+    }
+    .ranking .wrapper {
+        display: block; /*tit - list 좌우배치*/ 
+    }
+    .ranking .tit h2 {
+        font-size: 26px;
+    }
+    .ranking .tit h2 br.pc_only {
+        display: none;
+    }
+    .ranking .tit .tab {
+        margin: 23px 0 30px 0;
+    }
+    .ranking .tit .tab ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .ranking .tit .tab ul li button {
+        font-size: 19px;
+        font-weight: var(--font-weight-blod);
+    }
+    .ranking .tit .tab ul li button span.pc_only {
+        display: none;
+    }
+    .ranking .tit .tab ul li button span.mo_only {
+        display: block;
+    }
+    .ranking .tit .tab ul li.active {
+        padding: 7px 19px;
+    }
+    .ranking .tit .tab ul li.active::before {
+        width: 100%;
+    }
+    .ranking .list {
+        width: auto;
+        justify-content: center;
+        display: block;
+    }
+    .ranking .list ul li {
+        width: 100%;
+        border-radius: 20px;
+        height: 240px;
+        padding: 37px 20px 20px 20px;
+        margin: 0 0 16px 0;
+    }
+    .ranking .list ul li a .writing h3 {
+        font-size: 19px;
+    }    
+    .ranking .list ul li a .writing p {
+        display: none;
+    }
+    .ranking .list ul li a .percent {
+        align-items: flex-end;
+    }
+    .ranking .list ul li a .percent .photo {
+       display: none;
+    }
+    .ranking .list ul li a .percent h3 {
+        font-size: 32px;
+    }
+    .ranking .list ul li a .percent p {
+        padding: 0 0 0 73px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 footer {
