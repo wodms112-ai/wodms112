@@ -153,7 +153,33 @@ const event_swiper = new Swiper('.main_pop .inner .event .swiper', { /* 팝업�
 });
 
 	
+//******************************benefit (swiper):시작******************************* */
+const benefit_swiper = new Swiper('.benefit .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    slidesPerView: 1,  // 기본 = 980 이하 모바일
+    spaceBetween: 16,
 
+    breakpoints: {
+        768: {  // 981px 이상 ~ 1024 이하
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        1160: { // 1025px 이상 (데스크탑)
+            slidesPerView: 3,
+            spaceBetween: 20,
+        }
+    },
+	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+	// loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+	// autoplay: {  /* 팝업 자동 실행 */
+	// 	delay: 2500,
+	// 	disableOnInteraction: true,
+	// },
+	navigation: {
+		prevEl: '.benefit  .ctrl_btn .btn_prev',
+		nextEl: '.benefit  .ctrl_btn .btn_next',
+	},
+	
+});
 
 
 
